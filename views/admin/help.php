@@ -19,37 +19,37 @@
     .card .text {
         padding: 0 20px 20px;
     }
-    .card .text > button {
+    .card .text > a {
         background: gray;
         border: 0;
         color: white;
         padding: 10px;
-        width: 100%;
+        display: inherit;
+        text-decoration: none;
+        text-align: center;
     }
 </style>
 
 <main class="cards">
     <article class="card">
         <div class="text">
-            <h3><?php _e( 'Widget Access Control'); ?></h3>
-            <p><?php _e( 'With Pro, Each and every widget of elementor will have accessibility option through which you can control the access permission for any widget', 'fael' ); ?></p>
+            <h3><?php _e( 'Report Issue.'); ?></h3>
+            <p><?php _e( 'Help us improving the plugin to make awesome for all like you by reporting any issue if found.', 'fael' ); ?></p>
+            <a href="https://github.com/cybercraftit/user-frontend-for-elementor/issues/new" target="_blank"><?php _e( 'Report issue', 'fael' ); ?></a>
         </div>
     </article>
     <article class="card">
         <div class="text">
-            <h3><?php _e( 'More advanced widgets', 'fael' ); ?></h3>
-            <p><?php _e( 'Our pro version will give the access to more advanced and stunning widgets.'); ?></p>
+            <h3><?php _e( 'Rate Us.', 'fael' ); ?></h3>
+            <p><?php _e( 'If you find this plugin useful, let it be reliable to others as well by rating us.', 'fael' ); ?></p>
+            <a href="https://wordpress.org/support/plugin/user-frontend-for-elementor/reviews/#new-post" target="_blank"><?php _e( 'Rate', 'fael' ); ?></a>
         </div>
     </article>
     <article class="card">
         <div class="text">
-            <h3><?php _e( 'Premium Support', 'fael' ); ?></h3>
-            <p><?php _e( 'Premium support will be unlocked for you using pro version to get the solution of any query effectively.'); ?></p>
+            <h3><?php _e( 'Feature Request.', 'fael' ); ?></h3>
+            <p><?php _e( 'Got something great to suggest about this plugin ? Please, feel free to let us know.', 'fael'); ?></p>
+            <a href="https://cybercraftit.com/" target="_blank"><?php _e( 'Contact us', 'fael'); ?></a>
         </div>
     </article>
-    <article class="card">
-        <div class="text">
-            <h3><?php _e( 'Regular Pro Update'); ?></h3>
-            <p><?php _e( 'Instant and regular pro update will be available to you.'); ?></p>
-        </div>
-    </article>
+</main>
