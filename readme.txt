@@ -17,6 +17,11 @@ from the frontend.
 Add the functionality to wordpress to have a frontend admin panel/dashbaoard and user profile. It lets the authorized users manage the content
 from the frontend letting them have different dashboard in the frontend.
 
+= Documentation =
+
+You can find complete documentation for this plugin here.
+<a href="http://docs.cybercraftit.com/docs/user-frontend-for-elementor/">http://docs.cybercraftit.com/docs/user-frontend-for-elementor/</a>
+
 = Features =
 
 * Frontend admin panel - You can build frontend admin panel for users. Even different admin panels can be made for different users of different roles.

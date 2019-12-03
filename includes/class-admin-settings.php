@@ -84,7 +84,7 @@ class FAEL_Admin_Settings {
         if( !FAEL_Functions()->is_pro() ) {
             //add_submenu_page( 'edit.php?post_type=fael_form', __( 'Go Pro', 'fael' ), __( 'Go Pro', 'fael' ), $capability, 'fael-go-pro', array( $this, 'go_pro' ) );
         }
-        add_submenu_page( 'edit.php?post_type=fael_form', __( 'Help', 'fael' ), __( 'Help', 'fael' ), $capability, 'fael-help', array( $this, 'help' ) );
+        add_submenu_page( 'edit.php?post_type=fael_form', __( 'Help', 'fael' ), __( '<span style="color: #d54e21">Help</span>', 'fael' ), $capability, 'fael-help', array( $this, 'help' ) );
     }
 
     public function go_pro() {
