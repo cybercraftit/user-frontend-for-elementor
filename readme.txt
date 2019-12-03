@@ -19,7 +19,7 @@ from the frontend letting them have different dashboard in the frontend.
 
 = Documentation =
 
-You can find complete documentation for this plugin here.
+You can find complete documentation for this plugin here. 
 <a href="http://docs.cybercraftit.com/docs/user-frontend-for-elementor/">http://docs.cybercraftit.com/docs/user-frontend-for-elementor/</a>
 
 = Features =
