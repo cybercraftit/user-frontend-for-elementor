@@ -5,7 +5,7 @@ Tags: user-frontend, profile-builder, frontend-pagebuilder, Forms, widget-restri
 admin, frontend-admin, admin-panel, form-builer, post-form, user-form, display-widget, widget
 Requires at least: 3.0.1
 Tested up to: 5.3
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -19,7 +19,7 @@ from the frontend letting them have different dashboard in the frontend.
 
 = Documentation =
 
-You can find complete documentation for this plugin here. 
+You can find complete documentation for this plugin here.
 <a href="http://docs.cybercraftit.com/docs/user-frontend-for-elementor/">http://docs.cybercraftit.com/docs/user-frontend-for-elementor/</a>
 
 = Features =
@@ -67,6 +67,11 @@ able to create form for that and add it to the frontend admin panel for users to
 2. Activate the plugin through the 'Plugins' menu in WordPress
 
 == Changelog ==
+
+== 1.0.1 ==
+
+1. [new] Updated Readme
+2. [new] Help updated
 
 == 1.0 ==
 

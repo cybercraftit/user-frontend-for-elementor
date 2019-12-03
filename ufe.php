@@ -3,7 +3,7 @@
  * Plugin Name: User Frontend for Elementor
  * Description: Create full featured admin panel/dashboard for the frontend.
  * Plugin URI:
- * Version:     1.0.0
+ * Version:     1.0.1
  * Author:      CyberCraft
  * Author URI:
  * Text Domain: fael
@@ -12,6 +12,21 @@
 if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly.
 }
+
+/**
+ * Defining plugin constants.
+ *
+ * @since 3.0.0
+ */
+define('FAEL_NAME', 'User Frontend for Elementor');
+define('FAEL_ROOT', dirname(__FILE__));
+define('FAEL_PLUGIN_FILE', __FILE__);
+define('FAEL_PLUGIN_BASENAME', plugin_basename(__FILE__));
+define('FAEL_PLUGIN_PATH', plugin_dir_path(__FILE__));
+define('FAEL_PLUGIN_URL', plugins_url('/', __FILE__));
+define('FAEL_PLUGIN_VERSION', '1.0.1');
+define('FAEL_ASSET_PATH', FAEL_PLUGIN_PATH . '/assets');
+define('FAEL_ASSET_URL', FAEL_PLUGIN_URL . '/assets');
 
 if( !function_exists( 'pri' ) ) {
     function pri( $data ) {
@@ -66,21 +81,6 @@ function fael_elementor_pro_fail_load() {
 
     echo '<div class="error"><p>' . $message . '</p></div>';
 }
-
-/**
- * Defining plugin constants.
- *
- * @since 3.0.0
- */
-define('FAEL_NAME', 'User Frontend for Elementor');
-define('FAEL_ROOT', dirname(__FILE__));
-define('FAEL_PLUGIN_FILE', __FILE__);
-define('FAEL_PLUGIN_BASENAME', plugin_basename(__FILE__));
-define('FAEL_PLUGIN_PATH', plugin_dir_path(__FILE__));
-define('FAEL_PLUGIN_URL', plugins_url('/', __FILE__));
-define('FAEL_PLUGIN_VERSION', '3.3.2');
-define('FAEL_ASSET_PATH', FAEL_PLUGIN_PATH . '/assets');
-define('FAEL_ASSET_URL', FAEL_PLUGIN_URL . '/assets');
 
 final class FAEL_Init {
 
