@@ -188,6 +188,7 @@ final class FAEL_Init {
     }
 
     public function includes() {
+        require_once 'vote.php';
         require_once 'widgets-loader.php';
         require_once 'page-settings.php';
 
