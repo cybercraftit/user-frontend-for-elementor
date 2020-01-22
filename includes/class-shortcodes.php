@@ -76,7 +76,6 @@ final class FAEL_Shortcode {
             <?php echo FAEL_Page_Frontend()->restriction_filter( $form_post->ID, $contentElementor ); ?>
         </div>
         <?php
-        echo $vue_id;
         $ufe_vueobject[$vue_id] = [];
         return ob_get_clean();
     }
