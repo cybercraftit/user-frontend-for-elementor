@@ -42,7 +42,7 @@ final class FAEL_Shortcode {
     }
 
     public function form_handler( $atts, $content ) {
-        global $fael_forms, $fael_post;
+        global $fael_forms, $fael_post, $ufe_vueobject;
 
         $a = shortcode_atts(
             array(
@@ -69,7 +69,14 @@ final class FAEL_Shortcode {
         ob_start();
         $pluginElementor = \Elementor\Plugin::instance();
         $contentElementor = $pluginElementor->frontend->get_builder_content($form_post->ID);
-        echo FAEL_Page_Frontend()->restriction_filter( $form_post->ID, $contentElementor );
+
+        $vue_id = 'ufe_vueapp-'.rand(1,1000).'-'.$form_post->ID;
+        ?>
+        <div id="<?php echo $vue_id; ?>">
+            <?php echo FAEL_Page_Frontend()->restriction_filter( $form_post->ID, $contentElementor ); ?>
+        </div>
+        <?php
+        $ufe_vueobject[$vue_id] = [];
         return ob_get_clean();
     }
 
