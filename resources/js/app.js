@@ -24,12 +24,15 @@ window.Vue = require('vue');
 });*/
 
 var $ = jQuery;
-const fael_app = new Vue({
-    //store: store,
-    //router:router,
-    el: '#page',//#fael_app
-    data: fael_vuedata.data,
-    methods: fael_vuedata.methods,
-    created: fael_vuedata.created,
-    mounted: fael_vuedata.mounted
-});
+for ( var k in ufe_vueobject ) {
+    new Vue({
+        //store: store,
+        //router:router,
+        el: '#' + k,//#fael_app
+        data: fael_vuedata.data,
+        methods: fael_vuedata.methods,
+        created: fael_vuedata.created,
+        mounted: fael_vuedata.mounted
+    });
+}
+/*const fael_app = */

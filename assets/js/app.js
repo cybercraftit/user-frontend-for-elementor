@@ -14351,16 +14351,20 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 });*/
 
 var $ = jQuery;
-var fael_app = new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
-  //store: store,
-  //router:router,
-  el: '#page',
-  //#fael_app
-  data: fael_vuedata.data,
-  methods: fael_vuedata.methods,
-  created: fael_vuedata.created,
-  mounted: fael_vuedata.mounted
-});
+
+for (var k in ufe_vueobject) {
+  new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
+    //store: store,
+    //router:router,
+    el: '#' + k,
+    //#fael_app
+    data: fael_vuedata.data,
+    methods: fael_vuedata.methods,
+    created: fael_vuedata.created,
+    mounted: fael_vuedata.mounted
+  });
+}
+/*const fael_app = */
 
 /***/ }),
 

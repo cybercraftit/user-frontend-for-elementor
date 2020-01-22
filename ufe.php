@@ -204,6 +204,8 @@ final class FAEL_Init {
     }
 
     public function wp_enqueue_scripts_styles() {
+        global $ufe_vueobject;
+
         wp_enqueue_style( 'fael-app-css', FAEL_ASSET_URL.'/css/app.css');
 
         //for recaptcha field
@@ -326,11 +328,12 @@ final class FAEL_Init {
 
     public function footer_scripts_styles() {
 
-        global $has_fael_widget, $fael_forms;
+        global $has_fael_widget, $fael_forms, $ufe_vueobject;
+        if( !is_array( $ufe_vueobject ) ) $ufe_vueobject = [];
 
-        if( $has_fael_widget ) {
-            ?>
+        if( $has_fael_widget ) { ?>
             <script>
+                var ufe_vueobject = JSON.parse('<?php echo json_encode($ufe_vueobject); ?>');
                 var fael_forms = JSON.parse(atob('<?php echo base64_encode(json_encode($fael_forms)); ?>'));
                 fael_vuedata.data = Object.assign(fael_vuedata.data,{
                     fael_forms : fael_forms
