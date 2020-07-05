@@ -74,6 +74,17 @@ class FAEL_Form_Field extends FAEL_Widget_Base {
 
         do_action( 'fael_widget_controls_sections_before', $this );
 
+        $items = get_posts([
+            'post_type' => 'fael_form',
+            'post_publish' => 'publish'
+        ]);
+
+        $forms = [];
+
+        foreach ( $items as $k => $item ) {
+            $forms[$item->ID] = $item->post_title;
+        }
+
         $this->start_controls_section(
             'content_section',
             [
@@ -92,7 +103,7 @@ class FAEL_Form_Field extends FAEL_Widget_Base {
                 'label' => __( 'Select form', 'fael' ),
                 'type' => \Elementor\Controls_Manager::SELECT2,
                 'multiple' => false,
-                'options' => [],
+                'options' => $forms,
                 'description' => __( 'Select the form to display', 'fael' )
             ]
         );

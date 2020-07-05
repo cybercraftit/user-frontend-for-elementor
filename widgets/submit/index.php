@@ -174,13 +174,18 @@ class FAEL_Submit extends FAEL_Widget_Base {
                     'description' => __( 'Select what will happen if the user submit form.', 'fael')
                 ]
             );
+
+            $post_types = get_post_types( array(
+                'public'   => true
+            ));
+
             $this->add_control(
                 'post_type',
                 [
                     'label' => __( 'Post Type', 'your-plugin' ),
                     'type' => \Elementor\Controls_Manager::SELECT2,
                     'multiple' => false,
-                    'options' => [],
+                    'options' => $post_types,
                     'default' => 'post',
                     'conditions' => [
                         'terms' => [

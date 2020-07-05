@@ -83,7 +83,7 @@
             <div class="help-icon"><i class="dashicons dashicons-tag"></i></div>
             <h3><?php _e( 'Feature Request', 'fael' ); ?></h3>
             <p><?php _e( 'Got something great to suggest about this plugin ? Please, feel free to let us know.', 'fael'); ?></p>
-            <a href="https://cybercraftit.com/" target="_blank" class="help-link"><?php _e( 'Contact us', 'fael'); ?></a>
+            <a href="https://cybercraftit.com/contact" target="_blank" class="help-link"><?php _e( 'Contact us', 'fael'); ?></a>
         </div>
     </article>
     <article class="card">

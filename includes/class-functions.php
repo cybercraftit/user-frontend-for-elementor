@@ -213,6 +213,12 @@ Class FAEL_Functions {
         update_option( $section, $value );
     }
 
+    function add_cpt_support() {
+        $cpt_support = get_option( 'elementor_cpt_support', [ 'page', 'post' ] );
+        $cpt_support[] = 'fael_form';
+        update_option( 'elementor_cpt_support', $cpt_support );
+    }
+
 }
 
 function FAEL_Functions() {

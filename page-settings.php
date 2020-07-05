@@ -67,9 +67,11 @@ final class FAEL_Page_Settings {
                     'description' => __( 'Select what will happen if the user submit form.', 'fael')
                 ]
             );
+
             $post_types = get_post_types( array(
                 'public'   => true
             ));
+
             $item->add_control(
                 'post_type',
                 [

@@ -76,10 +76,10 @@ class UFEL_Vote {
         <div class="sm-vote">
             <div class="sm-vote-wrap">
                 <div class="sm-vote-gravatar">
-                    <a href="http://cybercraftit.com/" target="_blank"><img src="https://secure.gravatar.com/avatar/883c0dde9ec720743fe3e51c1848aba9?s=232&d=mm&r=g" alt="<?php _e( 'Mithu A Quayium', 'sm' ); ?>" width="50" height="50"></a>
+                    <a href="http://cybercraftit.com/" target="_blank"><img src="https://ps.w.org/user-frontend-for-elementor/assets/icon-128x128.png?rev=2203573" alt="<?php _e( 'User Frontend for Elementor', 'sm' ); ?>" width="50" height="50"></a>
                 </div>
                 <div class="sm-vote-message">
-                    <p><?php _e( '<h3>We Need Your Support</h3>Thanks for using <strong>'. self::$plugin_label.'</strong>.<br>If you find this plugin useful, please rate us, share and tweet to let
+                    <p><?php _e( '<h3>Thanks for using <strong>'. self::$plugin_label.'</strong>!<br></h3>If you find this plugin useful, please rate us, share and tweet to let
 others know about it, and help us improving it by your valuable suggestions .<br><b>Thank you!</b>', 'sm' ); ?></p>
                     <p>
                         <?php echo $btn_str; ?>

@@ -1,6 +1,6 @@
 .sm-vote {
     overflow: auto;
-    background: #2685B0;
+    background: #CB2F5C;
     color: #111;
 }
 .sm-vote-wrap {
@@ -9,10 +9,9 @@
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
-    -webkit-box-shadow: 0 0 10px #173859;
-    -moz-box-shadow: 0 0 10px #173859;
-    box-shadow: 0 0 10px #173859;
-
+    -webkit-box-shadow: 0 0 10px #613E61;
+    -moz-box-shadow: 0 0 10px #613E61;
+    box-shadow: 0 0 10px #613E61;
 }
 .sm-vote-clear {
     height: 0;
