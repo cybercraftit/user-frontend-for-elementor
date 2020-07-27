@@ -176,23 +176,24 @@ class FAEL_Post_Title extends FAEL_Widget_Base {
      * @access protected
      */
     protected function render() {
-        global $has_fael_widget, $fael_forms, $fael_post;
-
+        global $has_fael_widget, /*$fael_forms,*/ $fael_post;
         $has_fael_widget = true;
         $s = $this->get_settings_for_display();
 
         //
-        $fael_forms[$s['form_handle']]['post_title'] = apply_filters( 'fael_form_field', array(
+        FAEL_Form_Elements()->set_form_element( $s['form_handle'], 'post_title', apply_filters( 'fael_form_field', array(
             'rules' => array(
                 'is_required' => $s['is_required']
             ),
             'value' => '',
             'label' => $s['label'],
             'widget' => $this->get_class_name()
-        ), $s);
+        ), $s) );
 
-        self::populate_field( $s['form_handle'], 'post_title', $s['value'] );
-        self::$fael_forms = $fael_forms;
+        //self::populate_field( $s['form_handle'], 'post_title', $s['value'] );
+        FAEL_Form_Elements()->populate_field( $s['form_handle'], 'post_title', $s['value'] );
+        $fael_forms = FAEL_Form_Elements()->get_form_elements();
+        //self::$fael_forms = $fael_forms;
         ?>
         <div id="<?php echo $s['element_id']; ?>" class="position-relative form-group <?php echo $s['element_class']; ?>">
             <label for="<?php echo $s['form_handle']; ?>[<?php echo 'post_title'; ?>]" class="">
@@ -204,8 +205,8 @@ class FAEL_Post_Title extends FAEL_Widget_Base {
                    placeholder="<?php echo $s['placeholder']; ?>"
                    class="form-control"
                    value="<?php echo $fael_forms[$s['form_handle']]['post_title']['value']; ?>"
-
                    v-model="fael_forms['<?php echo $s['form_handle']; ?>']['<?php echo 'post_title'; ?>'].value"
+
             >
             <div>
                 <?php echo $s['description']; ?>

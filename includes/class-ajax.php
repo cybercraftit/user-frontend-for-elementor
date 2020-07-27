@@ -45,11 +45,12 @@ class FAEL_Ajax {
         //get saved form from page/form post
         $fael_forms = FAEL_Page_Frontend()->get_page_forms( $formdata['form_settings']['__container_id'] );
 
-
+        pri($formdata);exit;
         //if saved form not found
         if ( !$fael_forms || !is_array( $fael_forms ) ) {
             wp_send_json_error();
         }
+
 
 
         //If saved form with the specified handle not found

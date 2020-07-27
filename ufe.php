@@ -81,6 +81,8 @@ function fael_elementor_pro_fail_load() {
     echo '<div class="error"><p>' . $message . '</p></div>';
 }
 
+
+
 final class FAEL_Init {
 
     /**
@@ -196,6 +198,7 @@ final class FAEL_Init {
         require_once 'page-settings.php';
 
         require_once 'includes/editor-actions.php';
+
         require_once 'includes/class-shortcodes.php';
         require_once 'includes/class-ufe-forms.php';
         require_once 'includes/class-ajax.php';
@@ -205,6 +208,7 @@ final class FAEL_Init {
         require_once 'includes/class-accessibility-functions.php';
         require_once 'includes/class-admin-settings.php';
         require_once 'includes/class-settings-options.php';
+        require_once 'includes/class-form-elements.php';
     }
 
     public function wp_enqueue_scripts_styles() {
@@ -293,6 +297,7 @@ final class FAEL_Init {
                                 form_handle: form_handle
                             },
                             function (data) {
+                                console.log(data);
                                 if( data.success ) {
                                     if( typeof data.data.redirect != 'undefined' ) {
                                         window.location = data.data.redirect;
@@ -330,11 +335,15 @@ final class FAEL_Init {
         }
     }
 
+    /**
+     * Scripts to load in footer
+     */
     public function footer_scripts_styles() {
 
-        global $has_fael_widget, $fael_forms, $ufe_vueobject;
+        global $has_fael_widget, /*$fael_forms,*/ $ufe_vueobject;
         if( !is_array( $ufe_vueobject ) ) $ufe_vueobject = [];
-
+        $fael_forms = FAEL_Form_Elements()->get_form_elements();
+        pri($fael_forms);
         if( $has_fael_widget ) { ?>
             <script>
                 var ufe_vueobject = JSON.parse('<?php echo json_encode($ufe_vueobject); ?>');
@@ -342,6 +351,7 @@ final class FAEL_Init {
                 fael_vuedata.data = Object.assign(fael_vuedata.data,{
                     fael_forms : fael_forms
                 });
+                console.log(fael_forms);
             </script>
 <?php
             wp_enqueue_script( 'fael-app-js', FAEL_ASSET_URL.'/js/app.js', array('jquery'), false, true );
@@ -353,18 +363,22 @@ final class FAEL_Init {
      * @param $post_id
      */
     public function save_form_fields( $post_id ) {
-        global $fael_forms, $post, $fael_widgets;
+        global /*$fael_forms,*/ $post, $fael_widgets;
 
         //save widgets data in post
         update_post_meta( $post_id, 'fael_widgets', $fael_widgets );
+
+        $fael_forms = FAEL_Form_Elements()->get_form_elements();
 
         if( isset( $fael_forms ) && is_array( $fael_forms ) && !empty( $fael_forms ) ) {
 
             //if form post, get page settings and
             // and set them as each form's form settings of that.
             if( get_post_type( $post_id ) == 'fael_form' ) {
+
                 $page_settings = FAEL_Page_Settings()->get_page_settings($post_id);
-                update_post_meta(1,'fael_form', $page_settings);
+                //update_post_meta(1,'fael_form', $page_settings);
+
                 $form_settings = array(
                     'submit_type' => $page_settings['submit_type'],
                     'post_type' => $page_settings['post_type'],
@@ -389,6 +403,8 @@ final class FAEL_Init {
                     !isset( $fael_forms[$handle]['form_settings'] ) ? $fael_forms[$handle]['form_settings'] = array() : '';
                     $fael_forms[$handle]['form_settings'] = array_merge($fael_forms[$handle]['form_settings'], $form_settings );
                 }
+
+                FAEL_Form_Elements()->set_form_elements( $fael_forms );
             }
             update_post_meta( $post_id, 'fael_forms', $fael_forms );
         }
