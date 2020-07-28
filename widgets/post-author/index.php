@@ -171,11 +171,11 @@ class FAEL_Post_Author extends FAEL_Widget_Base {
      * @access protected
      */
     protected function render() {
-        global $has_fael_widget, /*$fael_forms, */$fael_post;
+        global $has_fael_widget, $fael_post;
         $has_fael_widget = true;
         $s = $this->get_settings_for_display();
 
-        FAEL_Form_Elements()->set_form_element( $s['form_handle'], $s['name'], apply_filters( 'fael_form_field', array(
+        FAEL_Form_Elements()->set_form_element( $s['form_handle'], 'post_author', apply_filters( 'fael_form_field', array(
             'rules' => array(
                 'is_required' => $s['is_required']
             ),

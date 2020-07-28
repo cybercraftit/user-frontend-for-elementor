@@ -131,6 +131,7 @@ class FAEL_User_Field extends FAEL_Widget_Base {
                 'type' => \Elementor\Controls_Manager::TEXT,
                 'input_type' => 'text',
                 'placeholder' => __( 'Label', 'fael' ),
+                'default' => __( 'User Field', 'fael' )
             ]
         );
         $this->add_control(
@@ -194,7 +195,7 @@ class FAEL_User_Field extends FAEL_Widget_Base {
      * @access protected
      */
     protected function render() {
-        global $has_fael_widget, /*$fael_forms, */$fael_post, $fael_user;
+        global $has_fael_widget, $fael_post, $fael_user;
         $has_fael_widget = true;
         $s = $this->get_settings_for_display();
 

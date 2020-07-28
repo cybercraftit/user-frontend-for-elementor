@@ -121,6 +121,7 @@ class FAEL_Text extends FAEL_Widget_Base {
                 'type' => \Elementor\Controls_Manager::TEXT,
                 'input_type' => 'text',
                 'placeholder' => __( 'Label', 'fael' ),
+                'default' => __( 'Text Field', 'fael' )
             ]
         );
         $this->add_control(
@@ -185,7 +186,7 @@ class FAEL_Text extends FAEL_Widget_Base {
      * @access protected
      */
     protected function render() {
-        global $has_fael_widget, /*$fael_forms,*/ $fael_post;
+        global $has_fael_widget, $fael_post;
         $has_fael_widget = true;
         $s = $this->get_settings_for_display();
 

@@ -340,7 +340,7 @@ final class FAEL_Init {
      */
     public function footer_scripts_styles() {
 
-        global $has_fael_widget, /*$fael_forms,*/ $ufe_vueobject;
+        global $has_fael_widget,  $ufe_vueobject;
         if( !is_array( $ufe_vueobject ) ) $ufe_vueobject = [];
         $fael_forms = FAEL_Form_Elements()->get_form_elements();
         //pri($fael_forms);
@@ -362,7 +362,7 @@ final class FAEL_Init {
      * @param $post_id
      */
     public function save_form_fields( $post_id ) {
-        global /*$fael_forms,*/ $post, $fael_widgets;
+        global  $post, $fael_widgets;
 
         //save widgets data in post
         update_post_meta( $post_id, 'fael_widgets', $fael_widgets );

@@ -42,7 +42,7 @@ final class FAEL_Shortcode {
     }
 
     public function form_handler( $atts, $content ) {
-        global /*$fael_forms,*/ $fael_post, $ufe_vueobject;
+        global  $fael_post, $ufe_vueobject;
 
         $a = shortcode_atts(
             array(

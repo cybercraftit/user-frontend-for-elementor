@@ -178,7 +178,7 @@ class FAEL_Post_Status extends FAEL_Widget_Base {
      * @access protected
      */
     protected function render() {
-        global $has_fael_widget, /*$fael_forms, */$fael_post;
+        global $has_fael_widget, $fael_post;
         $has_fael_widget = true;
         $s = $this->get_settings_for_display();
 
@@ -189,7 +189,7 @@ class FAEL_Post_Status extends FAEL_Widget_Base {
             'value' => '',
             'widget' => $this->get_class_name(),
         ), $s) );
-        
+
         FAEL_Form_Elements()->populate_field( $s['form_handle'], 'post_status', $s['value'] );
         $fael_forms = FAEL_Form_Elements()->get_form_elements();
         ?>

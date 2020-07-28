@@ -99,6 +99,16 @@ class FAEL_Radio_Group extends FAEL_Widget_Base {
                 'placeholder' => __( 'Field Name', 'fael' ),
             ]
         );
+        $this->add_control(
+            'label',
+            [
+                'label' => __( 'Label', 'fael' ),
+                'type' => \Elementor\Controls_Manager::TEXT,
+                'input_type' => 'text',
+                'placeholder' => __( 'Field Label', 'fael' ),
+                'default' => __( 'Radio Group', 'fael' ),
+            ]
+        );
         //repeater
         $repeater = new \Elementor\Repeater();
 
@@ -202,7 +212,7 @@ class FAEL_Radio_Group extends FAEL_Widget_Base {
      * @access protected
      */
     protected function render() {
-        global $has_fael_widget, /*$fael_forms, */$fael_post;
+        global $has_fael_widget, $fael_forms, $fael_post;
         $has_fael_widget = true;
         $s = $this->get_settings_for_display();
 
@@ -226,8 +236,8 @@ class FAEL_Radio_Group extends FAEL_Widget_Base {
             'value' => $value,
             'label' => $s['label']
         ), $s) );
-        FAEL_Form_Elements()->populate_field( $s['form_handle'], $s['name'], ( $s['is_check'] == 'yes' ? $s['value'] : '' ) );
-        $fael_forms = FAEL_Form_Elements()->get_form_elements();
+
+        self::$fael_forms = $fael_forms;
         ?>
         <div id="<?php echo $s['element_id']; ?>" class="position-relative form-group <?php echo $s['element_class']; ?>">
             <h5 class="card-title">

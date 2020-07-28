@@ -66,7 +66,7 @@ class FAEL_Form_Elements {
      * @param string $module
      */
     public function  populate_field( $handle, $name, $default = null, $use_default = false, $type = null, $module = 'post' ) {
-        global /*$fael_forms,*/ $fael_post, $fael_user;
+        global  $fael_post, $fael_user;
 
         $fael_forms = $this->fael_forms;
 

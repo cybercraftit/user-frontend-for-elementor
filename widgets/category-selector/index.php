@@ -103,7 +103,7 @@ class FAEL_Category_Selector extends FAEL_Widget_Base {
                 'type' => \Elementor\Controls_Manager::TEXT,
                 'input_type' => 'text',
                 'placeholder' => __( 'Label', 'fael' ),
-                'default' => __( 'Default Label', 'fael' )
+                'default' => __( 'Category', 'fael' )
             ]
         );
 
@@ -161,7 +161,7 @@ class FAEL_Category_Selector extends FAEL_Widget_Base {
      */
     protected function render() {
         //
-        global $has_fael_widget, /*$fael_forms, */$fael_post;
+        global $has_fael_widget, $fael_post;
         $has_fael_widget = true;
         $s = $this->get_settings_for_display();
 

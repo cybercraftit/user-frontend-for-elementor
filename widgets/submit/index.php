@@ -562,7 +562,7 @@ class FAEL_Submit extends FAEL_Widget_Base {
      * @param null $default
      */
     public static function populate_field( $handle, $name, $default = null, $use_default = false, $type = null, $module = 'post' ) {
-        global /*$fael_forms, */$fael_post, $fael_user;
+        global $fael_post, $fael_user;
 
         $fael_forms = FAEL_Form_Elements()->get_form_elements();
 
