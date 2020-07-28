@@ -343,7 +343,7 @@ final class FAEL_Init {
         global $has_fael_widget, /*$fael_forms,*/ $ufe_vueobject;
         if( !is_array( $ufe_vueobject ) ) $ufe_vueobject = [];
         $fael_forms = FAEL_Form_Elements()->get_form_elements();
-        pri($fael_forms);
+        //pri($fael_forms);
         if( $has_fael_widget ) { ?>
             <script>
                 var ufe_vueobject = JSON.parse('<?php echo json_encode($ufe_vueobject); ?>');

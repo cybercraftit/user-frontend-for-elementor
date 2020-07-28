@@ -528,7 +528,7 @@ class FAEL_Submit extends FAEL_Widget_Base {
         self::$fael_forms = $fael_forms;*/
 
         $fael_forms = FAEL_Form_Elements()->get_form_elements();
-        pri($fael_forms);
+        //pri($fael_forms);
         ?>
         <div id="<?php echo $s['element_id']; ?>" class="position-relative form-group <?php echo $s['element_class']; ?>">
             <?php

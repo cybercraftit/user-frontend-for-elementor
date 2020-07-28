@@ -199,7 +199,7 @@ class FAEL_Text extends FAEL_Widget_Base {
 
         FAEL_Form_Elements()->populate_field( $s['form_handle'], $s['name'], $s['value'] );
         $fael_forms = FAEL_Form_Elements()->get_form_elements();
-        pri(FAEL_Form_Elements()->get_form_elements());
+        //pri(FAEL_Form_Elements()->get_form_elements());
 
         ?>
         <div id="<?php echo $s['element_id']; ?>" class="position-relative form-group <?php echo $s['element_class']; ?>">

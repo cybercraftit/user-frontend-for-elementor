@@ -42,7 +42,7 @@ final class FAEL_Shortcode {
     }
 
     public function form_handler( $atts, $content ) {
-        global $fael_forms, $fael_post, $ufe_vueobject;
+        global /*$fael_forms,*/ $fael_post, $ufe_vueobject;
 
         $a = shortcode_atts(
             array(
@@ -54,6 +54,7 @@ final class FAEL_Shortcode {
         if( !$a['id'] ) return;
         $form_post = get_post( $a['id'] );
         $fael_forms = FAEL_Page_Frontend()->get_page_forms( $form_post->ID );
+        FAEL_Form_Elements()->set_form_elements( $fael_forms );
 
         $this->populate_form_fields();
 
@@ -81,7 +82,9 @@ final class FAEL_Shortcode {
     }
 
     public function populate_form_fields() {
-        global $fael_post, $fael_forms;
+        global /*$fael_post, */$fael_forms;
+
+        $fael_forms = FAEL_Form_Elements()->get_form_elements();
 
         foreach ( $fael_forms as $handle => $fael_form ) {
             foreach ( $fael_form as $field => $field_data ) {
