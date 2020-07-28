@@ -188,9 +188,7 @@ class FAEL_Email extends FAEL_Widget_Base {
         global $has_fael_widget, /*$fael_forms,*/ $fael_post;
         $has_fael_widget = true;
         $s = $this->get_settings_for_display();
-
-        //
-        $fael_forms[$s['form_handle']][$s['name']] = ;
+        
         FAEL_Form_Elements()->set_form_element( $s['form_handle'], $s['name'], apply_filters( 'fael_form_field', array(
             'rules' => array(
                 'is_required' => $s['is_required']
