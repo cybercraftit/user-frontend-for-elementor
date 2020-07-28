@@ -351,7 +351,6 @@ final class FAEL_Init {
                 fael_vuedata.data = Object.assign(fael_vuedata.data,{
                     fael_forms : fael_forms
                 });
-                console.log(fael_forms);
             </script>
 <?php
             wp_enqueue_script( 'fael-app-js', FAEL_ASSET_URL.'/js/app.js', array('jquery'), false, true );
@@ -377,7 +376,6 @@ final class FAEL_Init {
             if( get_post_type( $post_id ) == 'fael_form' ) {
 
                 $page_settings = FAEL_Page_Settings()->get_page_settings($post_id);
-                //update_post_meta(1,'fael_form', $page_settings);
 
                 $form_settings = array(
                     'submit_type' => $page_settings['submit_type'],

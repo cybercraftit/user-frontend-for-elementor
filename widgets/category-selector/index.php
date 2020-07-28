@@ -161,7 +161,7 @@ class FAEL_Category_Selector extends FAEL_Widget_Base {
      */
     protected function render() {
         //
-        global $has_fael_widget, $fael_forms, $fael_post;
+        global $has_fael_widget, /*$fael_forms, */$fael_post;
         $has_fael_widget = true;
         $s = $this->get_settings_for_display();
 
@@ -179,6 +179,8 @@ class FAEL_Category_Selector extends FAEL_Widget_Base {
         }
 
 
+        $fael_forms = FAEL_Form_Elements()->get_form_elements();
+
         $fael_forms[$s['form_handle']]['taxonomy']['category'] = apply_filters( 'fael_form_field', array(
             'rules' => array(
                 'is_required' => $s['is_required'],
@@ -187,7 +189,8 @@ class FAEL_Category_Selector extends FAEL_Widget_Base {
             'widget' => $this->get_class_name(),
             'value' => $value
         ), $s);
-        self::$fael_forms = $fael_forms;
+
+        FAEL_Form_Elements()->set_form_elements( $fael_forms );
         ?>
         <div class="main-card mb-3 card">
             <div class="card-body">

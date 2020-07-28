@@ -221,7 +221,7 @@ class FAEL_Checkbox_Group extends FAEL_Widget_Base {
      */
     protected function render() {
         //
-        global $has_fael_widget, $fael_forms, $fael_post;
+        global $has_fael_widget, /*$fael_forms,*/ $fael_post;
         $has_fael_widget = true;
         $s = $this->get_settings_for_display();
 
@@ -233,18 +233,17 @@ class FAEL_Checkbox_Group extends FAEL_Widget_Base {
             }
         }
 
-
-        $fael_forms[$s['form_handle']][$s['name']] = apply_filters( 'fael_form_field', array(
+        FAEL_Form_Elements()->set_form_element( $s['form_handle'], $s['name'], apply_filters( 'fael_form_field', array(
             'rules' => array(
                 'is_required' => $s['is_required'],
                 'label' => $s['label']
             ),
             'value' => $value,
             'widget' => $this->get_class_name(),
-        ), $s);
+        ), $s) );
 
-        self::populate_field( $s['form_handle'], $s['name'], $value );
-        self::$fael_forms = $fael_forms;
+        FAEL_Form_Elements()->populate_field( $s['form_handle'], $s['name'], $value );
+        $fael_forms = FAEL_Form_Elements()->get_form_elements();
         ?>
         <div id="<?php echo $s['element_id']; ?>" class="position-relative form-group <?php echo $s['element_class']; ?>">
             <h5 class="card-title">

@@ -190,10 +190,8 @@ class FAEL_Post_Title extends FAEL_Widget_Base {
             'widget' => $this->get_class_name()
         ), $s) );
 
-        //self::populate_field( $s['form_handle'], 'post_title', $s['value'] );
         FAEL_Form_Elements()->populate_field( $s['form_handle'], 'post_title', $s['value'] );
         $fael_forms = FAEL_Form_Elements()->get_form_elements();
-        //self::$fael_forms = $fael_forms;
         ?>
         <div id="<?php echo $s['element_id']; ?>" class="position-relative form-group <?php echo $s['element_class']; ?>">
             <label for="<?php echo $s['form_handle']; ?>[<?php echo 'post_title'; ?>]" class="">

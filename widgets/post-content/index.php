@@ -190,7 +190,6 @@ class FAEL_Post_Content extends FAEL_Widget_Base {
             'widget' => $this->get_class_name()
         ), $s) );
 
-        //self::populate_field( $s['form_handle'], 'post_content', $s['value'] );
         FAEL_Form_Elements()->populate_field( $s['form_handle'], 'post_content', $s['value'] );
         $fael_forms = FAEL_Form_Elements()->get_form_elements();
         ?>

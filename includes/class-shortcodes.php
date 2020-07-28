@@ -81,7 +81,7 @@ final class FAEL_Shortcode {
         return ob_get_clean();
     }
 
-    public function populate_form_fields() {
+    public function populate_form_fields() {return;
         global /*$fael_post, */$fael_forms;
 
         $fael_forms = FAEL_Form_Elements()->get_form_elements();

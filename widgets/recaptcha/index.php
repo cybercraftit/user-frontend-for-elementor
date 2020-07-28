@@ -152,15 +152,14 @@ class FAEL_Recaptcha extends FAEL_Widget_Base {
         $has_fael_widget = true;
         $s = $this->get_settings_for_display();
 
-        //
-        $fael_forms[$s['form_handle']]['recaptcha'] = apply_filters( 'fael_form_field', array(
+        FAEL_Form_Elements()->set_form_element( $s['form_handle'], 'recaptcha', apply_filters( 'fael_form_field', array(
             'rules' => array(),
             'value' => '',
             'widget' => $this->get_class_name(),
-        ), $s);
+        ), $s) );
 
         //self::populate_field( $s['form_handle'], 'recaptcha', $s['value'] );
-        self::$fael_forms = $fael_forms;
+        $fael_forms = FAEL_Form_Elements()->get_form_elements();
         ?>
         <div id="<?php echo $s['element_id']; ?>" class="position-relative form-group <?php echo $s['element_class']; ?>">
             <label><?php echo $s['label']; ?></label>
