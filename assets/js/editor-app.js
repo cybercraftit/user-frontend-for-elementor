@@ -93,6 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+var $ = jQuery;
 elementor.hooks.addAction('panel/open_editor/widget', function (panel, model, view) {
   /*if ( 'section' !== model.attributes.elType && 'column' !== model.attributes.elType ) {
       return;
@@ -285,7 +286,7 @@ function fael_populate_field_data($elName, model) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\wamp\www\wp5.2.4\wp-content\plugins\user-frontend-elementor\resources\js\editor-app.js */"./resources/js/editor-app.js");
+module.exports = __webpack_require__(/*! D:\xampp64\htdocs\wp5.4.2\wp-content\plugins\user-frontend-for-elementor\resources\js\editor-app.js */"./resources/js/editor-app.js");
 
 
 /***/ })

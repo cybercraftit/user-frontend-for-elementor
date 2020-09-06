@@ -208,10 +208,10 @@ class FAEL_Checkbox extends FAEL_Widget_Base {
             <label class="form-check-label">
                 <input type="checkbox"
                        class="form-check-input"
-                       value="<?php echo $s['value']; ?>"
+                       :value="'<?php echo $s['value']; ?>'"
                        name="<?php echo $s['form_handle']; ?>[<?php echo $s['name']; ?>]"
-                    <?php echo $fael_forms[$s['form_handle']][$s['name']]['value'] == $s['value'] ? 'checked' : '' ;?>
-
+                       true-value="<?php echo $s['value']; ?>"
+                       false-value="false"
                        v-model="fael_forms['<?php echo $s['form_handle']; ?>']['<?php echo $s['name']; ?>'].value"
                 >
                 <?php echo $s['label']; ?>

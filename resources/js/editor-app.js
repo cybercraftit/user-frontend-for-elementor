@@ -1,3 +1,4 @@
+var $ = jQuery;
 elementor.hooks.addAction( 'panel/open_editor/widget', function( panel, model, view ) {
 
     /*if ( 'section' !== model.attributes.elType && 'column' !== model.attributes.elType ) {
@@ -35,6 +36,7 @@ var fael_editor_opts = {
 };
 
 var fael_editor_render = {
+
     fael_user_list: {
         post_type: function ( value ) {
             var options = '';

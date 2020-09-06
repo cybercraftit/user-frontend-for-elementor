@@ -112,6 +112,7 @@ class FAEL_Textarea extends FAEL_Widget_Base {
                 'type' => \Elementor\Controls_Manager::TEXT,
                 'input_type' => 'text',
                 'placeholder' => __( 'Label', 'fael' ),
+                'default' => __( 'Textarea', 'fael' )
             ]
         );
         $this->add_control(
@@ -120,8 +121,7 @@ class FAEL_Textarea extends FAEL_Widget_Base {
                 'label' => __( 'Value', 'fael' ),
                 'type' => \Elementor\Controls_Manager::TEXT,
                 'input_type' => 'text',
-                'placeholder' => __( 'Value', 'fael' ),
-                'default' => __( 'Textarea', 'fael' )
+                'placeholder' => __( 'Value', 'fael' )
             ]
         );
         $this->add_control(

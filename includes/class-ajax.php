@@ -421,6 +421,8 @@ class FAEL_Ajax {
                     }
                     break;
                 case 'post_status':
+                    //post_status field will applied only
+                    //if the status setting is set to default in the form settings
                     if( $setting_value == 'default' ) {
                         if( !isset( $postdata['post_status'] ) ) {
                             $postdata['post_status'] = 'draft';

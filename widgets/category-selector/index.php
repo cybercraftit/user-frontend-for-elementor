@@ -169,6 +169,7 @@ class FAEL_Category_Selector extends FAEL_Widget_Base {
         $value = [];
         if( $fael_post ) {
             $post_terms = get_the_terms(  $fael_post, 'category' );
+            !is_array( $post_terms ) ? $post_terms = array() : '';
             $terms = [];
             foreach ( $post_terms as $k => $term ) {
                 $terms[] = $term->term_id;
