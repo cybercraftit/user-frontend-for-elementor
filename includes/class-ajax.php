@@ -96,8 +96,9 @@ class FAEL_Ajax {
         switch ( $form_settings['submit_type'] ) {
             //create user
             case 'create_user':
+                $ret = $this->create_user( $data, $current_form );
 
-                if( $ret = $this->create_user( $data, $current_form ) ) {
+                if( isset( $ret['item_id'] ) ) {
                     $item_id = $ret['item_id'];
                     $postdata = $ret['postdata'];
 
@@ -159,6 +160,7 @@ class FAEL_Ajax {
 
                     wp_send_json_success($return_data);
                 }
+                wp_send_json_error( ['msg' => $ret] );
                 break;
 
             //create post
@@ -320,11 +322,9 @@ class FAEL_Ajax {
     public function create_taxonomy( $data, $current_form ) {
         global $post;
         $postdata = array();
-
         /**
          * Set post data
          */
-
         foreach ( $data as $field => $value ) {
             if( $field == 'form_settings' ) {
                 continue;
@@ -352,6 +352,8 @@ class FAEL_Ajax {
                 }
             }
         }
+
+        $postdata = apply_filters( 'fael_after_prepare_taxdata', $postdata, $current_form, $data );
 
         if( $ret = wp_insert_category( $postdata ) ) {
             return [ 'item_id' => $ret, 'postdata' => $postdata ];
@@ -530,13 +532,15 @@ class FAEL_Ajax {
             }
         }
 
-        $postdata = apply_filters( 'fael_after_prepare_userdata', $postdata, $current_form);
+        $postdata = apply_filters( 'fael_after_prepare_userdata', $postdata, $current_form, $data );
 
-        if( $ret = wp_insert_user( $postdata ) ) {
+        $ret = wp_insert_user( $postdata );
+
+        if( !is_wp_error( $ret ) ) {
             return [ 'item_id' => $ret, 'postdata' => $postdata ];
         }
 
-        return false;
+        return $ret->get_error_message();
     }
 
 

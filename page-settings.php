@@ -51,6 +51,7 @@ final class FAEL_Page_Settings {
                     'tab' => \Elementor\Controls_Manager::TAB_SETTINGS,
                 ]
             );
+            do_action( 'fael_page_settings_after-form_settings_section', $item );
             //settings tab
             $item->add_control(
                 'submit_type',
@@ -405,6 +406,7 @@ final class FAEL_Page_Settings {
                     ],
                 ]
             );
+            do_action( 'fael_page_settings_before-form_settings_section', $item );
             $item->end_controls_section();
         }
 

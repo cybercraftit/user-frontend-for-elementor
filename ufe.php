@@ -288,16 +288,18 @@ final class FAEL_Init {
                             }
                         }
 
+                        /*console.log(_this.fael_forms[form_handle]);
+                        console.log(form_handle);*/
+
                         jQuery.post(
                             '<?php echo admin_url('admin-ajax.php'); ?>',
                             {
                                 action: 'fael_form_submit',
-                                formdata: this.fael_forms[form_handle],
+                                formdata: _this.fael_forms[form_handle],
                                 //__fael_form_page_id: '<?php echo get_queried_object_id(); ?>',
                                 form_handle: form_handle
                             },
                             function (data) {
-                                console.log('qweqwew');
                                 console.log(data);
                                 if( data.success ) {
                                     if( typeof data.data.redirect != 'undefined' ) {
@@ -378,7 +380,7 @@ final class FAEL_Init {
 
                 $page_settings = FAEL_Page_Settings()->get_page_settings($post_id);
 
-                $form_settings = array(
+                $form_settings = apply_filters( 'fael_set_form_settings', array(
                     'submit_type' => $page_settings['submit_type'],
                     'post_type' => $page_settings['post_type'],
                     'post_status' => $page_settings['status'],
@@ -396,7 +398,7 @@ final class FAEL_Init {
                     'fael_access_by_role' => $page_settings['fael_page_access_by_role'],
                     'fael_accessible_roles' => $page_settings['fael_page_accessible_roles'],
                     '__container_id' => get_the_ID()
-                );
+                ), $page_settings );
 
                 foreach ( $fael_forms as $handle => $fael_form ) {
                     !isset( $fael_forms[$handle]['form_settings'] ) ? $fael_forms[$handle]['form_settings'] = array() : '';
@@ -417,5 +419,4 @@ if( !FAEL_Functions()->is_pro() ) {
 }
 
 add_action('init',function () {
-    //pri(get_user_meta(6));die();
 });
