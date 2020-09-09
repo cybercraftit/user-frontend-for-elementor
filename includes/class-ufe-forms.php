@@ -72,7 +72,7 @@ class FAEL_Form {
             'description'           => __( 'Form Description', 'fael' ),
             'labels'                => $labels,
             /*'supports'              => false,*/
-            'taxonomies'            => array( 'category' ),
+            //'taxonomies'            => array( 'category' ),
             'hierarchical'          => false,
             'public'                => true,
             'show_ui'               => true,

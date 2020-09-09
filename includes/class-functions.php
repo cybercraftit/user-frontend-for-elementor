@@ -57,7 +57,8 @@ Class FAEL_Functions {
     }
 
     public function is_pro() {
-        if( file_exists( FAEL_ROOT.'/pro/loader.php' ) ) return true;
+        //if( file_exists( FAEL_ROOT.'/pro/loader.php' ) )
+        if( defined( 'FAEL_PRO') ) return true;
         return false;
     }
 

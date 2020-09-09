@@ -72,8 +72,13 @@ class FAEL_Widget_Base extends \Elementor\Widget_Base {
         global $fael_widgets;
         $s = $element->get_settings_for_display();
         $fael_widgets[$element->get_name()][$element->get_id()] = $s;
+        //pri($fael_widgets);
     }
 
+    /**
+     * @param $handle
+     * @param $name
+     */
     public function show_errors($handle, $name) {
         if( isset( $_GET['action']) && $_GET['action'] == 'elementor' ) return;
         ?>

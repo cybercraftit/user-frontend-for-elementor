@@ -14397,9 +14397,9 @@ for (var k in ufe_vueobject) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\xampp64\htdocs\wp5.4.2\wp-content\plugins\user-frontend-for-elementor\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! D:\xampp64\htdocs\wp5.4.2\wp-content\plugins\user-frontend-for-elementor\resources\less\app.less */"./resources/less/app.less");
-module.exports = __webpack_require__(/*! D:\xampp64\htdocs\wp5.4.2\wp-content\plugins\user-frontend-for-elementor\resources\less\promo.less */"./resources/less/promo.less");
+__webpack_require__(/*! D:\xampp64\htdocs\ufel\wp-content\plugins\user-frontend-for-elementor\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! D:\xampp64\htdocs\ufel\wp-content\plugins\user-frontend-for-elementor\resources\less\app.less */"./resources/less/app.less");
+module.exports = __webpack_require__(/*! D:\xampp64\htdocs\ufel\wp-content\plugins\user-frontend-for-elementor\resources\less\promo.less */"./resources/less/promo.less");
 
 
 /***/ })

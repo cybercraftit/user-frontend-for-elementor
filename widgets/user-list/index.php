@@ -80,25 +80,12 @@ class FAEL_User_List extends FAEL_Widget_Base {
             ]
         );
 
-        $this->post_types = [];
-
-        $this->add_control(
-            'post_type',
-            [
-                'label' => __( 'Post Type', 'fael' ),
-                'type' => \Elementor\Controls_Manager::SELECT2,
-                'multiple' => true,
-                'options' => $this->post_types,
-                'description' => __( 'Choose posts of which post type will be listed', 'fael' ),
-                'default' => 'post'
-            ]
-        );
         $this->add_control(
             'number',
             [
-                'label' => __( 'Post per Page', 'fael' ),
+                'label' => __( 'Users per Page', 'fael' ),
                 'type' => \Elementor\Controls_Manager::NUMBER,
-                'description' => __( 'Number of posts per page', 'fael' ),
+                'description' => __( 'Number of users per page', 'fael' ),
                 'default' => '10'
             ]
         );

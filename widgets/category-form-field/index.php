@@ -4,12 +4,12 @@
  *
  * @since 1.0.0
  */
-class FAEL_Category_Field extends FAEL_Widget_Base {
+class FAEL_Category_Meta extends FAEL_Widget_Base {
 
     /**
      * Get widget name.
      *
-     * Retrieve FAEL_Category_Field widget name.
+     * Retrieve FAEL_Category_Meta widget name.
      *
      * @since 1.0.0
      * @access public
@@ -17,13 +17,13 @@ class FAEL_Category_Field extends FAEL_Widget_Base {
      * @return string Widget name.
      */
     public function get_name() {
-        return 'fael_category_field';
+        return 'fael_category_form_field';
     }
 
     /**
      * Get widget title.
      *
-     * Retrieve FAEL_Category_Field widget title.
+     * Retrieve FAEL_Category_Meta widget title.
      *
      * @since 1.0.0
      * @access public
@@ -31,13 +31,13 @@ class FAEL_Category_Field extends FAEL_Widget_Base {
      * @return string Widget title.
      */
     public function get_title() {
-        return __( 'UF Category Field', 'fael' );
+        return __( 'UF Category Form Field', 'fael' );
     }
 
     /**
      * Get widget icon.
      *
-     * Retrieve FAEL_Category_Field widget icon.
+     * Retrieve FAEL_Category_Meta widget icon.
      *
      * @since 1.0.0
      * @access public
@@ -51,7 +51,7 @@ class FAEL_Category_Field extends FAEL_Widget_Base {
     /**
      * Get widget categories.
      *
-     * Retrieve the list of categories the FAEL_Category_Field widget belongs to.
+     * Retrieve the list of categories the FAEL_Category_Meta widget belongs to.
      *
      * @since 1.0.0
      * @access public
@@ -63,7 +63,7 @@ class FAEL_Category_Field extends FAEL_Widget_Base {
     }
 
     /**
-     * Register FAEL_Category_Field widget controls.
+     * Register FAEL_Category_Meta widget controls.
      *
      * Adds different input fields to allow the user to change and customize the widget settings.
      *
@@ -182,7 +182,7 @@ class FAEL_Category_Field extends FAEL_Widget_Base {
     }
 
     /**
-     * Render FAEL_Category_Field widget output on the frontend.
+     * Render FAEL_Category_Meta widget output on the frontend.
      *
      * Written in PHP and used to generate the final HTML.
      *
@@ -309,4 +309,4 @@ class FAEL_Category_Field extends FAEL_Widget_Base {
     }
 }
 
-\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new FAEL_Category_Field() );
+\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new FAEL_Category_Meta() );

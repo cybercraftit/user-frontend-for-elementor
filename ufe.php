@@ -213,7 +213,7 @@ final class FAEL_Init {
 
     public function wp_enqueue_scripts_styles() {
         global $ufe_vueobject;
-
+        if( !is_array( $ufe_vueobject ) ) $ufe_vueobject = [];
         wp_enqueue_style( 'fael-app-css', FAEL_ASSET_URL.'/css/app.css');
 
         //for recaptcha field
@@ -297,6 +297,7 @@ final class FAEL_Init {
                                 form_handle: form_handle
                             },
                             function (data) {
+                                console.log('qweqwew');
                                 console.log(data);
                                 if( data.success ) {
                                     if( typeof data.data.redirect != 'undefined' ) {
@@ -341,7 +342,7 @@ final class FAEL_Init {
     public function footer_scripts_styles() {
 
         global $has_fael_widget,  $ufe_vueobject;
-        if( !is_array( $ufe_vueobject ) ) $ufe_vueobject = [];
+
         $fael_forms = FAEL_Form_Elements()->get_form_elements();
         //pri($fael_forms);
         if( $has_fael_widget ) { ?>
@@ -411,8 +412,10 @@ final class FAEL_Init {
 
 FAEL_Init::instance();
 
-if( FAEL_Functions()->is_pro() ) {
-    require_once FAEL_ROOT.'/pro/loader.php';
-} else {
+if( !FAEL_Functions()->is_pro() ) {
     require_once FAEL_ROOT . '/promo.php';
 }
+
+add_action('init',function () {
+    //pri(get_user_meta(6));die();
+});

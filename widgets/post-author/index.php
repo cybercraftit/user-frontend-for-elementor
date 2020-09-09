@@ -171,6 +171,7 @@ class FAEL_Post_Author extends FAEL_Widget_Base {
      * @access protected
      */
     protected function render() {
+        $this->users = get_users();
         global $has_fael_widget, $fael_post;
         $has_fael_widget = true;
         $s = $this->get_settings_for_display();

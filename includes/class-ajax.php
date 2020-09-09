@@ -97,7 +97,9 @@ class FAEL_Ajax {
             //create user
             case 'create_user':
 
-                if( $item_id = $this->create_user($data, $current_form) ) {
+                if( $ret = $this->create_user( $data, $current_form ) ) {
+                    $item_id = $ret['item_id'];
+                    $postdata = $ret['postdata'];
 
                     //add system meta
 
@@ -124,7 +126,7 @@ class FAEL_Ajax {
                     }
 
                     //set system meta
-                    do_action( 'fael_after_create_user', $item_id, $current_form );
+                    do_action( 'fael_after_create_user', $item_id, $postdata, $current_form );
 
                     $url = '';
                     if( isset( $form_settings['after_create_item'] ) ) {
@@ -244,7 +246,11 @@ class FAEL_Ajax {
                 break;
 
             case 'create_taxonomy':
-                if( $item_id = $this->create_taxonomy( $data, $current_form )) {
+                if( $ret = $this->create_taxonomy( $data, $current_form )) {
+
+                    $item_id = $ret['item_id'];
+                    $postdata = $ret['postdata'];
+
                     //add system meta
 
                     //add form handle to $postdata
@@ -272,7 +278,7 @@ class FAEL_Ajax {
                     }
 
                     //set system meta
-                    do_action( 'fael_after_create_taxonomy', $item_id, $current_form );
+                    do_action( 'fael_after_create_taxonomy', $item_id, $postdata, $current_form );
 
                     $url = '';
                     if( isset( $form_settings['after_create_item'] ) ) {
@@ -340,11 +346,18 @@ class FAEL_Ajax {
                     case 'parent':
                         $postdata['category_parent'] = $value;
                         break;
+                    default:
+                        $postdata = apply_filters( 'fael_prepare_taxdata', $postdata, $field, $value, $data );
+                        break;
                 }
             }
         }
 
-        return wp_insert_category( $postdata );
+        if( $ret = wp_insert_category( $postdata ) ) {
+            return [ 'item_id' => $ret, 'postdata' => $postdata ];
+        }
+
+        return false;
     }
 
     /**
@@ -359,11 +372,9 @@ class FAEL_Ajax {
         global $post;
         $postdata = array();
 
-
         /**
          * Set post data
          */
-
         foreach ( $data as $field => $value ) {
             if( $field == 'form_settings' ) {
                 continue;
@@ -512,12 +523,20 @@ class FAEL_Ajax {
                     case 'password':
                         $postdata['password'] = $value;
                         break;
+                    default:
+                        $postdata = apply_filters( 'fael_prepare_userdata', $postdata, $field, $value, $data );
+                        break;
                 }
             }
         }
 
-        $postdata = apply_filters( 'fael_prepare_userdata', $postdata, $current_form);
-        return wp_insert_user($postdata);
+        $postdata = apply_filters( 'fael_after_prepare_userdata', $postdata, $current_form);
+
+        if( $ret = wp_insert_user( $postdata ) ) {
+            return [ 'item_id' => $ret, 'postdata' => $postdata ];
+        }
+
+        return false;
     }
 
 
@@ -677,7 +696,6 @@ class FAEL_Ajax {
                     break;
             }
         }*/
-
         wp_send_json_success(array(
             'data' => $data
         ));

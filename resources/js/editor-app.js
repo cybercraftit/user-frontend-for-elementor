@@ -17,9 +17,7 @@ var fael_editor_opts = {
     'fael_form': {
         'form' : {}
     },
-    'fael_user_list': {
-        'post_type': {}
-    },
+    'fael_user_list': {},
     'fael_post_author': {
         'value': {}
     },
@@ -37,17 +35,7 @@ var fael_editor_opts = {
 
 var fael_editor_render = {
 
-    fael_user_list: {
-        post_type: function ( value ) {
-            var options = '';
-            for( var k in fael_editor_opts.fael_user_list.post_type ) {
-                options = options + '<option value="'+ k +'" '+ ( value.indexOf(k) != -1 ? 'selected' : '' ) +'>'+ fael_editor_opts.fael_user_list.post_type[k] +'</option>';
-            }
-
-            $('select[data-setting="post_type"]').html(options);
-            options = '';
-        }
-    },
+    fael_user_list: {},
     fael_form: {
         form: function ( value ) {
             var options = '';
@@ -134,6 +122,10 @@ elementor.hooks.addAction( 'panel/open_editor/widget/fael_user_list', function( 
     var $elName = 'fael_user_list';
     fael_populate_field_data($elName,model);
 });
+elementor.hooks.addAction( 'panel/open_editor/widget/fael_post_list', function( panel, model, view ) {
+    var $elName = 'fael_post_list';
+    fael_populate_field_data($elName,model);
+});
 elementor.hooks.addAction( 'panel/open_editor/widget/fael_form', function( panel, model, view ) {
     var $elName = 'fael_form';
     fael_populate_field_data($elName,model);
@@ -162,6 +154,7 @@ function fael_populate_field_data($elName,model) {
 
 
     if( Object.keys(fetch_data).length ) {
+        console.log(Object.keys(fetch_data));
         $.post(
             ajaxurl,
             {
