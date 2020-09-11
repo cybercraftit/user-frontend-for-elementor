@@ -85,3 +85,33 @@ add_action( 'fael_widget_controls_sections_start', function ($elem) {
         }
     }
 },10);
+
+add_action( 'fael_page_settings_before-form_settings_section', function ( $item ) {
+    $item->add_control(
+        'pro_3',
+        [
+            'label' => __( 'Taxonomy <span class="fael_promo" style="color: red;">(Pro)</span>', 'your-plugin' ),
+            'type' => \Elementor\Controls_Manager::SELECT2,
+            'multiple' => false,
+            'options' => [
+                'category' => __( 'Category', 'fael' )
+            ],
+            'description' => __( 'Choose the taxonomy that will be created by this form', 'fael' ),
+            'default' => 'open',
+            'conditions' => [
+                'terms' => [
+                    [
+                        'name' => 'submit_type',
+                        'operator' => '==',
+                        'value' => 'create_taxonomy',
+                    ],
+                ],
+            ],
+        ]
+    );
+} );
+
+add_filter( 'fael_form_submit_types', function( $submit_types ) {
+    $submit_types['pro_4'] = __( 'Create Admin Settings <span class="fael_promo" style="color: red;">(Pro)</span>', 'fael' );
+    return $submit_types;
+});

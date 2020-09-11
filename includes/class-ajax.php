@@ -51,8 +51,6 @@ class FAEL_Ajax {
             wp_send_json_error();
         }
 
-
-
         //If saved form with the specified handle not found
         if( !isset( $fael_forms[$_POST['form_handle']] ) ) {
             wp_send_json_error();
@@ -163,8 +161,10 @@ class FAEL_Ajax {
                 wp_send_json_error( ['msg' => $ret] );
                 break;
 
+
             //create post
             case 'create_post':
+
                 if( $post_id = $this->create_post($data, $current_form) ) {
 
                     //set terms taxonomies
@@ -313,6 +313,9 @@ class FAEL_Ajax {
 
                     wp_send_json_success($return_data);
                 }
+                break;
+            default:
+                do_action( 'fael_create_item', $data, $current_form, $form_settings );
                 break;
         }
 
@@ -623,6 +626,9 @@ class FAEL_Ajax {
         //pri($current_form);die();
         if( empty( $errors ) ) {
             foreach ( $current_form as $field => $field_data ) {
+                $should_check = apply_filters( 'fael_before-field_rules_validations', true, $field_data, $formdata, $current_form, $field );
+                if( !$should_check ) continue;
+
                 switch ( $field ) {
                     case 'taxonomy':
                         foreach ( $field_data as $tax_name => $tax_field_data ) {
@@ -666,7 +672,6 @@ class FAEL_Ajax {
      */
     public function check_rules( $field_data, $blueprint_form ) {
         $errors = [];
-
         foreach ( $blueprint_form['rules'] as $rule => $rule_value ) {
             switch ( $rule ) {
                 case 'is_required':

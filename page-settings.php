@@ -60,11 +60,11 @@ final class FAEL_Page_Settings {
                     'type' => \Elementor\Controls_Manager::SELECT2,
                     'multiple' => false,
                     'default' => 'create_post',
-                    'options' => [
+                    'options' => apply_filters( 'fael_form_submit_types', [
                         'create_post'  => __( 'Create Post', 'plugin-domain' ),
                         'create_user'  => __( 'Create User', 'plugin-domain' ),
                         'create_taxonomy'  => __( 'Create Taxonomy', 'plugin-domain' ),
-                    ],
+                    ] ),
                     'description' => __( 'Select what will happen if the user submit form.', 'fael')
                 ]
             );
@@ -125,13 +125,13 @@ final class FAEL_Page_Settings {
                     'options' => [
                         'redirect_url' => __( 'Redirect to a URL', 'fael' ),
                         'to_page' => __( 'Redirect to a Page', 'fael' ),
-                        'redirect_edit_item' => __( 'Redirect to post edit page', 'fael' ),
+                        'redirect_edit_item' => __( 'Redirect to edit page', 'fael' ),
                         'view_post' => __( 'View created item', 'fael' ),
                     ],
                     'description' => __( 'What to do after the form is submitted successfully.', 'fael' ),
                     'conditions' => [
                         'relation' => 'or',
-                        'terms' => [
+                        'terms' => apply_filters( 'fael-after_create_item-conditions', [
                             [
                                 'name' => 'submit_type',
                                 'operator' => '==',
@@ -147,7 +147,7 @@ final class FAEL_Page_Settings {
                                 'operator' => '==',
                                 'value' => 'create_taxonomy',
                             ],
-                        ]
+                        ], 'after_create_item')
                     ],
                 ]
             );
@@ -160,11 +160,11 @@ final class FAEL_Page_Settings {
                     'type' => \Elementor\Controls_Manager::URL,
                     'conditions' => [
                         'terms' => [
-                            [
+                            /*[
                                 'name' => 'submit_type',
                                 'operator' => 'in',
                                 'value' => ['create_post', 'create_user', 'create_taxonomy'],
-                            ],
+                            ],*/
                             [
                                 'name' => 'after_create_item',
                                 'operator' => '==',
@@ -195,11 +195,11 @@ final class FAEL_Page_Settings {
                     'description' => __( 'Select the page that the user will be redirect to after the post created', 'fael' ),
                     'conditions' => [
                         'terms' => [
-                            [
+                            /*[
                                 'name' => 'submit_type',
                                 'operator' => 'in',
                                 'value' => ['create_post', 'create_user', 'create_taxonomy' ],
-                            ],
+                            ],*/
                             [
                                 'name' => 'after_create_item',
                                 'operator' => '==',

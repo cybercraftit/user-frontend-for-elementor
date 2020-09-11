@@ -179,7 +179,6 @@ class FAEL_Post_Content extends FAEL_Widget_Base {
         global $has_fael_widget,  $fael_post;
         $has_fael_widget = true;
         $s = $this->get_settings_for_display();
-
         //
         FAEL_Form_Elements()->set_form_element( $s['form_handle'], 'post_content', apply_filters( 'fael_form_field', array(
             'rules' => array(

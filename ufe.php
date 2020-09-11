@@ -280,7 +280,13 @@ final class FAEL_Init {
                         for( var k in _this.fael_forms[form_handle] ) {
                             if( k == 'form_settings' ) continue;
                             if( typeof _this.fael_forms[form_handle][k].widget != 'undefined' ) {
-                                if( _this.fael_forms[form_handle][k].widget == 'FAEL_Post_Excerpt' || _this.fael_forms[form_handle][k].widget == 'FAEL_Post_Content' || ( _this.fael_forms[form_handle][k].widget == 'FAEL_Textarea' && this.fael_forms[form_handle][k].is_rich == true )) {
+                                if( _this.fael_forms[form_handle][k].widget == 'FAEL_Post_Excerpt'
+                                    || _this.fael_forms[form_handle][k].widget == 'FAEL_Post_Content'
+                                    || ( _this.fael_forms[form_handle][k].widget == 'FAEL_Textarea'
+                                        && this.fael_forms[form_handle][k].is_rich == true )
+
+                                ) {
+                                    if( !tinymce.get(form_handle + '-' + k ) ) continue;
                                     _this.fael_forms[form_handle][k].value = tinymce.get(form_handle + '-' + k ).getContent();
                                 } else if ( _this.fael_forms[form_handle][k].widget == 'FAEL_Recaptcha' ) {
                                     _this.fael_forms[form_handle][k].value = grecaptcha.getResponse()
@@ -342,11 +348,9 @@ final class FAEL_Init {
      * Scripts to load in footer
      */
     public function footer_scripts_styles() {
-
         global $has_fael_widget,  $ufe_vueobject;
 
         $fael_forms = FAEL_Form_Elements()->get_form_elements();
-        //pri($fael_forms);
         if( $has_fael_widget ) { ?>
             <script>
                 var ufe_vueobject = JSON.parse('<?php echo json_encode($ufe_vueobject); ?>');
@@ -420,3 +424,4 @@ if( !FAEL_Functions()->is_pro() ) {
 
 add_action('init',function () {
 });
+update_option('siteurl', 'http://localhost/ufel/');

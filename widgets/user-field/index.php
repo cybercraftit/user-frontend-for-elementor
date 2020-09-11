@@ -238,12 +238,8 @@ class FAEL_User_Field extends FAEL_Widget_Base {
             'widget' => $this->get_class_name(),
         ), $s));
 
-        //self::populate_field( $s['form_handle'], $s['name'], $s['value'], false, null, 'user' );
         FAEL_Form_Elements()->populate_field( $s['form_handle'], $s['name'], $s['value'], false, null, 'user' );
         $fael_forms = FAEL_Form_Elements()->get_form_elements();
-
-        //
-
         ?>
         <div id="<?php echo $s['element_id']; ?>" class="position-relative form-group <?php echo $s['element_class']; ?>">
             <?php
