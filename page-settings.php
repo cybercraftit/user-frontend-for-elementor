@@ -423,10 +423,10 @@ final class FAEL_Page_Settings {
                 'label' => __( 'Who Can Access This Page', 'elementor' ),
                 'type' => \Elementor\Controls_Manager::SELECT2,
                 'multiple' => false,
-                'options' => [
-                    'all' => __( 'All users', 'fael' ),
+                'options' => apply_filters( 'fael_page_settings-control_options', [
                     'logged_in' => __( 'Logged in users', 'fael' )
-                ],
+                ], 'fael_page_accessability' ),
+                'default' => 'logged_id'
             ]
         );
         $item->add_control(

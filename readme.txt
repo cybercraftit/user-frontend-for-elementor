@@ -4,8 +4,8 @@ Contributors: cybercraftit
 Tags: user-frontend, profile-builder, frontend-pagebuilder, Forms, widget-restriction, registration, login, elementor, membership, dashboard, dashboard-builder, frontend-posting,
 admin, frontend-admin, admin-panel, form-builer, post-form, user-form, display-widget, widget
 Requires at least: 3.0.1
-Tested up to: 5.4.2
-Stable tag: 1.0.1.2
+Tested up to: 5.5.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -67,6 +67,23 @@ able to create form for that and add it to the frontend admin panel for users to
 2. Activate the plugin through the 'Plugins' menu in WordPress
 
 == Changelog ==
+
+== 1.0.2 ==
+
+1. [fix] Issue with saving category fixed.
+2. [fix] Type fixed
+3. [fix] Issue with populating options in post author, post status and field settings fixed
+4. [fix] Issue with rendering radio field label fixed
+5. [fix] Issue with saving post status, fixed.
+6. [fix] Issue with required field being restricted for a user role showing error , fixed.
+
+== 1.0.1 ==
+
+1. [new] No need to enable elementor for forms manually, it will be done by the system itself.
+2. [fix] Post is now saving
+3. [fix] Help link fixed
+4. [fix] List of forms are now populated in form control
+5. [fix] List of post stautses are now populated in submit button's form control
 
 == 1.0.1 ==
 

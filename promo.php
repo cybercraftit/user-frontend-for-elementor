@@ -111,6 +111,12 @@ add_action( 'fael_page_settings_before-form_settings_section', function ( $item 
     );
 } );
 
+add_filter( 'fael_page_settings-control_options', function ( $options, $setting_name ) {
+    if( $setting_name == 'fael_page_accessability' ) {
+        $options['pro_5'] = __( 'All users <span class="fael_promo" style="color: red;">(Pro)</span>', 'fael' );
+    }
+    return $options;
+}, 10, 2 );
 add_filter( 'fael_form_submit_types', function( $submit_types ) {
     $submit_types['pro_4'] = __( 'Create Admin Settings <span class="fael_promo" style="color: red;">(Pro)</span>', 'fael' );
     return $submit_types;

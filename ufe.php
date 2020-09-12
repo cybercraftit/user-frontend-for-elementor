@@ -3,7 +3,7 @@
  * Plugin Name: User Frontend for Elementor
  * Description: Create full featured admin panel/dashboard for the frontend.
  * Plugin URI:
- * Version:     1.0.1.2
+ * Version:     1.0.2
  * Author:      CyberCraft
  * Author URI:
  * Text Domain: fael
@@ -349,7 +349,6 @@ final class FAEL_Init {
      */
     public function footer_scripts_styles() {
         global $has_fael_widget,  $ufe_vueobject;
-
         $fael_forms = FAEL_Form_Elements()->get_form_elements();
         if( $has_fael_widget ) { ?>
             <script>
