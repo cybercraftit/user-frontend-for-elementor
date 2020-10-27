@@ -81,7 +81,7 @@ foreach ( $taxes as $name => $tax ) {
          * @return array Widget categories.
          */
         public function get_categories() {
-            return [ 'fael-category' ];
+            return [ 'fael-pro-cat' ];
         }
 
         /**

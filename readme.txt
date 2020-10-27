@@ -5,7 +5,7 @@ Tags: user-frontend, profile-builder, frontend-pagebuilder, Forms, widget-restri
 admin, frontend-admin, admin-panel, form-builer, post-form, user-form, display-widget, widget
 Requires at least: 3.0.1
 Tested up to: 5.5.1
-Stable tag: 1.0.2
+Stable tag: 2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -52,6 +52,30 @@ able to create form for that and add it to the frontend admin panel for users to
 * Taxonomy listing with pagination - You can make taxonomy list page along with along edit, delete actions like the one in backend
 * And more...
 
+= Pro =
+
+Pro version includess the following features to extend the awesomeness !
+
+1) Accessibility control - user can  controll the privacy/accessibility of any widget, form, page etc.
+2) Content creation by guest - logged out/guest user can create post, page or any content
+3) Control Widget visibility and accessibility for different roles.
+4) List posts/contents of any author(s)
+5) Control the actions as how you want (add , edit, delete) for the posts listed
+6) Field Widgets:
+    checkbox group,
+    datepicker,
+    post exceprt
+7) Display widget:
+    plugin list widget with capability to active, deactive or delete,
+	tag list widget,
+	list of all the taxonomies,
+	themes listing with capability to active, deactive or delete
+8) Form:
+    settings form - wp admin setting page fields,
+
+9) Create any taxonomy as how you want, along with the categories.
+
+
 == Screenshots ==
 
 1. Screenshot-1
@@ -67,6 +91,14 @@ able to create form for that and add it to the frontend admin panel for users to
 2. Activate the plugin through the 'Plugins' menu in WordPress
 
 == Changelog ==
+
+== 2.0 ==
+
+1. [new] New hooks and features added.
+2. [new] New fields added
+3. [fix] Typography fixed
+4. [fix] Code restructured
+
 
 == 1.0.2 ==
 

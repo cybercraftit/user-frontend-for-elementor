@@ -319,9 +319,22 @@ class FAEL_Ajax {
                 break;
         }
 
+        //if none of the above is created,
+        // something went wrong
+        $response['errors']['wrong'][] = __( 'Whoops ! Something went wrong.', 'fael' );
+        wp_send_json_error([
+            'success' =>  false,
+            'msg' => __( 'Whoops ! Something went wrong.' ),
+            'errors' => $response['errors']
+        ]);
         exit;
     }
 
+    /**
+     * @param $data
+     * @param $current_form
+     * @return array|bool
+     */
     public function create_taxonomy( $data, $current_form ) {
         global $post;
         $postdata = array();

@@ -278,7 +278,7 @@ function fael_populate_field_data($elName, model) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\xampp64\htdocs\ufel\wp-content\plugins\user-frontend-for-elementor\resources\js\editor-app.js */"./resources/js/editor-app.js");
+module.exports = __webpack_require__(/*! D:\xampp-new\htdocs\ufel\wp-content\plugins\user-frontend-for-elementor\resources\js\editor-app.js */"./resources/js/editor-app.js");
 
 
 /***/ })

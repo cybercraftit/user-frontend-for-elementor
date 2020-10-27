@@ -59,7 +59,7 @@ class FAEL_Checkbox_Group extends FAEL_Widget_Base {
      * @return array Widget categories.
      */
     public function get_categories() {
-        return [ 'fael-category' ];
+        return [ 'fael-pro-cat' ];
     }
 
     /**

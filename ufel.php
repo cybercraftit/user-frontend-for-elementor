@@ -3,7 +3,7 @@
  * Plugin Name: User Frontend for Elementor
  * Description: Create full featured admin panel/dashboard for the frontend.
  * Plugin URI:
- * Version:     1.0.2
+ * Version:     2.0
  * Author:      CyberCraft
  * Author URI:
  * Text Domain: fael
@@ -23,7 +23,7 @@ define('FAEL_PLUGIN_FILE', __FILE__);
 define('FAEL_PLUGIN_BASENAME', plugin_basename(__FILE__));
 define('FAEL_PLUGIN_PATH', plugin_dir_path(__FILE__));
 define('FAEL_PLUGIN_URL', plugins_url('/', __FILE__));
-define('FAEL_PLUGIN_VERSION', '1.0.1.2');
+define('FAEL_PLUGIN_VERSION', '2');
 define('FAEL_ASSET_PATH', FAEL_PLUGIN_PATH . '/assets');
 define('FAEL_ASSET_URL', FAEL_PLUGIN_URL . '/assets');
 
@@ -117,7 +117,6 @@ final class FAEL_Init {
     }
 
     public function __construct() {
-        $this->includes();
         register_activation_hook( __FILE__, array( $this, 'on_activate' ) );
 
         if ( ! did_action( 'elementor/loaded' ) ) {
@@ -156,6 +155,8 @@ final class FAEL_Init {
 
         //for media uploader
         add_filter( 'ajax_query_attachments_args', 'the_dramatist_filter_media' );
+
+        $this->includes();
     }
 
     public function on_activate() {
@@ -193,6 +194,7 @@ final class FAEL_Init {
     }
 
     public function includes() {
+        require_once 'includes/class-ajax.php';
         require_once 'vote.php';
         require_once 'widgets-loader.php';
         require_once 'page-settings.php';
@@ -201,7 +203,6 @@ final class FAEL_Init {
 
         require_once 'includes/class-shortcodes.php';
         require_once 'includes/class-ufe-forms.php';
-        require_once 'includes/class-ajax.php';
         require_once 'includes/class-functions.php';
         require_once 'includes/class-page-frontend.php';
         require_once 'includes/class-widget-functions.php';
@@ -212,6 +213,7 @@ final class FAEL_Init {
     }
 
     public function wp_enqueue_scripts_styles() {
+
         global $ufe_vueobject;
         if( !is_array( $ufe_vueobject ) ) $ufe_vueobject = [];
         wp_enqueue_style( 'fael-app-css', FAEL_ASSET_URL.'/css/app.css');
@@ -232,6 +234,8 @@ final class FAEL_Init {
         );
         ?>
         <script>
+            console.log('<?php echo admin_url('admin-ajax.php'); ?>')
+
             var fael_vuedata = {
                 data: {
                     errors: {}
@@ -294,9 +298,6 @@ final class FAEL_Init {
                             }
                         }
 
-                        /*console.log(_this.fael_forms[form_handle]);
-                        console.log(form_handle);*/
-
                         jQuery.post(
                             '<?php echo admin_url('admin-ajax.php'); ?>',
                             {
@@ -350,6 +351,7 @@ final class FAEL_Init {
     public function footer_scripts_styles() {
         global $has_fael_widget,  $ufe_vueobject;
         $fael_forms = FAEL_Form_Elements()->get_form_elements();
+
         if( $has_fael_widget ) { ?>
             <script>
                 var ufe_vueobject = JSON.parse('<?php echo json_encode($ufe_vueobject); ?>');
@@ -423,4 +425,4 @@ if( !FAEL_Functions()->is_pro() ) {
 
 add_action('init',function () {
 });
-update_option('siteurl', 'http://localhost/ufel/');
+//update_option('siteurl', 'http://localhost/ufel/');
