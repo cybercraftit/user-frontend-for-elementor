@@ -18,6 +18,10 @@ Class FAEL_Accessibility_Functions {
      * FAEL_Accessibility_Functions constructor.
      */
     public function __construct() {
+        if ( !FAEL_Functions()->is_pro() ) {
+            //add_action( 'elementor/widget/render_content', array( $this, 'is_widget_accessible' ), 10, 2 );
+        }
+
         add_action( 'admin_init', array( $this, 'wp_admin_access_check' ), 100 );
         add_action('after_setup_theme', array( $this, 'admin_bar_visibility' ) );
     }
@@ -32,6 +36,10 @@ Class FAEL_Accessibility_Functions {
     }
 
     public function wp_admin_access_check() {
+
+        //check  if the incoming request is ajax call.
+        if (defined('DOING_AJAX') && DOING_AJAX) return;
+
         $redirect = !is_admin() &&  isset( $_SERVER['HTTP_REFERER'] ) ? $_SERVER['HTTP_REFERER'] : home_url( '/' );
         $admin_roles = FAEL_Functions()->get_option( 'fael_general', 'admin_access' );
         !is_array( $admin_roles ) ? $admin_roles = array() : '';
@@ -49,8 +57,48 @@ Class FAEL_Accessibility_Functions {
      * @param $content
      * @param $widget
      */
-    public function is_widget_accessible( $content, $widget ) {
+    public function is_widget_accessible( $content, $widget ) {return;
+        global $fael_post, $post;
+
+        $s = $widget->get_settings();
+
+        //check widget accessibility
+        if( !apply_filters( 'fael_is_element_accessible', $this->check_widget_accessibility( $s ), $s ) ) {
+            return;
+        }
+
+
+        //if this is edit page, check if the user has
+        //permission to edit the post
+
+        //if edit page
+        if( isset( $_GET['fael_edit_id'] ) ) {
+
+            //if it is form element
+            if( isset( $s['form_handle'] ) ) {
+
+                $fael_forms = FAEL_Page_Frontend()->get_page_forms( $post->ID, $s['form_handle'] );
+
+                //check if user has the capability to edit the post
+                // check if form is accessible by user, submit button's acceissibility = form accessibility
+                if( !apply_filters( 'fael_is_form_accessible', $this->check_widget_accessibility( $fael_forms['form_settings'] ) )   ) {
+                    return;
+                }
+
+                // if post created by this form is not editable
+                if( $fael_forms['form_settings']['can_edit_post'] != 'yes' ) {
+                    return;
+                }
+
+                return $content;
+            }
+        }
+
+
+
+        return $content;
     }
+
     /**
      * @param $s
      * @return bool

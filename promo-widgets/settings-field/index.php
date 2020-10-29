@@ -4,12 +4,12 @@
  *
  * @since 1.0.0
  */
-class FAEL_Taxonomy_List extends FAEL_Widget_Base {
+class FAEL_Settings_Field extends FAEL_Widget_Base {
 
     /**
      * Get widget name.
      *
-     * Retrieve FAEL_Taxonomy_List widget name.
+     * Retrieve FAEL_Settings_Field widget name.
      *
      * @since 1.0.0
      * @access public
@@ -17,13 +17,13 @@ class FAEL_Taxonomy_List extends FAEL_Widget_Base {
      * @return string Widget name.
      */
     public function get_name() {
-        return 'fael_taxonomy_list';
+        return 'fael_settings_field';
     }
 
     /**
      * Get widget title.
      *
-     * Retrieve FAEL_Taxonomy_List widget title.
+     * Retrieve FAEL_Settings_Field widget title.
      *
      * @since 1.0.0
      * @access public
@@ -31,13 +31,13 @@ class FAEL_Taxonomy_List extends FAEL_Widget_Base {
      * @return string Widget title.
      */
     public function get_title() {
-        return __( 'UF Taxonomy List <span class="fael_promo_text" style="color: red;">(Pro)</span>', 'fael' );
+        return __( 'UF Admin Settings Field <span class="fael_promo_text" style="color: red;">(Pro)</span>', 'fael' );
     }
 
     /**
      * Get widget icon.
      *
-     * Retrieve FAEL_Taxonomy_List widget icon.
+     * Retrieve FAEL_Settings_Field widget icon.
      *
      * @since 1.0.0
      * @access public
@@ -51,7 +51,7 @@ class FAEL_Taxonomy_List extends FAEL_Widget_Base {
     /**
      * Get widget categories.
      *
-     * Retrieve the list of categories the FAEL_Taxonomy_List widget belongs to.
+     * Retrieve the list of categories the FAEL_Settings_Field widget belongs to.
      *
      * @since 1.0.0
      * @access public
@@ -63,7 +63,7 @@ class FAEL_Taxonomy_List extends FAEL_Widget_Base {
     }
 
     /**
-     * Register FAEL_Taxonomy_List widget controls.
+     * Register FAEL_Settings_Field widget controls.
      *
      * Adds different input fields to allow the user to change and customize the widget settings.
      *
@@ -96,7 +96,7 @@ class FAEL_Taxonomy_List extends FAEL_Widget_Base {
     }
 
     /**
-     * Render FAEL_Taxonomy_List widget output on the frontend.
+     * Render FAEL_Settings_Field widget output on the frontend.
      *
      * Written in PHP and used to generate the final HTML.
      *
@@ -113,4 +113,4 @@ class FAEL_Taxonomy_List extends FAEL_Widget_Base {
     }
 }
 
-\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new FAEL_Taxonomy_List() );
+\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new FAEL_Settings_Field() );

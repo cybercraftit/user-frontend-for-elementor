@@ -57,7 +57,8 @@ Class FAEL_Functions {
     }
 
     public function is_pro() {
-        if( file_exists( FAEL_ROOT.'/pro/loader.php' ) ) return true;
+        //if( file_exists( FAEL_ROOT.'/pro/loader.php' ) )
+        if( defined( 'FAEL_PRO') ) return true;
         return false;
     }
 
@@ -66,6 +67,13 @@ Class FAEL_Functions {
         return add_query_arg( array( 'fael_action' => 'edit',  'id' => $post_id, 'module' => 'post' ), $wp->request );
     }
 
+    /**
+     * Return id of edit page
+     *
+     * @param $id
+     * @param null $module
+     * @return mixed|string
+     */
     public function get_item_edit_page_id( $id, $module = null ) {
         if( !$module || $module == 'post' ) {
             //return edit page id saved in settings

@@ -235,10 +235,11 @@ final class FAEL_Widgets_Loader {
         if( !FAEL_Functions()->is_pro() ) {
             foreach (glob(FAEL_PLUGIN_PATH. "promo-widgets/*") as $k => $dir)
             {
-
                 require_once $dir.'/index.php';
             }
         }
+
+        do_action( 'fael_init_widgets' );
 
         // Include Widget files
         /*require_once( __DIR__ . '/widgets/applist-header/index.php' );
@@ -281,10 +282,26 @@ function add_elementor_widget_categories( $elements_manager ) {
     $elements_manager->add_category(
         'fael-category',
         [
-            'title' => __( 'User Frontend for Elementor', 'fael' ),
+            'title' => __( 'Form Fields - UFEL', 'fael' ),
             'icon' => 'fa fa-user-lock',
         ]
     );
+    $elements_manager->add_category(
+        'fael-display',
+        [
+            'title' => __( 'Display Fields - UFEL', 'fael' ),
+            'icon' => 'fa fa-user-lock',
+        ]
+    );
+    $elements_manager->add_category(
+        'fael-admin-menu-item',
+        [
+            'title' => __( 'Admin Menu Item - UFEL', 'fael' ),
+            'icon' => 'fa fa-user-lock',
+        ]
+    );
+
+    do_action('fael_add_elementor_widget_categories', $elements_manager );
 
 }
 add_action( 'elementor/elements/categories_registered', 'add_elementor_widget_categories' );

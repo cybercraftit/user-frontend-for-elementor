@@ -131,6 +131,7 @@ class FAEL_User_Field extends FAEL_Widget_Base {
                 'type' => \Elementor\Controls_Manager::TEXT,
                 'input_type' => 'text',
                 'placeholder' => __( 'Label', 'fael' ),
+                'default' => __( 'User Field', 'fael' )
             ]
         );
         $this->add_control(
@@ -194,7 +195,7 @@ class FAEL_User_Field extends FAEL_Widget_Base {
      * @access protected
      */
     protected function render() {
-        global $has_fael_widget, $fael_forms, $fael_post, $fael_user;
+        global $has_fael_widget, $fael_post, $fael_user;
         $has_fael_widget = true;
         $s = $this->get_settings_for_display();
 
@@ -229,19 +230,16 @@ class FAEL_User_Field extends FAEL_Widget_Base {
                 break;
         }
 
-        $fael_forms[$s['form_handle']][$s['name']] = apply_filters( 'fael_form_field', array(
+        FAEL_Form_Elements()->set_form_element( $s['form_handle'], $s['name'], apply_filters( 'fael_form_field', array(
             'rules' => array(
                 'is_required' => $s['is_required']
             ),
             'value' => '',
             'widget' => $this->get_class_name(),
-        ), $s);
+        ), $s));
 
-        self::populate_field( $s['form_handle'], $s['name'], $s['value'], false, null, 'user' );
-        self::$fael_forms = $fael_forms;
-
-        //
-
+        FAEL_Form_Elements()->populate_field( $s['form_handle'], $s['name'], $s['value'], false, null, 'user' );
+        $fael_forms = FAEL_Form_Elements()->get_form_elements();
         ?>
         <div id="<?php echo $s['element_id']; ?>" class="position-relative form-group <?php echo $s['element_class']; ?>">
             <?php

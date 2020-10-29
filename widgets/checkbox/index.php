@@ -187,30 +187,31 @@ class FAEL_Checkbox extends FAEL_Widget_Base {
      * @access protected
      */
     protected function render() {
-        global $has_fael_widget, $fael_forms, $fael_post;
+        global $has_fael_widget, $fael_post;
         $has_fael_widget = true;
         $s = $this->get_settings_for_display();
 
         //
-        $fael_forms[$s['form_handle']][$s['name']] = apply_filters( 'fael_form_field', array(
+        FAEL_Form_Elements()->set_form_element( $s['form_handle'], $s['name'], apply_filters( 'fael_form_field', array(
             'rules' => array(
                 'is_required' => $s['is_required']
             ),
             'value' => '',
             'label' => $s['label'],
             'widget' => $this->get_class_name(),
-        ), $s);
-        self::populate_field( $s['form_handle'], $s['name'], ($s['is_check'] == 'yes' ? $s['value'] : '') );
-        self::$fael_forms = $fael_forms;
+        ), $s) );
+
+        FAEL_Form_Elements()->populate_field( $s['form_handle'], $s['name'], ($s['is_check'] == 'yes' ? $s['value'] : '') );
+        $fael_forms = FAEL_Form_Elements()->get_form_elements();
         ?>
         <div id="<?php echo $s['element_id']; ?>" class="form-check <?php echo $s['element_class']; ?>">
             <label class="form-check-label">
                 <input type="checkbox"
                        class="form-check-input"
-                       value="<?php echo $s['value']; ?>"
+                       :value="'<?php echo $s['value']; ?>'"
                        name="<?php echo $s['form_handle']; ?>[<?php echo $s['name']; ?>]"
-                    <?php echo $fael_forms[$s['form_handle']][$s['name']]['value'] == $s['value'] ? 'checked' : '' ;?>
-
+                       true-value="<?php echo $s['value']; ?>"
+                       false-value="false"
                        v-model="fael_forms['<?php echo $s['form_handle']; ?>']['<?php echo $s['name']; ?>'].value"
                 >
                 <?php echo $s['label']; ?>

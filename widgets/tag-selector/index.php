@@ -103,7 +103,7 @@ class FAEL_Tag_Selector extends FAEL_Widget_Base {
                 'type' => \Elementor\Controls_Manager::TEXT,
                 'input_type' => 'text',
                 'placeholder' => __( 'Label', 'fael' ),
-                'default' => __( 'Default Label', 'fael' )
+                'default' => __( 'Tag Selector', 'fael' )
             ]
         );
 
@@ -161,7 +161,7 @@ class FAEL_Tag_Selector extends FAEL_Widget_Base {
      */
     protected function render() {
         //
-        global $has_fael_widget, $fael_forms, $fael_post;
+        global $has_fael_widget, $fael_post;
         $has_fael_widget = true;
         $s = $this->get_settings_for_display();
 
@@ -169,6 +169,7 @@ class FAEL_Tag_Selector extends FAEL_Widget_Base {
         $value = [];
         if( $fael_post ) {
             $post_terms = get_the_terms(  $fael_post, 'post_tag' );
+            !is_array( $post_terms ) ? $post_terms = array() : '';
             $terms = [];
             foreach ( $post_terms as $k => $term ) {
                 $terms[] = $term->name;
@@ -178,7 +179,7 @@ class FAEL_Tag_Selector extends FAEL_Widget_Base {
             $value = [];
         }
 
-
+        $fael_forms = FAEL_Form_Elements()->get_form_elements();
         $fael_forms[$s['form_handle']]['taxonomy']['post_tag'] = apply_filters( 'fael_form_field', array(
             'rules' => array(
                 'is_required' => $s['is_required'],
@@ -188,8 +189,10 @@ class FAEL_Tag_Selector extends FAEL_Widget_Base {
             'widget' => $this->get_class_name()
         ), $s);
 
-        self::populate_field( $s['form_handle'], 'post_tag', $value, true, 'taxonomy' );
-        self::$fael_forms = $fael_forms;
+        FAEL_Form_Elements()->set_form_elements( $fael_forms );
+        //self::populate_field( $s['form_handle'], 'post_tag', $value, true, 'taxonomy' );
+        FAEL_Form_Elements()->populate_field( $s['form_handle'], 'post_tag', $value, true, 'taxonomy' );
+        $fael_forms = FAEL_Form_Elements()->get_form_elements();
         ?>
         <div class="main-card mb-3 card">
             <div class="card-body">

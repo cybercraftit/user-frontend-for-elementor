@@ -14,7 +14,6 @@ Class FAEL_Page_Frontend {
 
     public function __construct() {
         add_action( 'init', array( $this, 'set_editable_post' ) );
-        add_filter( 'the_content', array( $this, 'page_restriction_check' ) );
     }
 
     public function set_editable_post() {
@@ -107,43 +106,38 @@ Class FAEL_Page_Frontend {
 
 
     /**
-     * @param $content
-     * @return null|string|void
-     */
-    public function page_restriction_check( $content ) {
-        if( get_queried_object_id() != get_the_ID() ) return $content;
-
-        return $this->restriction_filter( get_the_ID(), $content );
-    }
-
-
-    /**
      * @param $post_id
      * @param $content
      * @return string|void
      */
-    public function restriction_filter( $post_id, $content ) {
-        $error = null;
+    public function form_restriction_filter( $post_id, $content, $is_shortcode = true ) {
 
-        if( FAEL_Page_Settings()->get_page_settings( $post_id, 'fael_page_accessability' ) == 'logged_in' ) {
-            if( !is_user_logged_in() ) {
-                $error = __( 'You do not have access to this page', 'fael' );
-            } else {
+        $error = null;
+        $is_okay = 0;
+        $accessibility = FAEL_Page_Settings()->get_page_settings( $post_id, 'fael_page_accessability' );
+
+        if( $accessibility == 'logged_in' ) {
+            if( is_user_logged_in() ) {
                 if( FAEL_Page_Settings()->get_page_settings( $post_id, 'fael_page_access_by_role' ) == 'yes' ) {
                     $accessible_roles = FAEL_Page_Settings()->get_page_settings( $post_id, 'fael_page_accessible_roles' );
                     !is_array( $accessible_roles ) ? $accessible_roles = array() : '';
-                    if(  empty( array_intersect(get_userdata(get_current_user_id())->roles, $accessible_roles ) ) ) {
-                        $error = __( 'Sorry, You are not allowed to access this page', 'fael' );
+                    if( !empty( array_intersect(get_userdata(get_current_user_id())->roles, $accessible_roles ) ) ) {
+                        $is_okay = 1;
                     }
+                } else {
+                    $is_okay = 1;
+                    //return $content;
                 }
             }
         }
 
-        if( $error ) {
-            return $error;
-        }
-        return $content;
+        $is_okay = apply_filters( 'ufel_after_form_restriction_filter', $is_okay, $accessibility );
 
+        if( !$is_okay ) {
+            return $is_okay;
+        }
+
+        return $content;
     }
 
 

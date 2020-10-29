@@ -178,7 +178,7 @@ class FAEL_Post_List extends FAEL_Widget_Base {
             );
         }
 
-        $this->add_control(
+        /*$this->add_control(
             'list_type',
             [
                 'label' => __( 'Which posts to list ?'.$tax_name, 'fael' ),
@@ -190,7 +190,7 @@ class FAEL_Post_List extends FAEL_Widget_Base {
                 ],
                 'description' => __( 'Which posts to list', 'fael' )
             ]
-        );
+        );*/
 
         $this->add_control(
             'label',
@@ -277,6 +277,23 @@ class FAEL_Post_List extends FAEL_Widget_Base {
                 $args['author__in'] = array( get_current_user_id() );
             }
         }
+
+        //terms taxonomy
+        if( !empty( $s['taxonomies'] ) ) {
+            foreach ( $s['taxonomies'] as $k => $tax ) {
+                if( !empty( $s['tax_terms['.$tax.']'] ) ) {
+                    $args['tax_query'][] =  array(
+                        'taxonomy' => $tax,
+                        'field' => 'id',
+                        'terms' => $s['tax_terms['.$tax.']'],
+                        'include_children' => false,
+                        'operator' => 'IN'
+                    );
+                }
+            }
+            $args['tax_query']['relation'] = 'AND';
+        }
+
 
         $args = apply_filters( 'fael_post_list-render-posts_args', $args, $this, $s );
 

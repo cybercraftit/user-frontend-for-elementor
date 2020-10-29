@@ -4,12 +4,12 @@
  *
  * @since 1.0.0
  */
-class FAEL_Taxonomy_List extends FAEL_Widget_Base {
+class FAEL_Theme_List extends FAEL_Widget_Base {
 
     /**
      * Get widget name.
      *
-     * Retrieve FAEL_Taxonomy_List widget name.
+     * Retrieve Post Title widget name.
      *
      * @since 1.0.0
      * @access public
@@ -17,13 +17,13 @@ class FAEL_Taxonomy_List extends FAEL_Widget_Base {
      * @return string Widget name.
      */
     public function get_name() {
-        return 'fael_taxonomy_list';
+        return 'fael_theme_list';
     }
 
     /**
      * Get widget title.
      *
-     * Retrieve FAEL_Taxonomy_List widget title.
+     * Retrieve Post Title widget title.
      *
      * @since 1.0.0
      * @access public
@@ -31,13 +31,13 @@ class FAEL_Taxonomy_List extends FAEL_Widget_Base {
      * @return string Widget title.
      */
     public function get_title() {
-        return __( 'UF Taxonomy List <span class="fael_promo_text" style="color: red;">(Pro)</span>', 'fael' );
+        return __( 'FA Theme List <span class="fael_promo_text" style="color: red;">(Pro)</span>', 'fael' );
     }
 
     /**
      * Get widget icon.
      *
-     * Retrieve FAEL_Taxonomy_List widget icon.
+     * Retrieve Post Title widget icon.
      *
      * @since 1.0.0
      * @access public
@@ -51,7 +51,7 @@ class FAEL_Taxonomy_List extends FAEL_Widget_Base {
     /**
      * Get widget categories.
      *
-     * Retrieve the list of categories the FAEL_Taxonomy_List widget belongs to.
+     * Retrieve the list of categories the FAEL_Theme_List widget belongs to.
      *
      * @since 1.0.0
      * @access public
@@ -113,4 +113,5 @@ class FAEL_Taxonomy_List extends FAEL_Widget_Base {
     }
 }
 
-\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new FAEL_Taxonomy_List() );
+\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new FAEL_Theme_List() );
+

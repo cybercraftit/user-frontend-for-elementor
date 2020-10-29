@@ -42,7 +42,7 @@ final class FAEL_Shortcode {
     }
 
     public function form_handler( $atts, $content ) {
-        global $fael_forms, $fael_post, $ufe_vueobject;
+        global  /*$fael_post,*/ $ufe_vueobject;
 
         $a = shortcode_atts(
             array(
@@ -53,7 +53,9 @@ final class FAEL_Shortcode {
 
         if( !$a['id'] ) return;
         $form_post = get_post( $a['id'] );
+
         $fael_forms = FAEL_Page_Frontend()->get_page_forms( $form_post->ID );
+        FAEL_Form_Elements()->set_form_elements( $fael_forms );
 
         $this->populate_form_fields();
 
@@ -71,17 +73,27 @@ final class FAEL_Shortcode {
         $contentElementor = $pluginElementor->frontend->get_builder_content($form_post->ID);
 
         $vue_id = 'ufe_vueapp-'.rand(1,1000).'-'.$form_post->ID;
+        //pri($form_post);die();
         ?>
         <div id="<?php echo $vue_id; ?>">
-            <?php echo FAEL_Page_Frontend()->restriction_filter( $form_post->ID, $contentElementor ); ?>
+            <?php
+            $content = FAEL_Page_Frontend()->form_restriction_filter( $form_post->ID, $contentElementor, true );
+            if( $content ) {
+                echo $content;
+            } else {
+                _e( 'You do not have access to this page', 'fael' );
+            }
+            ?>
         </div>
         <?php
         $ufe_vueobject[$vue_id] = [];
         return ob_get_clean();
     }
 
-    public function populate_form_fields() {
-        global $fael_post, $fael_forms;
+    public function populate_form_fields() {return;
+        global /*$fael_post, */$fael_forms;
+
+        $fael_forms = FAEL_Form_Elements()->get_form_elements();
 
         foreach ( $fael_forms as $handle => $fael_form ) {
             foreach ( $fael_form as $field => $field_data ) {

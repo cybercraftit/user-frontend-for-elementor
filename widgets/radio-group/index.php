@@ -99,6 +99,16 @@ class FAEL_Radio_Group extends FAEL_Widget_Base {
                 'placeholder' => __( 'Field Name', 'fael' ),
             ]
         );
+        $this->add_control(
+            'label',
+            [
+                'label' => __( 'Label', 'fael' ),
+                'type' => \Elementor\Controls_Manager::TEXT,
+                'input_type' => 'text',
+                'placeholder' => __( 'Field Label', 'fael' ),
+                'default' => __( 'Radio Group', 'fael' ),
+            ]
+        );
         //repeater
         $repeater = new \Elementor\Repeater();
 
@@ -219,13 +229,14 @@ class FAEL_Radio_Group extends FAEL_Widget_Base {
             }
         }
 
-        $fael_forms[$s['form_handle']][$s['name']] = apply_filters( 'fael_form_field', array(
+        FAEL_Form_Elements()->set_form_element( $s['form_handle'], $s['name'], apply_filters( 'fael_form_field', array(
             'rules' => array(
                 'is_required' => $s['is_required']
             ),
             'value' => $value,
             'label' => $s['label']
-        ), $s);
+        ), $s) );
+
         self::$fael_forms = $fael_forms;
         ?>
         <div id="<?php echo $s['element_id']; ?>" class="position-relative form-group <?php echo $s['element_class']; ?>">

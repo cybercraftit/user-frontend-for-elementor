@@ -121,6 +121,7 @@ class FAEL_Text extends FAEL_Widget_Base {
                 'type' => \Elementor\Controls_Manager::TEXT,
                 'input_type' => 'text',
                 'placeholder' => __( 'Label', 'fael' ),
+                'default' => __( 'Text Field', 'fael' )
             ]
         );
         $this->add_control(
@@ -185,21 +186,20 @@ class FAEL_Text extends FAEL_Widget_Base {
      * @access protected
      */
     protected function render() {
-        global $has_fael_widget, $fael_forms, $fael_post;
+        global $has_fael_widget, $fael_post;
         $has_fael_widget = true;
         $s = $this->get_settings_for_display();
 
-        //
-        $fael_forms[$s['form_handle']][$s['name']] = apply_filters( 'fael_form_field', array(
+        FAEL_Form_Elements()->set_form_element( $s['form_handle'], $s['name'], apply_filters( 'fael_form_field', array(
             'rules' => array(
                 'is_required' => $s['is_required']
             ),
             'value' => '',
             'widget' => $this->get_class_name(),
-        ), $s);
+        ), $s) );
 
-        self::populate_field( $s['form_handle'], $s['name'], $s['value'] );
-        self::$fael_forms = $fael_forms;
+        FAEL_Form_Elements()->populate_field( $s['form_handle'], $s['name'], $s['value'] );
+        $fael_forms = FAEL_Form_Elements()->get_form_elements();
         ?>
         <div id="<?php echo $s['element_id']; ?>" class="position-relative form-group <?php echo $s['element_class']; ?>">
             <label for="<?php echo $s['form_handle']; ?>[<?php echo $s['name']; ?>]" class="">

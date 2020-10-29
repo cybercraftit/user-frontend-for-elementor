@@ -485,15 +485,16 @@ class FAEL_Submit extends FAEL_Widget_Base {
         $s = $this->get_settings_for_display();
 
         //
-        $fael_forms[$s['form_handle']]['submit'] = apply_filters( 'fael_form_field', array(
+
+        FAEL_Form_Elements()->set_form_element( $s['form_handle'], 'submit', apply_filters( 'fael_form_field', array(
             'rules' => array(),
             'value' => '',
             'widget' => $this->get_class_name()
-        ), $s);
+        ), $s) );
 
         self::populate_field( $s['form_handle'], 'submit', $s['value'], true );
 
-        $form_settings = array();
+        /*$form_settings = array();
 
         if( isset( $s['submit_type'] ) ) {
             switch( $s['submit_type'] ) {
@@ -524,7 +525,10 @@ class FAEL_Submit extends FAEL_Widget_Base {
 
         $fael_forms[$s['form_handle']]['form_settings'] = apply_filters( 'fael_form_settings', $form_settings, $s );
 
-        self::$fael_forms = $fael_forms;
+        self::$fael_forms = $fael_forms;*/
+
+        $fael_forms = FAEL_Form_Elements()->get_form_elements();
+        //pri($fael_forms);
         ?>
         <div id="<?php echo $s['element_id']; ?>" class="position-relative form-group <?php echo $s['element_class']; ?>">
             <?php
@@ -558,7 +562,9 @@ class FAEL_Submit extends FAEL_Widget_Base {
      * @param null $default
      */
     public static function populate_field( $handle, $name, $default = null, $use_default = false, $type = null, $module = 'post' ) {
-        global $fael_forms, $fael_post, $fael_user;
+        global $fael_post, $fael_user;
+
+        $fael_forms = FAEL_Form_Elements()->get_form_elements();
 
         if( isset( $fael_post->submit ) ) {
             $value = $fael_post->submit;
@@ -571,6 +577,8 @@ class FAEL_Submit extends FAEL_Widget_Base {
         if( isset( $fael_post->ID ) ) {
             $fael_forms[$handle]['__item_ID'] = $fael_post->ID;
         }
+
+        FAEL_Form_Elements()->set_form_elements( $fael_forms );
     }
 }
 

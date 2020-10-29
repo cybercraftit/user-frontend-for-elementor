@@ -3,7 +3,7 @@
  * Plugin Name: User Frontend for Elementor
  * Description: Create full featured admin panel/dashboard for the frontend.
  * Plugin URI:
- * Version:     1.0.1.2
+ * Version:     2.0
  * Author:      CyberCraft
  * Author URI:
  * Text Domain: fael
@@ -23,7 +23,7 @@ define('FAEL_PLUGIN_FILE', __FILE__);
 define('FAEL_PLUGIN_BASENAME', plugin_basename(__FILE__));
 define('FAEL_PLUGIN_PATH', plugin_dir_path(__FILE__));
 define('FAEL_PLUGIN_URL', plugins_url('/', __FILE__));
-define('FAEL_PLUGIN_VERSION', '1.0.1.2');
+define('FAEL_PLUGIN_VERSION', '2');
 define('FAEL_ASSET_PATH', FAEL_PLUGIN_PATH . '/assets');
 define('FAEL_ASSET_URL', FAEL_PLUGIN_URL . '/assets');
 
@@ -81,6 +81,8 @@ function fael_elementor_pro_fail_load() {
     echo '<div class="error"><p>' . $message . '</p></div>';
 }
 
+
+
 final class FAEL_Init {
 
     /**
@@ -115,7 +117,6 @@ final class FAEL_Init {
     }
 
     public function __construct() {
-        $this->includes();
         register_activation_hook( __FILE__, array( $this, 'on_activate' ) );
 
         if ( ! did_action( 'elementor/loaded' ) ) {
@@ -154,6 +155,8 @@ final class FAEL_Init {
 
         //for media uploader
         add_filter( 'ajax_query_attachments_args', 'the_dramatist_filter_media' );
+
+        $this->includes();
     }
 
     public function on_activate() {
@@ -191,25 +194,28 @@ final class FAEL_Init {
     }
 
     public function includes() {
+        require_once 'includes/class-ajax.php';
         require_once 'vote.php';
         require_once 'widgets-loader.php';
         require_once 'page-settings.php';
 
         require_once 'includes/editor-actions.php';
+
         require_once 'includes/class-shortcodes.php';
         require_once 'includes/class-ufe-forms.php';
-        require_once 'includes/class-ajax.php';
         require_once 'includes/class-functions.php';
         require_once 'includes/class-page-frontend.php';
         require_once 'includes/class-widget-functions.php';
         require_once 'includes/class-accessibility-functions.php';
         require_once 'includes/class-admin-settings.php';
         require_once 'includes/class-settings-options.php';
+        require_once 'includes/class-form-elements.php';
     }
 
     public function wp_enqueue_scripts_styles() {
-        global $ufe_vueobject;
 
+        global $ufe_vueobject;
+        if( !is_array( $ufe_vueobject ) ) $ufe_vueobject = [];
         wp_enqueue_style( 'fael-app-css', FAEL_ASSET_URL.'/css/app.css');
 
         //for recaptcha field
@@ -228,6 +234,8 @@ final class FAEL_Init {
         );
         ?>
         <script>
+            console.log('<?php echo admin_url('admin-ajax.php'); ?>')
+
             var fael_vuedata = {
                 data: {
                     errors: {}
@@ -276,7 +284,13 @@ final class FAEL_Init {
                         for( var k in _this.fael_forms[form_handle] ) {
                             if( k == 'form_settings' ) continue;
                             if( typeof _this.fael_forms[form_handle][k].widget != 'undefined' ) {
-                                if( _this.fael_forms[form_handle][k].widget == 'FAEL_Post_Excerpt' || _this.fael_forms[form_handle][k].widget == 'FAEL_Post_Content' || ( _this.fael_forms[form_handle][k].widget == 'FAEL_Textarea' && this.fael_forms[form_handle][k].is_rich == true )) {
+                                if( _this.fael_forms[form_handle][k].widget == 'FAEL_Post_Excerpt'
+                                    || _this.fael_forms[form_handle][k].widget == 'FAEL_Post_Content'
+                                    || ( _this.fael_forms[form_handle][k].widget == 'FAEL_Textarea'
+                                        && this.fael_forms[form_handle][k].is_rich == true )
+
+                                ) {
+                                    if( !tinymce.get(form_handle + '-' + k ) ) continue;
                                     _this.fael_forms[form_handle][k].value = tinymce.get(form_handle + '-' + k ).getContent();
                                 } else if ( _this.fael_forms[form_handle][k].widget == 'FAEL_Recaptcha' ) {
                                     _this.fael_forms[form_handle][k].value = grecaptcha.getResponse()
@@ -288,11 +302,12 @@ final class FAEL_Init {
                             '<?php echo admin_url('admin-ajax.php'); ?>',
                             {
                                 action: 'fael_form_submit',
-                                formdata: this.fael_forms[form_handle],
+                                formdata: _this.fael_forms[form_handle],
                                 //__fael_form_page_id: '<?php echo get_queried_object_id(); ?>',
                                 form_handle: form_handle
                             },
                             function (data) {
+                                console.log(data);
                                 if( data.success ) {
                                     if( typeof data.data.redirect != 'undefined' ) {
                                         window.location = data.data.redirect;
@@ -330,10 +345,12 @@ final class FAEL_Init {
         }
     }
 
+    /**
+     * Scripts to load in footer
+     */
     public function footer_scripts_styles() {
-
-        global $has_fael_widget, $fael_forms, $ufe_vueobject;
-        if( !is_array( $ufe_vueobject ) ) $ufe_vueobject = [];
+        global $has_fael_widget,  $ufe_vueobject;
+        $fael_forms = FAEL_Form_Elements()->get_form_elements();
 
         if( $has_fael_widget ) { ?>
             <script>
@@ -353,19 +370,22 @@ final class FAEL_Init {
      * @param $post_id
      */
     public function save_form_fields( $post_id ) {
-        global $fael_forms, $post, $fael_widgets;
+        global  $post, $fael_widgets;
 
         //save widgets data in post
         update_post_meta( $post_id, 'fael_widgets', $fael_widgets );
+
+        $fael_forms = FAEL_Form_Elements()->get_form_elements();
 
         if( isset( $fael_forms ) && is_array( $fael_forms ) && !empty( $fael_forms ) ) {
 
             //if form post, get page settings and
             // and set them as each form's form settings of that.
             if( get_post_type( $post_id ) == 'fael_form' ) {
+
                 $page_settings = FAEL_Page_Settings()->get_page_settings($post_id);
-                update_post_meta(1,'fael_form', $page_settings);
-                $form_settings = array(
+
+                $form_settings = apply_filters( 'fael_set_form_settings', array(
                     'submit_type' => $page_settings['submit_type'],
                     'post_type' => $page_settings['post_type'],
                     'post_status' => $page_settings['status'],
@@ -383,12 +403,14 @@ final class FAEL_Init {
                     'fael_access_by_role' => $page_settings['fael_page_access_by_role'],
                     'fael_accessible_roles' => $page_settings['fael_page_accessible_roles'],
                     '__container_id' => get_the_ID()
-                );
+                ), $page_settings );
 
                 foreach ( $fael_forms as $handle => $fael_form ) {
                     !isset( $fael_forms[$handle]['form_settings'] ) ? $fael_forms[$handle]['form_settings'] = array() : '';
                     $fael_forms[$handle]['form_settings'] = array_merge($fael_forms[$handle]['form_settings'], $form_settings );
                 }
+
+                FAEL_Form_Elements()->set_form_elements( $fael_forms );
             }
             update_post_meta( $post_id, 'fael_forms', $fael_forms );
         }
@@ -397,8 +419,10 @@ final class FAEL_Init {
 
 FAEL_Init::instance();
 
-if( FAEL_Functions()->is_pro() ) {
-    require_once FAEL_ROOT.'/pro/loader.php';
-} else {
+if( !FAEL_Functions()->is_pro() ) {
     require_once FAEL_ROOT . '/promo.php';
 }
+
+add_action('init',function () {
+});
+//update_option('siteurl', 'http://localhost/ufel/');

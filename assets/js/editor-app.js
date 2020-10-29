@@ -93,6 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+var $ = jQuery;
 elementor.hooks.addAction('panel/open_editor/widget', function (panel, model, view) {
   /*if ( 'section' !== model.attributes.elType && 'column' !== model.attributes.elType ) {
       return;
@@ -109,9 +110,7 @@ var fael_editor_opts = {
   'fael_form': {
     'form': {}
   },
-  'fael_user_list': {
-    'post_type': {}
-  },
+  'fael_user_list': {},
   'fael_post_author': {
     'value': {}
   },
@@ -127,18 +126,7 @@ var fael_editor_opts = {
   }
 };
 var fael_editor_render = {
-  fael_user_list: {
-    post_type: function post_type(value) {
-      var options = '';
-
-      for (var k in fael_editor_opts.fael_user_list.post_type) {
-        options = options + '<option value="' + k + '" ' + (value.indexOf(k) != -1 ? 'selected' : '') + '>' + fael_editor_opts.fael_user_list.post_type[k] + '</option>';
-      }
-
-      $('select[data-setting="post_type"]').html(options);
-      options = '';
-    }
-  },
+  fael_user_list: {},
   fael_form: {
     form: function form(value) {
       var options = '';
@@ -225,6 +213,10 @@ elementor.hooks.addAction('panel/open_editor/widget/fael_user_list', function (p
   var $elName = 'fael_user_list';
   fael_populate_field_data($elName, model);
 });
+elementor.hooks.addAction('panel/open_editor/widget/fael_post_list', function (panel, model, view) {
+  var $elName = 'fael_post_list';
+  fael_populate_field_data($elName, model);
+});
 elementor.hooks.addAction('panel/open_editor/widget/fael_form', function (panel, model, view) {
   var $elName = 'fael_form';
   fael_populate_field_data($elName, model);
@@ -252,6 +244,7 @@ function fael_populate_field_data($elName, model) {
   }
 
   if (Object.keys(fetch_data).length) {
+    console.log(Object.keys(fetch_data));
     $.post(ajaxurl, {
       action: 'fael_fetch_data',
       widget: $elName,
@@ -285,7 +278,7 @@ function fael_populate_field_data($elName, model) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\wamp\www\wp5.2.4\wp-content\plugins\user-frontend-elementor\resources\js\editor-app.js */"./resources/js/editor-app.js");
+module.exports = __webpack_require__(/*! D:\xampp-new\htdocs\ufel\wp-content\plugins\user-frontend-for-elementor\resources\js\editor-app.js */"./resources/js/editor-app.js");
 
 
 /***/ })

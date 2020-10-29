@@ -45,12 +45,11 @@ class FAEL_Ajax {
         //get saved form from page/form post
         $fael_forms = FAEL_Page_Frontend()->get_page_forms( $formdata['form_settings']['__container_id'] );
 
-
+        //pri($formdata);exit;
         //if saved form not found
         if ( !$fael_forms || !is_array( $fael_forms ) ) {
             wp_send_json_error();
         }
-
 
         //If saved form with the specified handle not found
         if( !isset( $fael_forms[$_POST['form_handle']] ) ) {
@@ -95,8 +94,11 @@ class FAEL_Ajax {
         switch ( $form_settings['submit_type'] ) {
             //create user
             case 'create_user':
+                $ret = $this->create_user( $data, $current_form );
 
-                if( $item_id = $this->create_user($data, $current_form) ) {
+                if( isset( $ret['item_id'] ) ) {
+                    $item_id = $ret['item_id'];
+                    $postdata = $ret['postdata'];
 
                     //add system meta
 
@@ -123,7 +125,7 @@ class FAEL_Ajax {
                     }
 
                     //set system meta
-                    do_action( 'fael_after_create_user', $item_id, $current_form );
+                    do_action( 'fael_after_create_user', $item_id, $postdata, $current_form );
 
                     $url = '';
                     if( isset( $form_settings['after_create_item'] ) ) {
@@ -156,10 +158,13 @@ class FAEL_Ajax {
 
                     wp_send_json_success($return_data);
                 }
+                wp_send_json_error( ['msg' => $ret] );
                 break;
+
 
             //create post
             case 'create_post':
+
                 if( $post_id = $this->create_post($data, $current_form) ) {
 
                     //set terms taxonomies
@@ -243,7 +248,11 @@ class FAEL_Ajax {
                 break;
 
             case 'create_taxonomy':
-                if( $item_id = $this->create_taxonomy( $data, $current_form )) {
+                if( $ret = $this->create_taxonomy( $data, $current_form )) {
+
+                    $item_id = $ret['item_id'];
+                    $postdata = $ret['postdata'];
+
                     //add system meta
 
                     //add form handle to $postdata
@@ -271,7 +280,7 @@ class FAEL_Ajax {
                     }
 
                     //set system meta
-                    do_action( 'fael_after_create_taxonomy', $item_id, $current_form );
+                    do_action( 'fael_after_create_taxonomy', $item_id, $postdata, $current_form );
 
                     $url = '';
                     if( isset( $form_settings['after_create_item'] ) ) {
@@ -305,19 +314,33 @@ class FAEL_Ajax {
                     wp_send_json_success($return_data);
                 }
                 break;
+            default:
+                do_action( 'fael_create_item', $data, $current_form, $form_settings );
+                break;
         }
 
+        //if none of the above is created,
+        // something went wrong
+        $response['errors']['wrong'][] = __( 'Whoops ! Something went wrong.', 'fael' );
+        wp_send_json_error([
+            'success' =>  false,
+            'msg' => __( 'Whoops ! Something went wrong.' ),
+            'errors' => $response['errors']
+        ]);
         exit;
     }
 
+    /**
+     * @param $data
+     * @param $current_form
+     * @return array|bool
+     */
     public function create_taxonomy( $data, $current_form ) {
         global $post;
         $postdata = array();
-
         /**
          * Set post data
          */
-
         foreach ( $data as $field => $value ) {
             if( $field == 'form_settings' ) {
                 continue;
@@ -339,11 +362,20 @@ class FAEL_Ajax {
                     case 'parent':
                         $postdata['category_parent'] = $value;
                         break;
+                    default:
+                        $postdata = apply_filters( 'fael_prepare_taxdata', $postdata, $field, $value, $data );
+                        break;
                 }
             }
         }
 
-        return wp_insert_category( $postdata );
+        $postdata = apply_filters( 'fael_after_prepare_taxdata', $postdata, $current_form, $data );
+
+        if( $ret = wp_insert_category( $postdata ) ) {
+            return [ 'item_id' => $ret, 'postdata' => $postdata ];
+        }
+
+        return false;
     }
 
     /**
@@ -358,11 +390,9 @@ class FAEL_Ajax {
         global $post;
         $postdata = array();
 
-
         /**
          * Set post data
          */
-
         foreach ( $data as $field => $value ) {
             if( $field == 'form_settings' ) {
                 continue;
@@ -420,6 +450,8 @@ class FAEL_Ajax {
                     }
                     break;
                 case 'post_status':
+                    //post_status field will applied only
+                    //if the status setting is set to default in the form settings
                     if( $setting_value == 'default' ) {
                         if( !isset( $postdata['post_status'] ) ) {
                             $postdata['post_status'] = 'draft';
@@ -509,12 +541,22 @@ class FAEL_Ajax {
                     case 'password':
                         $postdata['password'] = $value;
                         break;
+                    default:
+                        $postdata = apply_filters( 'fael_prepare_userdata', $postdata, $field, $value, $data );
+                        break;
                 }
             }
         }
 
-        $postdata = apply_filters( 'fael_prepare_userdata', $postdata, $current_form);
-        return wp_insert_user($postdata);
+        $postdata = apply_filters( 'fael_after_prepare_userdata', $postdata, $current_form, $data );
+
+        $ret = wp_insert_user( $postdata );
+
+        if( !is_wp_error( $ret ) ) {
+            return [ 'item_id' => $ret, 'postdata' => $postdata ];
+        }
+
+        return $ret->get_error_message();
     }
 
 
@@ -597,6 +639,9 @@ class FAEL_Ajax {
         //pri($current_form);die();
         if( empty( $errors ) ) {
             foreach ( $current_form as $field => $field_data ) {
+                $should_check = apply_filters( 'fael_before-field_rules_validations', true, $field_data, $formdata, $current_form, $field );
+                if( !$should_check ) continue;
+
                 switch ( $field ) {
                     case 'taxonomy':
                         foreach ( $field_data as $tax_name => $tax_field_data ) {
@@ -640,7 +685,6 @@ class FAEL_Ajax {
      */
     public function check_rules( $field_data, $blueprint_form ) {
         $errors = [];
-
         foreach ( $blueprint_form['rules'] as $rule => $rule_value ) {
             switch ( $rule ) {
                 case 'is_required':
@@ -674,7 +718,6 @@ class FAEL_Ajax {
                     break;
             }
         }*/
-
         wp_send_json_success(array(
             'data' => $data
         ));
