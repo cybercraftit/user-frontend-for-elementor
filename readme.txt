@@ -75,7 +75,7 @@ able to create form for that and add it to the frontend admin panel for users to
 
 9) Create any taxonomy as how you want, along with the categories.
 
-<a href="https://cybercraftit.com/user-frontend-for-elementor-pro/" target="_blank">You can find pro version here</a>
+<a href="https://cybercraftit.com/user-frontend-for-elementor-pro/" target="_blank">You can find pro version here</a> 
 
 == Screenshots ==
 
