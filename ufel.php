@@ -3,7 +3,7 @@
  * Plugin Name: User Frontend for Elementor
  * Description: Create full featured admin panel/dashboard for the frontend.
  * Plugin URI:
- * Version:     2.0
+ * Version:     2.0.0.1
  * Author:      CyberCraft
  * Author URI:
  * Text Domain: fael
@@ -23,7 +23,7 @@ define('FAEL_PLUGIN_FILE', __FILE__);
 define('FAEL_PLUGIN_BASENAME', plugin_basename(__FILE__));
 define('FAEL_PLUGIN_PATH', plugin_dir_path(__FILE__));
 define('FAEL_PLUGIN_URL', plugins_url('/', __FILE__));
-define('FAEL_PLUGIN_VERSION', '2');
+define('FAEL_PLUGIN_VERSION', '2.0.0.1');
 define('FAEL_ASSET_PATH', FAEL_PLUGIN_PATH . '/assets');
 define('FAEL_ASSET_URL', FAEL_PLUGIN_URL . '/assets');
 
@@ -125,7 +125,6 @@ final class FAEL_Init {
                 <?php fael_elementor_pro_fail_load(); ?>
                 <?php
             } );
-            return;
         }
 
         add_action( 'wp_enqueue_scripts', array( $this, 'wp_enqueue_scripts_styles' ) );
