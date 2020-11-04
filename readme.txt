@@ -22,6 +22,15 @@ from the frontend letting them have different dashboard in the frontend.
 You can find complete documentation for this plugin here.
 <a href="http://docs.cybercraftit.com/docs/user-frontend-for-elementor/">http://docs.cybercraftit.com/docs/user-frontend-for-elementor/</a>
 
+= Demo =
+
+You can find complete demo for this plugin here.
+<a href="http://cybercraftit.com/demo/testwp/user-frontend-for-elementor/wp-admin" target="_blank">Demo for User Frontend for Elementor</a>
+
+Username: ufel
+password: admin
+
+
 = Features =
 
 * Frontend admin panel - You can build frontend admin panel for users. Even different admin panels can be made for different users of different roles.
