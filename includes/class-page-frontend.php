@@ -22,7 +22,6 @@ Class FAEL_Page_Frontend {
         if( isset( $_GET['fael_action'] ) ) {
 
             if( $_GET['fael_action'] == 'edit' ) {
-
                 //get form page from post meta
                 $form_page_id = null;
 
@@ -42,7 +41,6 @@ Class FAEL_Page_Frontend {
                     wp_redirect( add_query_arg( array( 'fael_object' => ( isset( $_GET['module'] ) ? $_GET['module'] : 'post' ), 'fael_edit_id' => $_GET['id'] ), get_permalink( $form_page_id ) ) );
                     exit;
                 }
-
             } elseif ( $_GET['fael_action'] == 'delete' ) {
                 //check if it is post author
                 switch ( $_GET['module'] ) {

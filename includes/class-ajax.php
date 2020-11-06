@@ -45,7 +45,6 @@ class FAEL_Ajax {
         //get saved form from page/form post
         $fael_forms = FAEL_Page_Frontend()->get_page_forms( $formdata['form_settings']['__container_id'] );
 
-        //pri($formdata);exit;
         //if saved form not found
         if ( !$fael_forms || !is_array( $fael_forms ) ) {
             wp_send_json_error();
@@ -636,7 +635,6 @@ class FAEL_Ajax {
                 break;
         }
 
-        //pri($current_form);die();
         if( empty( $errors ) ) {
             foreach ( $current_form as $field => $field_data ) {
                 $should_check = apply_filters( 'fael_before-field_rules_validations', true, $field_data, $formdata, $current_form, $field );
