@@ -3,6 +3,7 @@
 class FAEL_Login {
 
     private static $_instance = null;
+    protected $login_url;
 
     public static function instance() {
 
@@ -16,6 +17,37 @@ class FAEL_Login {
         add_filter( 'fael_form_submit_types', [ $this, 'add_login_submit_type' ]);
         add_action( 'fael_create_item', [ $this, 'process_login' ], 10, 3 );
         add_filter( 'fael-after_create_item-conditions', [ $this, 'modify_after_create_item_conditions'], 10, 2 );
+        add_filter( 'fael_settings_sections', [ $this, 'add_new_settings_section' ] );
+        add_filter( 'fael_settings_fields', [ $this, 'add_settings_fields' ], 10, 2 );
+        add_filter( 'login_url', [ $this, 'change_login_url' ] );
+        // Hook the appropriate WordPress action
+        add_action('init', [ $this, 'prevent_wp_login' ] );
+    }
+
+    public function prevent_wp_login() {
+        $id = FAEL_Functions()->get_option( 'fael_login_reg', 'login_page_id' );
+        if ( !$id ) {
+            return;
+        }
+        $this->login_url = get_permalink( $id );
+
+        // WP tracks the current page - global the variable to access it
+        global $pagenow;
+        // Check if a $_GET['action'] is set, and if so, load it into $action variable
+        $action = (isset($_GET['action'])) ? $_GET['action'] : '';
+        // Check if we're on the login page, and ensure the action is not 'logout'
+        if( $pagenow == 'wp-login.php' && ( ! $action || ( $action && ! in_array($action, array('logout', 'lostpassword', 'rp', 'resetpass'))))) {
+            //get_template_part( 404 );
+            wp_redirect($this->login_url);
+            exit;
+        }
+    }
+
+    public function change_login_url( $login_url ) {
+        if( $this->login_url ) {
+            return $this->login_url;
+        }
+        return $login_url;
     }
 
     /**
@@ -101,6 +133,40 @@ class FAEL_Login {
             'remember'      => true
         ];*/
         return wp_signon( $creds );
+    }
+
+    /**
+     * Add login and registration section
+     * @param $sections
+     * @return array
+     */
+    public function add_new_settings_section( $sections ) {
+        $sections[] = array(
+            'id'    => 'fael_login_reg',
+            'title' => __( 'Login and Registration', 'fael' ),
+            'icon' => 'dashicons-user'
+        );
+        return $sections;
+    }
+
+    public function add_settings_fields( $settings_fields, $data ) {
+        $settings_fields['fael_login_reg'] = [
+            array(
+                'name'    => 'login_page_id',
+                'label'   => __( 'Login Page', 'fael' ),
+                'desc'    => __( 'Select the page which will be considered as login page.', 'fael' ),
+                'type'    => 'select',
+                'options' => $data['pages']
+            ),
+            array(
+                'name'    => 'reg_page_id',
+                'label'   => __( 'Registration Page', 'fael' ),
+                'desc'    => __( 'Select the page which will be considered as registration page.', 'fael' ),
+                'type'    => 'select',
+                'options' => $data['pages']
+            )
+        ];
+        return $settings_fields;
     }
 
 

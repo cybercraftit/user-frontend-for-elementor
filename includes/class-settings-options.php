@@ -132,7 +132,11 @@ class FAEL_Settings_Options {
             ) )
         );
 
-        return apply_filters( 'fael_settings_fields', $settings_fields );
+        return apply_filters( 'fael_settings_fields', $settings_fields, [
+            'pages' => $pages,
+            'users' => $users,
+            'user_roles' => $user_roles
+        ] );
     }
 }
 
