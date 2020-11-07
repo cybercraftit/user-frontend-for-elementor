@@ -111,8 +111,3 @@ function FAEL_Login() {
 }
 
 FAEL_Login();
-
-add_action( 'init', function() {return;
-
-    //pri(wp_authenticate( 'admin', 'admin' ));die();
-});
