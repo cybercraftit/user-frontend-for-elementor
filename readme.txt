@@ -49,6 +49,8 @@ user role. (Requires pro version)
 * Frontend admin panel - You can create a completely separete admin panel in the frotnend for your logged in users. Users in your site no longer needs
 to log into the wp-admin. Instead , they will enter the frontend admin panel after logging in.
 
+* You can set custom redirection url after user logs in.
+
 * Control access for wp-admin - With UFEL, you can control which user role can have the access to your deault wp-admin panel and who cannot.
 
 
