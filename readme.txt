@@ -14,8 +14,44 @@ from the frontend.
 
 == Description ==
 
-Add the functionality to wordpress to have a frontend admin panel/dashbaoard and user profile. It lets the authorized users manage the content
-from the frontend letting them have different dashboard in the frontend.
+Want to build admin panel, user profile, post, page, post type, category, taxonomy creating/submission form, WP settings form, custom login and registration in
+the FRONTEND even for different roles with just drag and drop functionality of Elementor ? User Frontend for Elementor is the exact thing to make this happen with
+NO hassles.
+
+== What User Frotnend for Elementor ( UFEL ) can do for you ? ==
+
+* Frontend Post, Taxonomy, User, Settings creation - With UFEL, you can let your your create post of any post type, taxonomy including catergory, settings
+or even user with different submission forms. UFEL lets you create UNLIMITED forms and use them to create anything from frontend.
+
+* You can control the ability of editing, deleting, drafting or publishing any content created by user with frotnend form.
+
+* Build frontend user profile - You can build frotnent user profile with UFEL. With this, logged in user can manage their profile even from frotnend.
+
+* Display created content in the frontend - The content created by frontend form can be displayed with any layour designed by Elementor.
+You can show any field data, be it post title or post meta.
+
+* Unlimited widgets to create form - You  will have unlimited widgets including Text field, Textarea, Checkbox, Radio button, Dropdown field, File Uploader,
+Post Title, Post Content, different User fields, Meta fields, category fields, Taxonomy fields and more and more to make forms of different type.
+
+* Exclusive display widgets - Different complex and exclusive display widgets like plugin list, theme list, post list, user list admin more with advanced controls and actions will
+provide the ultimate flexibility to you to make different admin page to create frontend  admin panel.
+
+* Custom login and registation form - You can build custom login and registration form as how you want and make your site use those insteasd of defailt boring login
+and registration form.
+
+* Upload files - you can upload file of any type in the frontend.
+
+* Guest post submission/submission by non logged in users - You can also let guest user to create content from frontend, if you want. (Requires pro version)
+
+* Role wise widget access control - You can define which part of your frontend form or frontend admin panel should be visible/accessible by which
+user role. (Requires pro version)
+
+* Frontend admin panel - You can create a completely separete admin panel in the frotnend for your logged in users. Users in your site no longer needs
+to log into the wp-admin. Instead , they will enter the frontend admin panel after logging in.
+
+* Control access for wp-admin - With UFEL, you can control which user role can have the access to your deault wp-admin panel and who cannot.
+
+
 
 = Documentation =
 
