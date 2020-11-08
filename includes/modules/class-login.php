@@ -14,12 +14,12 @@ class FAEL_Login {
     }
 
     public function __construct() {
-        add_filter( 'fael_form_submit_types', [ $this, 'add_login_submit_type' ]);
-        add_action( 'fael_create_item', [ $this, 'process_login' ], 10, 3 );
+        add_filter( 'fael_form_submit_types', [ $this, 'add_submit_type' ]);
+        add_action( 'fael_create_item', [ $this, 'process' ], 10, 3 );
         add_filter( 'fael-after_create_item-conditions', [ $this, 'modify_after_create_item_conditions'], 10, 2 );
         add_filter( 'fael_settings_sections', [ $this, 'add_new_settings_section' ] );
         add_filter( 'fael_settings_fields', [ $this, 'add_settings_fields' ], 10, 2 );
-        add_filter( 'login_url', [ $this, 'change_login_url' ] );
+        add_filter( 'login_url', [ $this, 'change_url' ] );
         // Hook the appropriate WordPress action
         add_action('init', [ $this, 'prevent_wp_login' ] );
     }
@@ -43,7 +43,7 @@ class FAEL_Login {
         }
     }
 
-    public function change_login_url( $login_url ) {
+    public function change_url( $login_url ) {
         if( $this->login_url ) {
             return $this->login_url;
         }
@@ -53,7 +53,7 @@ class FAEL_Login {
     /**
      * @param $submit_types
      */
-    public function add_login_submit_type( $submit_types ) {
+    public function add_submit_type( $submit_types ) {
         $submit_types['login_form'] = __( 'Login Form', 'fael' );
         return $submit_types;
     }
@@ -77,7 +77,7 @@ class FAEL_Login {
      * @param $current_form
      * @param $form_settings
      */
-    public function process_login( $data, $current_form, $form_settings ) {
+    public function process( $data, $current_form, $form_settings ) {
         if( !is_wp_error( $this->authenticate_user( $data, $current_form ) ) ) {
             //set system meta
             do_action( 'fael_after_user_login', $data, $current_form );
@@ -149,23 +149,19 @@ class FAEL_Login {
         return $sections;
     }
 
+    /**
+     * @param $settings_fields
+     * @param $data
+     * @return mixed
+     */
     public function add_settings_fields( $settings_fields, $data ) {
-        $settings_fields['fael_login_reg'] = [
-            array(
-                'name'    => 'login_page_id',
-                'label'   => __( 'Login Page', 'fael' ),
-                'desc'    => __( 'Select the page which will be considered as login page.', 'fael' ),
-                'type'    => 'select',
-                'options' => $data['pages']
-            ),
-            array(
-                'name'    => 'reg_page_id',
-                'label'   => __( 'Registration Page', 'fael' ),
-                'desc'    => __( 'Select the page which will be considered as registration page.', 'fael' ),
-                'type'    => 'select',
-                'options' => $data['pages']
-            )
-        ];
+        $settings_fields['fael_login_reg'][] = array(
+            'name'    => 'login_page_id',
+            'label'   => __( 'Login Page', 'fael' ),
+            'desc'    => __( 'Select the page which will be considered as login page.', 'fael' ),
+            'type'    => 'select',
+            'options' => $data['pages']
+        );
         return $settings_fields;
     }
 
