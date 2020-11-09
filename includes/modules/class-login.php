@@ -41,7 +41,7 @@ class FAEL_Login {
         // Check if a $_GET['action'] is set, and if so, load it into $action variable
         $action = (isset($_GET['action'])) ? $_GET['action'] : '';
         // Check if we're on the login page, and ensure the action is not 'logout'
-        if( $pagenow == 'wp-login.php' && ( ! $action || ( $action && ! in_array($action, array('logout', 'lostpassword', 'rp', 'resetpass'))))) {
+        if( $pagenow == 'wp-login.php' && ( ! $action || ( $action && ! in_array($action, array('logout', 'lostpassword', 'rp', 'resetpass', 'register'))))) {
             //get_template_part( 404 );
             wp_redirect($this->login_url);
             exit;

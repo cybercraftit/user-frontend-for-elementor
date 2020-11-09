@@ -425,29 +425,3 @@ FAEL_Init::instance();
 if( !FAEL_Functions()->is_pro() ) {
     require_once FAEL_ROOT . '/promo.php';
 }
-
-
-
-//
-function wpse127636_register_url($link){
-    /*
-        Change wp registration url
-    */
-    return str_replace(site_url('wp-login.php?action=register', 'login'),site_url('register', 'login'),$link);
-}
-add_filter('register','wpse127636_register_url');
-
-function wpse127636_fix_register_urls($url, $path, $orig_scheme){
-    /*
-        Site URL hack to overwrite register url
-        http://en.bainternet.info/2012/wordpress-easy-login-url-with-no-htaccess
-    */
-    if ($orig_scheme !== 'login')
-        return $url;
-
-    if ($path == 'wp-login.php?action=register')
-        return site_url('register', 'login');
-
-    return $url;
-}
-add_filter('site_url', 'wpse127636_fix_register_urls', 10, 3);

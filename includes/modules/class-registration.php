@@ -3,7 +3,7 @@
 class FAEL_Registration {
 
     private static $_instance = null;
-    protected $login_url;
+    protected $reg_url = null;
 
     public static function instance() {
 
@@ -18,8 +18,8 @@ class FAEL_Registration {
         add_action( 'fael_create_item', [ $this, 'process' ], 10, 3 );
         add_filter( 'fael-after_create_item-conditions', [ $this, 'modify_after_create_item_conditions'], 10, 2 );
         add_filter( 'fael_settings_fields', [ $this, 'add_settings_fields' ], 10, 2 );
-        add_filter( 'site_url', [ $this, 'change_url' ], 10, 3 );
-        add_filter('register', [ $this, 'change_reg_url']);
+        add_action( 'init', [ $this, 'change_url' ], 10, 3 );
+        add_filter('register', [ $this, 'change_reg_link']);
         add_filter( 'ufel_after_form_restriction_filter', [ $this, 'show_reg'] );
     }
 
@@ -76,30 +76,31 @@ class FAEL_Registration {
      * @param $orig_scheme
      * @return false|string
      */
-    public function change_url( $url, $path, $orig_scheme ) {
-        /*
-        Site URL hack to overwrite register url
-        http://en.bainternet.info/2012/wordpress-easy-login-url-with-no-htaccess
-        */
-        if ($orig_scheme !== 'login')
-            return $url;
-
-        if ($path == 'wp-login.php?action=register'){
-            $id = FAEL_Functions()->get_option( 'fael_login_reg', 'reg_page_id' );
-            if ( $id ) {
-                $url = get_permalink( $id );
-            }
+    public function change_url() {
+        $id = FAEL_Functions()->get_option( 'fael_login_reg', 'reg_page_id' );
+        if ( !$id ) {
+            return;
         }
 
-        return $url;
+        $this->reg_url = get_permalink( $id );
+
+        global $pagenow;
+        $action = (isset($_GET['action'])) ? $_GET['action'] : '';
+
+        // Check if we're on the login page, and ensure the action is not 'logout'
+        if( $pagenow == 'wp-login.php' && ( $action && in_array($action, array('register' ) ) ) ) {
+            //get_template_part( 404 );
+            wp_redirect($this->reg_url);
+            exit;
+        }
     }
 
-    protected function change_reg_url( $link ) {
-        $id = FAEL_Functions()->get_option( 'fael_login_reg', 'reg_page_id' );
-        if ( $id ) {
-            $link = get_permalink( $id );
+    public function change_reg_link( $link ) {
+        if ( $this->reg_url ) {
+            $link = $this->reg_url;
+            return '<a href="'.$link.'">'.__( 'Register', 'fael' ).'</a>';
         }
-        return '<a href="'.$link.'">'.__( 'Register', 'fael' ).'</a>';
+        return $link;
     }
 }
 
