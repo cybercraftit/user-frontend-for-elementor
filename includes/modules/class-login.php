@@ -22,6 +22,11 @@ class FAEL_Login {
         add_filter( 'login_url', [ $this, 'change_url' ] );
         // Hook the appropriate WordPress action
         add_action('init', [ $this, 'prevent_wp_login' ] );
+        add_filter( 'ufel_after_form_restriction_filter', [ $this, 'show_login'] );
+    }
+
+    public function show_login( $bool ) {
+        return true;
     }
 
     public function prevent_wp_login() {

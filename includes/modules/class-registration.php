@@ -20,6 +20,16 @@ class FAEL_Registration {
         add_filter( 'fael_settings_fields', [ $this, 'add_settings_fields' ], 10, 2 );
         add_filter( 'site_url', [ $this, 'change_url' ], 10, 3 );
         add_filter('register', [ $this, 'change_reg_url']);
+        add_filter( 'ufel_after_form_restriction_filter', [ $this, 'show_reg'] );
+    }
+
+    /**
+     * @param $bool
+     * @param $accessibility
+     * @return bool
+     */
+    public function show_reg( $bool ) {
+        return true;
     }
 
     /**
