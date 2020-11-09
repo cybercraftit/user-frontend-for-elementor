@@ -59,7 +59,11 @@ Class FAEL_Accessibility_Functions {
 
         $s = $widget->get_settings();
 
-        $fael_forms = FAEL_Page_Frontend()->get_page_forms( $post->ID, $s['form_handle'] );
+        //if it is form widget
+        if( isset( $s['form_handle'] ) ) {
+            $fael_forms = FAEL_Page_Frontend()->get_page_forms( $post->ID, $s['form_handle'] );
+        }
+
         //check widget accessibility
         if( !apply_filters( 'fael_is_element_accessible', true, $content, $widget ) ) {
             return;
