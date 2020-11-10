@@ -62,7 +62,7 @@ class FAEL_Ajax {
 
         //Check capability for creating item from form settings,
         // if not have capability, user can not create item
-        if( !FAEL_Accessibility_Functions()->check_widget_accessibility($form_settings) ) {
+        if( !apply_filters( 'form_submit-check_widget_accessibility', FAEL_Accessibility_Functions()->check_widget_accessibility($form_settings), $form_settings ) ) {
             wp_send_json_error(array(
                 'errors' => $errors,
                 'msg' => __( 'You are not allowed to perform this action', 'fael' )
@@ -720,6 +720,10 @@ class FAEL_Ajax {
             'data' => $data
         ));
     }
+}
+
+function FAEL_Ajax() {
+    return FAEL_Ajax::instance();
 }
 
 FAEL_Ajax::instance();

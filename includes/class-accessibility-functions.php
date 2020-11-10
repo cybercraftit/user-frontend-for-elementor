@@ -124,6 +124,7 @@ Class FAEL_Accessibility_Functions {
                 }
                 return true;
             }
+            return false;
         }
         return true;
     }

@@ -22,11 +22,25 @@ class FAEL_Login {
         add_filter( 'login_url', [ $this, 'change_url' ] );
         // Hook the appropriate WordPress action
         add_action('init', [ $this, 'prevent_wp_login' ] );
-        add_filter( 'ufel_after_form_restriction_filter', [ $this, 'show_login'] );
+        add_filter( 'ufel_after_form_restriction_filter', [ $this, 'show_login'], 10, 3 );
+        add_filter( 'form_submit-check_widget_accessibility', [ $this, 'allow_form_submit' ], 10, 2 );
     }
 
-    public function show_login( $bool ) {
-        return true;
+    /**
+     * @param $bool
+     * @param $form_settings
+     * @return bool
+     */
+    public function allow_form_submit( $bool, $form_settings ) {
+        if( $form_settings['submit_type'] == 'login_form' ) {
+            $bool = true;
+        }
+        return $bool;
+    }
+
+    public function show_login( $bool, $accessibility, $page_settings ) {
+        if( isset( $page_settings['submit_type'] ) && $page_settings['submit_type'] == 'login_form' ) $bool = true;
+        return $bool;
     }
 
     public function prevent_wp_login() {

@@ -129,7 +129,7 @@ Class FAEL_Page_Frontend {
             }
         }
 
-        $is_okay = apply_filters( 'ufel_after_form_restriction_filter', $is_okay, $accessibility );
+        $is_okay = apply_filters( 'ufel_after_form_restriction_filter', $is_okay, $accessibility, FAEL_Page_Settings()->get_page_settings( $post_id ) );
 
         if( !$is_okay ) {
             return $is_okay;

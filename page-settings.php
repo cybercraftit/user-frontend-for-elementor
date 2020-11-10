@@ -43,7 +43,7 @@ final class FAEL_Page_Settings {
 
     public function register_controls( $item ) {
 
-        if( get_post_type() == 'fael_form' ) {
+        if( $item->get_post()->post_type == 'fael_form' ) {
             $item->start_controls_section(
                 'form_settings_section',
                 [
@@ -417,6 +417,7 @@ final class FAEL_Page_Settings {
                 'tab' => \Elementor\Controls_Manager::TAB_SETTINGS,
             ]
         );
+
         $item->add_control(
             'fael_page_accessability',
             [
