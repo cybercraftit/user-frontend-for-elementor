@@ -22,8 +22,17 @@ class FAEL_Registration {
         add_filter('register', [ $this, 'change_reg_link']);
         add_filter( 'ufel_after_form_restriction_filter', [ $this, 'show_reg'], 10, 3 );
         add_filter( 'form_submit-check_widget_accessibility', [ $this, 'allow_form_submit' ], 10, 2 );
+        add_filter( 'form_return_content_after_restriction_filter', [ $this , 'check_registerability' ], 10, 4 );
     }
 
+    public function check_registerability( $content, $is_okay, $accessibility, $page_settings ) {
+        if( isset( $page_settings['submit_type'] ) && $page_settings['submit_type'] == 'reg_form' ) {
+            if( !get_option( 'users_can_register' ) ) {
+                return __( 'Registration is disabled in admin panel', 'fael' );
+            }
+        }
+        return $content;
+    }
     /**
      * @param $bool
      * @param $form_settings
