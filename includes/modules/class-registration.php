@@ -127,10 +127,13 @@ class FAEL_Registration {
     }
 
     public function process( $data, $current_form, $form_settings ) {
+        if( $form_settings['submit_type'] != 'reg_form' ) return;
+
         $ret = FAEL_Ajax()->create_user( $data, $current_form );
 
         //user is registered
         if( isset( $ret['item_id'] ) ) {
+
             $item_id = $ret['item_id'];
             $postdata = $ret['postdata'];
 

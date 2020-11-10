@@ -97,7 +97,11 @@ class FAEL_Login {
      * @param $form_settings
      */
     public function process( $data, $current_form, $form_settings ) {
-        if( !is_wp_error( $this->authenticate_user( $data, $current_form ) ) ) {
+        if( $form_settings['submit_type'] != 'login_form' ) return;
+
+        $result = $this->authenticate_user( $data, $current_form );
+
+        if( !is_wp_error( $result ) && $result ) {
             //set system meta
             do_action( 'fael_after_user_login', $data, $current_form );
 
@@ -127,15 +131,24 @@ class FAEL_Login {
 
             wp_send_json_success($return_data);
         }
+
+        wp_send_json_error([
+            'success' =>  false,
+            'msg' => __( 'Credentials are not matching !' ),
+            'errors' => ''
+        ]);
+
     }
 
     /**
      * @param $data
      * @param $current_form
-     * @return WP_Error|WP_User
+     * @return bool|WP_Error|WP_User
      */
     public function authenticate_user ( $data, $current_form ) {
+
         $creds = [];
+
         if( isset( $data['user_login'] ) ) {
             $creds['user_login'] = $data['user_login'];
         }
@@ -146,12 +159,31 @@ class FAEL_Login {
             $creds['user_password'] = $data['password'];
         }
 
-        /*$creds = [
-            'user_login'    => 'admin',
-            'user_password' => 'admin',
-            'remember'      => true
-        ];*/
-        return wp_signon( $creds );
+        //
+        $creds['user_login'] = isset( $creds['user_login'] ) ? sanitize_text_field( wp_unslash( $creds['user_login'] ) ) : '';
+        $creds['user_password'] = isset( $creds['user_password'] ) ? sanitize_text_field( wp_unslash( $creds['user_password'] ) ) : '';
+
+        $to_match = null;
+
+        if( isset( $creds['user_login'] ) ) {
+            $to_match = $creds['user_login'];
+        } elseif ( isset( $creds['user_email'] )) {
+            $to_match = $creds['user_email'];
+        }
+
+        if( is_email( $to_match ) ) {
+            $userdata = get_user_by('email', $creds['user_email']);
+        } else {
+            $userdata = get_user_by('login', $creds['user_login']);
+        }
+
+        if( !empty( $userdata ) ) {
+            if( wp_check_password( $creds['user_password'], $userdata->user_pass, $userdata->ID) ) {
+                return wp_signon($creds);
+            };
+        }
+
+        return false;
     }
 
     /**
