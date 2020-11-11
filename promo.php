@@ -1,4 +1,9 @@
 <?php
+add_filter( 'fael_form_submit_types', function ( $submit_types ) {
+    $submit_types['pro_1'] = __( 'Registration Form <span class="fael_promo" style="color: red;">(Pro)</span>', 'fael' );
+    return $submit_types;
+});
+
 add_filter( 'plugin_action_links_' . plugin_basename( FAEL_PLUGIN_FILE ), function ( $links ) {
     // Check to see if Pro version already installed
     $links['upgrade'] = '<a href="https://cybercraftit.com/product/user-frontend-elementor-pro/" style="color: white;

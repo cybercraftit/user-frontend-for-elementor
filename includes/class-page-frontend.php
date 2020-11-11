@@ -22,7 +22,6 @@ Class FAEL_Page_Frontend {
         if( isset( $_GET['fael_action'] ) ) {
 
             if( $_GET['fael_action'] == 'edit' ) {
-
                 //get form page from post meta
                 $form_page_id = null;
 
@@ -42,7 +41,6 @@ Class FAEL_Page_Frontend {
                     wp_redirect( add_query_arg( array( 'fael_object' => ( isset( $_GET['module'] ) ? $_GET['module'] : 'post' ), 'fael_edit_id' => $_GET['id'] ), get_permalink( $form_page_id ) ) );
                     exit;
                 }
-
             } elseif ( $_GET['fael_action'] == 'delete' ) {
                 //check if it is post author
                 switch ( $_GET['module'] ) {
@@ -115,6 +113,7 @@ Class FAEL_Page_Frontend {
         $error = null;
         $is_okay = 0;
         $accessibility = FAEL_Page_Settings()->get_page_settings( $post_id, 'fael_page_accessability' );
+        $page_settings = FAEL_Page_Settings()->get_page_settings( $post_id );
 
         if( $accessibility == 'logged_in' ) {
             if( is_user_logged_in() ) {
@@ -131,13 +130,13 @@ Class FAEL_Page_Frontend {
             }
         }
 
-        $is_okay = apply_filters( 'ufel_after_form_restriction_filter', $is_okay, $accessibility );
+        $is_okay = apply_filters( 'ufel_after_form_restriction_filter', $is_okay, $accessibility, $page_settings );
 
         if( !$is_okay ) {
             return $is_okay;
         }
 
-        return $content;
+        return apply_filters( 'form_return_content_after_restriction_filter', $content, $is_okay, $accessibility, $page_settings );
     }
 
 

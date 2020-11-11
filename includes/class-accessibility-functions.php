@@ -18,10 +18,7 @@ Class FAEL_Accessibility_Functions {
      * FAEL_Accessibility_Functions constructor.
      */
     public function __construct() {
-        if ( !FAEL_Functions()->is_pro() ) {
-            //add_action( 'elementor/widget/render_content', array( $this, 'is_widget_accessible' ), 10, 2 );
-        }
-
+        add_action( 'elementor/widget/render_content', array( $this, 'is_widget_accessible' ), 10, 2 );
         add_action( 'admin_init', array( $this, 'wp_admin_access_check' ), 100 );
         add_action('after_setup_theme', array( $this, 'admin_bar_visibility' ) );
     }
@@ -57,13 +54,18 @@ Class FAEL_Accessibility_Functions {
      * @param $content
      * @param $widget
      */
-    public function is_widget_accessible( $content, $widget ) {return;
+    public function is_widget_accessible( $content, $widget ) {
         global $fael_post, $post;
 
         $s = $widget->get_settings();
 
+        //if it is form widget
+        if( isset( $s['form_handle'] ) ) {
+            $fael_forms = FAEL_Page_Frontend()->get_page_forms( $post->ID, $s['form_handle'] );
+        }
+
         //check widget accessibility
-        if( !apply_filters( 'fael_is_element_accessible', $this->check_widget_accessibility( $s ), $s ) ) {
+        if( !apply_filters( 'fael_is_element_accessible', true, $content, $widget ) ) {
             return;
         }
 
@@ -122,6 +124,7 @@ Class FAEL_Accessibility_Functions {
                 }
                 return true;
             }
+            return false;
         }
         return true;
     }

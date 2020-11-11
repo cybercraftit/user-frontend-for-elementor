@@ -59,8 +59,6 @@ final class FAEL_Shortcode {
 
         $this->populate_form_fields();
 
-
-
         $form_settings = [];
 
         foreach ( $fael_forms as $handle => $fael_form ) {
@@ -73,7 +71,6 @@ final class FAEL_Shortcode {
         $contentElementor = $pluginElementor->frontend->get_builder_content($form_post->ID);
 
         $vue_id = 'ufe_vueapp-'.rand(1,1000).'-'.$form_post->ID;
-        //pri($form_post);die();
         ?>
         <div id="<?php echo $vue_id; ?>">
             <?php
@@ -91,7 +88,7 @@ final class FAEL_Shortcode {
     }
 
     public function populate_form_fields() {return;
-        global /*$fael_post, */$fael_forms;
+        global $fael_post, $fael_forms;
 
         $fael_forms = FAEL_Form_Elements()->get_form_elements();
 

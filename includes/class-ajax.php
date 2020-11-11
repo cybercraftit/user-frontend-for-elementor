@@ -45,7 +45,6 @@ class FAEL_Ajax {
         //get saved form from page/form post
         $fael_forms = FAEL_Page_Frontend()->get_page_forms( $formdata['form_settings']['__container_id'] );
 
-        //pri($formdata);exit;
         //if saved form not found
         if ( !$fael_forms || !is_array( $fael_forms ) ) {
             wp_send_json_error();
@@ -63,7 +62,7 @@ class FAEL_Ajax {
 
         //Check capability for creating item from form settings,
         // if not have capability, user can not create item
-        if( !FAEL_Accessibility_Functions()->check_widget_accessibility($form_settings) ) {
+        if( !apply_filters( 'form_submit-check_widget_accessibility', FAEL_Accessibility_Functions()->check_widget_accessibility($form_settings), $form_settings ) ) {
             wp_send_json_error(array(
                 'errors' => $errors,
                 'msg' => __( 'You are not allowed to perform this action', 'fael' )
@@ -539,7 +538,7 @@ class FAEL_Ajax {
                         $postdata['description'] = $value;
                         break;
                     case 'password':
-                        $postdata['password'] = $value;
+                        $postdata['user_pass'] = $value;
                         break;
                     default:
                         $postdata = apply_filters( 'fael_prepare_userdata', $postdata, $field, $value, $data );
@@ -636,7 +635,6 @@ class FAEL_Ajax {
                 break;
         }
 
-        //pri($current_form);die();
         if( empty( $errors ) ) {
             foreach ( $current_form as $field => $field_data ) {
                 $should_check = apply_filters( 'fael_before-field_rules_validations', true, $field_data, $formdata, $current_form, $field );
@@ -722,6 +720,10 @@ class FAEL_Ajax {
             'data' => $data
         ));
     }
+}
+
+function FAEL_Ajax() {
+    return FAEL_Ajax::instance();
 }
 
 FAEL_Ajax::instance();
