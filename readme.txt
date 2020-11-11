@@ -5,7 +5,7 @@ Tags: user-frontend, profile-builder, frontend-pagebuilder, Forms, widget-restri
 admin, frontend-admin, admin-panel, form-builer, post-form, user-form, display-widget, widget
 Requires at least: 3.0.1
 Tested up to: 5.5.1
-Stable tag: 2.0.0.1
+Stable tag: 2.0.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -101,26 +101,37 @@ able to create form for that and add it to the frontend admin panel for users to
 
 = Pro =
 
-<a href="https://cybercraftit.com/user-frontend-for-elementor-pro/" target="_blank">Pro version</a> includess the following features to extend the awesomeness !
+We value our every customer, we hope you do so. Cause, to us, you are not a customer, rather a member of this greated family. And a relation grows healthy by
+bidirectional communication and support.
 
-1) Accessibility control - user can  controll the privacy/accessibility of any widget, form, page etc.
-2) Content creation by guest - logged out/guest user can create post, page or any content
-3) Control Widget visibility and accessibility for different roles.
-4) List posts/contents of any author(s)
-5) Control the actions as how you want (add , edit, delete) for the posts listed
-6) Field Widgets:
+We always try to offer you the best in best possible ways.
+And for that reason we have included the following features to extend the awesomeness in <a href="https://cybercraftit.com/user-frontend-for-elementor-pro/" target="_blank">Pro</a> !
+
+1) Regular update
+2) Instant security update
+3) Priority support
+4) Support to setup the plugin on need
+5) Feature requests integration on priority basis
+6) Accessibility control - user can  controll the privacy/accessibility of any widget, form, page etc.
+7) Content creation by guest - logged out/guest user can create post, page or any content
+8) Control Widget visibility and accessibility for different roles.
+9) List posts/contents of any author(s)
+10) Control the actions as how you want (add , edit, delete) for the posts listed
+11) Field Widgets:
     checkbox group,
     datepicker,
     post exceprt
-7) Display widget:
+12) Display widget:
     plugin list widget with capability to active, deactive or delete,
 	tag list widget,
 	list of all the taxonomies,
 	themes listing with capability to active, deactive or delete
-8) Form:
+13) Form:
     settings form - wp admin setting page fields,
 
-9) Create any taxonomy as how you want, along with the categories.
+14) Create any taxonomy as how you want, along with the categories.
+
+15) Custom Registration
 
 <a href="https://cybercraftit.com/user-frontend-for-elementor-pro/" target="_blank">You can find pro version here</a>
 
