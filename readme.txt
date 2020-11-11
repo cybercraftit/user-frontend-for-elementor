@@ -1,4 +1,4 @@
-=== User Frontend for Elementor - Frontend Admin Panel, Profile, Login, Registration & Post Submission for Elementor ===
+=== User Frontend for Elementor - Frontend Admin Panel, Profile, Login, Registration & Content Submission for Elementor ===
 
 Contributors: cybercraftit
 Tags: elementor, frontend admin, pagebuilder, user frontend, profile builder, frontend pagebuilder, Forms, widget-restriction, registration, login, membership, dashboard, dashboard-builder, frontend-posting,
