@@ -538,7 +538,7 @@ class FAEL_Ajax {
                         $postdata['description'] = $value;
                         break;
                     case 'password':
-                        $postdata['password'] = $value;
+                        $postdata['user_pass'] = $value;
                         break;
                     default:
                         $postdata = apply_filters( 'fael_prepare_userdata', $postdata, $field, $value, $data );
