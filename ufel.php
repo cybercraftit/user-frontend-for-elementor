@@ -7,6 +7,7 @@
  * Author:      CyberCraft
  * Author URI:
  * Text Domain: fael
+ * Domain Path: /languages
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -117,6 +118,7 @@ final class FAEL_Init {
     }
 
     public function __construct() {
+        add_action( 'init', [ $this, 'load_textdomain' ] );
         register_activation_hook( __FILE__, array( $this, 'on_activate' ) );
 
         if ( ! did_action( 'elementor/loaded' ) ) {
@@ -156,6 +158,15 @@ final class FAEL_Init {
         add_filter( 'ajax_query_attachments_args', 'the_dramatist_filter_media' );
 
         $this->includes();
+    }
+
+    /**
+     * Load the translation file for current language.
+     *
+     * @since version 2.0.0.2
+     */
+    public function load_textdomain() {
+        load_plugin_textdomain( 'fael', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
     }
 
     public function on_activate() {
