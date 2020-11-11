@@ -195,7 +195,6 @@ final class FAEL_Init {
     public function includes() {
         //include moduldes
         include_once 'includes/modules/class-login.php';
-        include_once 'includes/modules/class-registration.php';
 
         require_once 'includes/class-ajax.php';
         require_once 'vote.php';

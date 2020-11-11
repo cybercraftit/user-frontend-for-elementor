@@ -427,7 +427,7 @@ final class FAEL_Page_Settings {
                 'options' => apply_filters( 'fael_page_settings-control_options', [
                     'logged_in' => __( 'Logged in users', 'fael' )
                 ], 'fael_page_accessability' ),
-                'default' => 'logged_in'
+                //'default' => 'logged_in'
             ]
         );
         $item->add_control(
