@@ -60,6 +60,8 @@ to log into the wp-admin. Instead , they will enter the frontend admin panel aft
 You can find complete documentation for this plugin here.
 <a href="http://docs.cybercraftit.com/docs/user-frontend-for-elementor/">http://docs.cybercraftit.com/docs/user-frontend-for-elementor/</a>
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/bD8EkemogcU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 = Demo =
 
 You can find complete demo for this plugin here.
