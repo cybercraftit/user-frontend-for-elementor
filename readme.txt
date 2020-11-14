@@ -62,6 +62,8 @@ You can find complete documentation for this plugin here.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/bD8EkemogcU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/OjrwdO2jpz4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 = Demo =
 
 You can find complete demo for this plugin here.
