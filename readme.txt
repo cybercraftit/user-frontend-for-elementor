@@ -60,9 +60,17 @@ to log into the wp-admin. Instead , they will enter the frontend admin panel aft
 You can find complete documentation for this plugin here.
 <a href="http://docs.cybercraftit.com/docs/user-frontend-for-elementor/">http://docs.cybercraftit.com/docs/user-frontend-for-elementor/</a>
 
+= How to create post form in User Frontend for Elementor and how to use it =
 <iframe width="560" height="315" src="https://www.youtube.com/embed/bD8EkemogcU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+= How to create category form in User Frontend for Elementor and how to use it. =
 <iframe width="560" height="315" src="https://www.youtube.com/embed/OjrwdO2jpz4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+= How to create registration form in Elementor and how to use it =
+<iframe width="560" height="315" src="https://www.youtube.com/embed/LJEBxLYDF1c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+= How to create login form in UFEL and how to use it =
+<iframe width="560" height="315" src="https://www.youtube.com/embed/VbQBoW08Xuo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 = Demo =
 
