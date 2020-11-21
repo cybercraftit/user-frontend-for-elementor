@@ -1,7 +1,7 @@
 === User Frontend for Elementor - Frontend Admin Panel, Profile, Login, Registration & Content Submission for Elementor ===
 
 Contributors: cybercraftit
-Tags: elementor, frontend admin, pagebuilder, user frontend, profile builder, frontend pagebuilder, Forms, widget-restriction, registration, login, membership, dashboard, dashboard-builder, frontend-posting,
+Tags: frontend admin for elementor, elementor, frontend admin, pagebuilder, user frontend, profile builder, frontend pagebuilder, Forms, widget-restriction, registration, login, membership, dashboard, dashboard-builder, frontend-posting,
 admin, frontend-admin, admin-panel, form-builer, post-form, user-form, display-widget, widget
 Requires at least: 3.0.1
 Tested up to: 5.5.1
