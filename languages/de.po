@@ -1,0 +1,1730 @@
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Project-Id-Version: User Frontend for Elementor\n"
+"POT-Creation-Date: 2020-11-18 12:44+0600\n"
+"PO-Revision-Date: 2020-11-18 15:41+0600\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: ufel.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Last-Translator: \n"
+"Language: de\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: includes/class-admin-settings.php:80 includes/class-admin-settings.php:124
+msgid "Settings"
+msgstr "die Einstellungen"
+
+#: includes/class-admin-settings.php:85
+msgid "Go Pro"
+msgstr "Gehen Sie Pro"
+
+#: includes/class-admin-settings.php:85
+msgid ""
+"<span style=\"color: #ff0000;\n"
+"    font-weight: bold;\">Go Pro</span>"
+msgstr ""
+"<span style = \"color: # ff0000;\n"
+"     Schriftgröße: fett; \"> Gehen Sie Pro </ span>"
+
+#: includes/class-admin-settings.php:88
+msgid "Help"
+msgstr "Hilfe"
+
+#: includes/class-admin-settings.php:88
+msgid "<span style=\"color: #d54e21\">Help</span>"
+msgstr "<span style=\"color: #d54e21\">Hilfe</span>"
+
+#: includes/class-ajax.php:68 includes/class-ajax.php:614
+#: includes/class-ajax.php:623 includes/class-ajax.php:632
+msgid "You are not allowed to perform this action"
+msgstr "Sie dürfen diese Aktion nicht ausführen"
+
+#: includes/class-ajax.php:87
+msgid "Something went wrong !"
+msgstr "Etwas ist schief gelaufen !"
+
+#: includes/class-ajax.php:151 includes/class-ajax.php:306
+msgid "User created successfully"
+msgstr "Benutzer erfolgreich erstellt"
+
+#: includes/class-ajax.php:238
+msgid "Post created successfully"
+msgstr "Beitrag erfolgreich erstellt"
+
+#: includes/class-ajax.php:323 includes/class-ajax.php:326
+msgid "Whoops ! Something went wrong."
+msgstr "Hoppla! Etwas ist schief gelaufen."
+
+#: includes/class-ajax.php:577 includes/class-ajax.php:592
+msgid "Recaptcha should be verified"
+msgstr "Recaptcha sollte überprüft werden"
+
+#: includes/class-functions.php:27
+msgid "-- select --"
+msgstr "-- wählen --"
+
+#: includes/class-settings-api.php:358
+msgid "Choose File"
+msgstr "Datei wählen"
+
+#: includes/class-settings-options.php:19
+msgid "General Options"
+msgstr "Allgemeine Optionen"
+
+#: includes/class-settings-options.php:24
+msgid "Frontend Posting"
+msgstr "Frontend-Posting"
+
+#: includes/class-settings-options.php:39
+msgid "Previous Page"
+msgstr "Vorherige Seite"
+
+#: includes/class-settings-options.php:53
+msgid "Who Can Have Admin Access"
+msgstr "Wer kann Administratorzugriff haben?"
+
+#: includes/class-settings-options.php:54
+msgid "Check the roles who you want to have access to wp admin panel"
+msgstr "Überprüfen Sie die Rollen, auf die Sie Zugriff haben möchten"
+
+#: includes/class-settings-options.php:61
+msgid "reCAPTCHA Site Key"
+msgstr "reCAPTCHA Site Key"
+
+#: includes/class-settings-options.php:65
+msgid "reCAPTCHA Secret Key"
+msgstr "reCAPTCHA Geheimschlüssel"
+
+#: includes/class-settings-options.php:66
+msgid ""
+"<a target=\"_blank\" href=\"https://www.google.com/recaptcha/\">Register "
+"here</a> to get reCaptcha Site and Secret keys."
+msgstr ""
+"<a target=\"_blank\" href=\"https://www.google.com/recaptcha/\">Hier "
+"registrieren</a> um reCaptcha Site und Secret Keys zu erhalten."
+
+#: includes/class-settings-options.php:72
+msgid "Edit Page for Post"
+msgstr "Seite für Beitrag bearbeiten"
+
+#: includes/class-settings-options.php:73
+msgid "Select the page which will be considered edit page for post."
+msgstr ""
+"Wählen Sie die Seite aus, die als Bearbeitungsseite für den Beitrag "
+"betrachtet wird."
+
+#: includes/class-settings-options.php:79
+msgid "Edit Page for User"
+msgstr "Seite für Benutzer bearbeiten"
+
+#: includes/class-settings-options.php:80
+msgid "Select the page which will be considered edit page for user."
+msgstr ""
+"Wählen Sie die Seite aus, die als Bearbeitungsseite für den Benutzer "
+"betrachtet wird."
+
+#: includes/class-settings-options.php:86
+msgid "Edit Page for Term of any Taxonomy"
+msgstr "Seite für Laufzeit einer Taxonomie bearbeiten"
+
+#: includes/class-settings-options.php:87
+msgid "Select the page which will be considered edit page for term."
+msgstr ""
+"Wählen Sie die Seite aus, die als Bearbeitungsseite für den Begriff "
+"betrachtet wird."
+
+#: includes/class-settings-options.php:93
+msgid "Default Post Owner"
+msgstr "Standard-Postbesitzer"
+
+#: includes/class-settings-options.php:94
+msgid ""
+"If guest post is enabled and user details are OFF, the posts are assigned to "
+"this user"
+msgstr ""
+"Wenn der Gastbeitrag aktiviert und die Benutzerdetails deaktiviert sind, "
+"werden die Beiträge diesem Benutzer zugewiesen"
+
+#: includes/class-settings-options.php:101
+msgid "Default Post Form"
+msgstr "Standard-Post-Formular"
+
+#: includes/class-settings-options.php:102
+msgid "Fallback form for post editing if no associated form found"
+msgstr ""
+"Fallback-Formular für die Nachbearbeitung, wenn kein zugehöriges Formular "
+"gefunden wurde"
+
+#: includes/class-settings-options.php:113
+msgid "Account Page"
+msgstr "Kontoseite"
+
+#: includes/class-settings-options.php:114
+msgid "Select the page which contains <code>[]</code> shortcode"
+msgstr "Wählen Sie die Seite aus, die enthält <code>[]</code> Shortcode"
+
+#: includes/class-settings-options.php:120
+msgid "Show Subscriptions"
+msgstr "Abonnements anzeigen"
+
+#: includes/class-settings-options.php:121
+msgid ""
+"Show Subscriptions tab in \"my account\" page where <code>[]</code> is "
+"located"
+msgstr ""
+"Registerkarte \"Abonnements\" auf der Seite \"Mein Konto\" anzeigen "
+"<code>[]</code> befindet sich"
+
+#: includes/class-settings-options.php:127
+msgid "Show Billing Address"
+msgstr "Rechnungsadresse anzeigen"
+
+#: includes/class-settings-options.php:128
+msgid "Show billing address in account page."
+msgstr "Rechnungsadresse auf Kontoseite anzeigen."
+
+#: includes/class-shortcodes.php:81
+msgid "You do not have access to this page"
+msgstr "Sie haben keinen Zugriff auf diese Seite"
+
+#: includes/class-ufe-forms.php:42
+msgctxt "Post Type General Name"
+msgid "Forms"
+msgstr "Formen"
+
+#: includes/class-ufe-forms.php:43
+msgctxt "Post Type Singular Name"
+msgid "Form"
+msgstr "Bilden"
+
+#. Plugin Name of the plugin/theme
+#: includes/class-ufe-forms.php:44 vote.php:79
+msgid "User Frontend for Elementor"
+msgstr "Benutzer-Frontend für Elementor"
+
+#: includes/class-ufe-forms.php:45 includes/class-ufe-forms.php:71
+msgid "Form"
+msgstr "Bilden"
+
+#: includes/class-ufe-forms.php:46
+msgid "Form Archives"
+msgstr "Formulararchive"
+
+#: includes/class-ufe-forms.php:47
+msgid "Form Attributes"
+msgstr "Formularattribute"
+
+#: includes/class-ufe-forms.php:48
+msgid "Parent Form:"
+msgstr "Übergeordnetes Formular:"
+
+#: includes/class-ufe-forms.php:49
+msgid "All Forms"
+msgstr "Alle Formen"
+
+#: includes/class-ufe-forms.php:50
+msgid "Add New Form"
+msgstr "Neues Formular hinzufügen"
+
+#: includes/class-ufe-forms.php:51
+msgid "Add New"
+msgstr "Neue hinzufügen"
+
+#: includes/class-ufe-forms.php:52
+msgid "New Form"
+msgstr "Neue Form"
+
+#: includes/class-ufe-forms.php:53
+msgid "Edit Form"
+msgstr "Formular bearbeiten"
+
+#: includes/class-ufe-forms.php:54
+msgid "Update Form"
+msgstr "Formular aktualisieren"
+
+#: includes/class-ufe-forms.php:55
+msgid "View Form"
+msgstr "Formular anzeigen"
+
+#: includes/class-ufe-forms.php:56
+msgid "View Forms"
+msgstr "Formulare anzeigen"
+
+#: includes/class-ufe-forms.php:57
+msgid "Search Form"
+msgstr "Suchformular"
+
+#: includes/class-ufe-forms.php:58
+msgid "Not found"
+msgstr "Nicht gefunden"
+
+#: includes/class-ufe-forms.php:59
+msgid "Not found in Trash"
+msgstr "Nicht im Papierkorb gefunden"
+
+#: includes/class-ufe-forms.php:60 widgets/post-thumbnail/index.php:113
+msgid "Featured Image"
+msgstr "Ausgewähltes Bild"
+
+#: includes/class-ufe-forms.php:61
+msgid "Set featured image"
+msgstr "Stellen Sie das vorgestellte Bild ein"
+
+#: includes/class-ufe-forms.php:62
+msgid "Remove featured image"
+msgstr "Entfernen Sie das vorgestellte Bild"
+
+#: includes/class-ufe-forms.php:63
+msgid "Use as featured image"
+msgstr "Als vorgestellten Bild verwenden"
+
+#: includes/class-ufe-forms.php:64
+msgid "Insert into item"
+msgstr "In Artikel einfügen"
+
+#: includes/class-ufe-forms.php:65
+msgid "Uploaded to this item"
+msgstr "Auf diesen Artikel hochgeladen"
+
+#: includes/class-ufe-forms.php:66
+msgid "Forms list"
+msgstr "Formularliste"
+
+#: includes/class-ufe-forms.php:67
+msgid "Forms list navigation"
+msgstr "Formularlistennavigation"
+
+#: includes/class-ufe-forms.php:68
+msgid "Filter items list"
+msgstr "Elementliste filtern"
+
+#: includes/class-ufe-forms.php:72
+msgid "Form Description"
+msgstr "Formularbeschreibung"
+
+#: includes/modules/class-login.php:76
+msgid "Login Form"
+msgstr "Login Formular"
+
+#: includes/modules/class-login.php:125
+msgid "User logged in successfully"
+msgstr "Benutzer hat sich erfolgreich angemeldet"
+
+#: includes/modules/class-login.php:137
+msgid "Credentials are not matching !"
+msgstr "Anmeldeinformationen stimmen nicht überein!"
+
+#: includes/modules/class-login.php:197
+msgid "Login and Registration"
+msgstr "Login und Registrierung"
+
+#: includes/modules/class-login.php:211
+msgid "Login Page"
+msgstr "Loginseite"
+
+#: includes/modules/class-login.php:212
+msgid "Select the page which will be considered as login page."
+msgstr "Wählen Sie die Seite aus, die als Anmeldeseite betrachtet wird."
+
+#: page-settings.php:50 widgets/submit/index.php:155
+msgid "Form Settings"
+msgstr "Formulareinstellungen"
+
+#: page-settings.php:59 widgets/submit/index.php:166
+msgid "When User Submit Form"
+msgstr "Wenn Benutzer Formular senden"
+
+#: page-settings.php:64 widgets/submit/index.php:171
+msgid "Create Post"
+msgstr "Beitrag erstellen"
+
+#: page-settings.php:65 widgets/submit/index.php:172
+msgid "Create User"
+msgstr "Benutzer erstellen"
+
+#: page-settings.php:66
+msgid "Create Taxonomy"
+msgstr "Taxonomie erstellen"
+
+#: page-settings.php:68 widgets/submit/index.php:174
+msgid "Select what will happen if the user submit form."
+msgstr ""
+"Wählen Sie aus, was passieren soll, wenn der Benutzer ein Formular sendet."
+
+#: page-settings.php:79 widgets/post-list/index.php:110
+#: widgets/submit/index.php:185
+msgid "Post Type"
+msgstr "Post-Typ"
+
+#: page-settings.php:98 widgets/submit/index.php:204
+msgid "Comment Status"
+msgstr "Kommentarstatus"
+
+#: page-settings.php:102 widgets/submit/index.php:208
+msgid "Close"
+msgstr "Schließen"
+
+#: page-settings.php:103 widgets/submit/index.php:209
+msgid "Open"
+msgstr "Öffnen"
+
+#: page-settings.php:121 widgets/submit/index.php:227
+msgid "After Submit"
+msgstr "Nach dem Senden"
+
+#: page-settings.php:126 widgets/submit/index.php:232
+msgid "Redirect to a URL"
+msgstr "Zu einer URL umleiten"
+
+#: page-settings.php:127 widgets/menu/index.php:109
+#: widgets/submit/index.php:233
+msgid "Redirect to a Page"
+msgstr "Auf eine Seite umleiten"
+
+#: page-settings.php:128
+msgid "Redirect to edit page"
+msgstr "Weiterleiten, um die Seite zu bearbeiten"
+
+#: page-settings.php:129
+msgid "View created item"
+msgstr "Erstelltes Element anzeigen"
+
+#: page-settings.php:131 widgets/submit/index.php:237
+msgid "What to do after the form is submitted successfully."
+msgstr "Was tun, nachdem das Formular erfolgreich gesendet wurde?"
+
+#: page-settings.php:159 widgets/menu/index.php:117
+#: widgets/submit/index.php:260
+msgid "Redirection URL"
+msgstr "Umleitungs-URL"
+
+#: page-settings.php:191 widgets/menu/index.php:156
+#: widgets/submit/index.php:292
+msgid "Page to redirect to"
+msgstr "Seite, zu der umgeleitet werden soll"
+
+#: page-settings.php:195 widgets/submit/index.php:296
+msgid ""
+"Select the page that the user will be redirect to after the post created"
+msgstr ""
+"Wählen Sie die Seite aus, zu der der Benutzer nach dem Erstellen des "
+"Beitrags weitergeleitet wird"
+
+#: page-settings.php:215 widgets/submit/index.php:316
+msgid "Can User Edit Post ?"
+msgstr "Kann der Benutzer einen Beitrag bearbeiten?"
+
+#: page-settings.php:217 page-settings.php:238 page-settings.php:259
+#: page-settings.php:280 page-settings.php:327 page-settings.php:348
+#: page-settings.php:372 page-settings.php:393 page-settings.php:438
+#: widgets/category-form-field/index.php:154
+#: widgets/category-selector/index.php:124 widgets/checkbox/index.php:151
+#: widgets/email/index.php:149 widgets/media-uploader/index.php:139
+#: widgets/menu/index.php:135 widgets/number/index.php:169
+#: widgets/post-author/index.php:135 widgets/post-content/index.php:140
+#: widgets/post-status/index.php:141 widgets/post-thumbnail/index.php:130
+#: widgets/post-title/index.php:140 widgets/radio-group/index.php:179
+#: widgets/radio/index.php:151 widgets/select/index.php:185
+#: widgets/select/index.php:196 widgets/submit/index.php:318
+#: widgets/submit/index.php:339 widgets/submit/index.php:360
+#: widgets/submit/index.php:381 widgets/submit/index.php:428
+#: widgets/submit/index.php:449 widgets/tag-selector/index.php:124
+#: widgets/text/index.php:150 widgets/textarea/index.php:150
+#: widgets/textarea/index.php:162 widgets/textarea/index.php:183
+#: widgets/user-field/index.php:160
+msgid "Yes"
+msgstr "Ja"
+
+#: page-settings.php:218 page-settings.php:239 page-settings.php:260
+#: page-settings.php:281 page-settings.php:328 page-settings.php:349
+#: page-settings.php:373 page-settings.php:394 page-settings.php:439
+#: widgets/category-form-field/index.php:155
+#: widgets/category-selector/index.php:125 widgets/checkbox/index.php:152
+#: widgets/email/index.php:150 widgets/media-uploader/index.php:140
+#: widgets/menu/index.php:136 widgets/number/index.php:170
+#: widgets/post-author/index.php:136 widgets/post-content/index.php:141
+#: widgets/post-status/index.php:142 widgets/post-thumbnail/index.php:131
+#: widgets/post-title/index.php:141 widgets/radio-group/index.php:180
+#: widgets/radio/index.php:152 widgets/select/index.php:186
+#: widgets/select/index.php:197 widgets/submit/index.php:319
+#: widgets/submit/index.php:340 widgets/submit/index.php:361
+#: widgets/submit/index.php:382 widgets/submit/index.php:429
+#: widgets/submit/index.php:450 widgets/tag-selector/index.php:125
+#: widgets/text/index.php:151 widgets/textarea/index.php:151
+#: widgets/textarea/index.php:163 widgets/textarea/index.php:184
+#: widgets/user-field/index.php:161
+msgid "No"
+msgstr "Nein"
+
+#: page-settings.php:221 widgets/submit/index.php:322
+msgid "Checking this will allow the post creator to edit the created post"
+msgstr ""
+"Wenn Sie dies aktivieren, kann der Post-Ersteller den erstellten Post "
+"bearbeiten"
+
+#: page-settings.php:236 widgets/submit/index.php:337
+msgid "Can User Delete Post ?"
+msgstr "Kann der Benutzer einen Beitrag löschen?"
+
+#: page-settings.php:242 page-settings.php:352 page-settings.php:397
+#: widgets/submit/index.php:343 widgets/submit/index.php:453
+msgid "Checking this will allow the post creator to delete the created post"
+msgstr ""
+"Wenn Sie dies aktivieren, kann der Post-Ersteller den erstellten Post löschen"
+
+#: page-settings.php:257 widgets/submit/index.php:358
+msgid "Can User Draft Post ?"
+msgstr "Kann der Benutzer einen Beitrag verfassen?"
+
+#: page-settings.php:263 widgets/submit/index.php:364
+msgid "Checking this will allow the post creator to draft the post"
+msgstr "Wenn Sie dies aktivieren, kann der Post-Ersteller den Post erstellen"
+
+#: page-settings.php:278 widgets/submit/index.php:379
+msgid "Created Post Need Review ?"
+msgstr "Erstellt Beitrag Benötigen Sie eine Überprüfung?"
+
+#: page-settings.php:284 widgets/submit/index.php:385
+msgid ""
+"If this is checked, the created post will need review before being published"
+msgstr ""
+"Wenn diese Option aktiviert ist, muss der erstellte Beitrag vor der "
+"Veröffentlichung überprüft werden"
+
+#: page-settings.php:298 widgets/submit/index.php:399
+msgid "Default"
+msgstr "Standard"
+
+#: page-settings.php:303 widgets/post-list/index.php:131
+#: widgets/post-status/index.php:115 widgets/submit/index.php:404
+msgid "Post Status"
+msgstr "Poststatus"
+
+#: page-settings.php:308 widgets/submit/index.php:409
+msgid "Status for created post"
+msgstr "Status für erstellten Beitrag"
+
+#: page-settings.php:325 widgets/submit/index.php:426
+msgid "Can User Edit User ?"
+msgstr "Kann der Benutzer den Benutzer bearbeiten?"
+
+#: page-settings.php:331 page-settings.php:376 widgets/submit/index.php:432
+msgid "Checking this will allow the post creator to edit the created user"
+msgstr ""
+"Wenn Sie dies aktivieren, kann der Post-Ersteller den erstellten Benutzer "
+"bearbeiten"
+
+#: page-settings.php:346 widgets/submit/index.php:447
+msgid "Can User Delete User ?"
+msgstr "Kann Benutzer Benutzer löschen?"
+
+#: page-settings.php:370
+msgid "Can User Edit Term ?"
+msgstr "Kann der Benutzer den Begriff bearbeiten?"
+
+#: page-settings.php:391
+msgid "Can User Delete Term ?"
+msgstr "Kann der Benutzer den Begriff löschen?"
+
+#: page-settings.php:416
+msgid "Accessibility"
+msgstr "Barrierefreiheit"
+
+#: page-settings.php:424
+msgid "Who Can Access This Page"
+msgstr "Wer kann auf diese Seite zugreifen?"
+
+#: page-settings.php:428
+msgid "Logged in users"
+msgstr "Angemeldete Benutzer"
+
+#: page-settings.php:436
+msgid "Access by Role"
+msgstr "Zugriff nach Rolle"
+
+#: page-settings.php:442
+msgid ""
+"Check if you want users with specific roles to have this page access, if "
+"switch if off, all logged in users will be\n"
+"                able to access this page"
+msgstr ""
+"Überprüfen Sie, ob Benutzer mit bestimmten Rollen Zugriff auf diese Seite "
+"haben sollen. Wenn diese Option deaktiviert ist, werden alle angemeldeten "
+"Benutzer aktiviert\n"
+"                 Zugriff auf diese Seite"
+
+#: page-settings.php:461
+msgid "Roles"
+msgstr "Rollen"
+
+#: page-settings.php:465
+msgid "Users with the roles checked will have the access to this page."
+msgstr "Benutzer mit aktivierten Rollen haben Zugriff auf diese Seite."
+
+#: promo-widgets/checkbox-group/index.php:34
+msgid ""
+"UF Checkbox Group <span class=\"fael_promo_text\" style=\"color: red;"
+"\">(Pro)</span>"
+msgstr ""
+"UF-Kontrollkästchengruppe <span class=\"fael_promo_text\" style=\"color: red;"
+"\">(Profi)</span>"
+
+#: promo-widgets/checkbox-group/index.php:78
+#: promo-widgets/datepicker/index.php:78 promo-widgets/plugins/index.php:78
+#: promo-widgets/post-excerpt/index.php:78
+#: promo-widgets/settings-field/index.php:78
+#: promo-widgets/tag-list/index.php:78
+#: promo-widgets/taxonomy-list-2/index.php:100
+#: promo-widgets/taxonomy-list/index.php:78 promo-widgets/themes/index.php:78
+#: widgets/category-form-field/index.php:80 widgets/category-list/index.php:80
+#: widgets/category-selector/index.php:80 widgets/checkbox/index.php:80
+#: widgets/email/index.php:80 widgets/fa-form/index.php:91
+#: widgets/media-uploader/index.php:80 widgets/menu/index.php:80
+#: widgets/number/index.php:80 widgets/post-author/index.php:82
+#: widgets/post-content/index.php:80 widgets/post-list/index.php:81
+#: widgets/post-status/index.php:80 widgets/post-thumbnail/index.php:80
+#: widgets/post-title/index.php:80 widgets/radio-group/index.php:78
+#: widgets/radio/index.php:80 widgets/recaptcha/index.php:81
+#: widgets/select/index.php:80 widgets/submit/index.php:80
+#: widgets/tag-selector/index.php:80 widgets/text/index.php:81
+#: widgets/textarea/index.php:80 widgets/user-field/index.php:80
+#: widgets/user-list/index.php:78
+msgid "Content"
+msgstr "Inhalt"
+
+#: promo-widgets/checkbox-group/index.php:88
+#: promo-widgets/datepicker/index.php:88 promo-widgets/plugins/index.php:88
+#: promo-widgets/post-excerpt/index.php:88
+#: promo-widgets/settings-field/index.php:88
+#: promo-widgets/tag-list/index.php:88
+#: promo-widgets/taxonomy-list-2/index.php:110
+#: promo-widgets/taxonomy-list/index.php:88 promo-widgets/themes/index.php:88
+msgid "<span style=\"color:red;\"> This is pro feature </span>."
+msgstr "<span style=\"color:red;\"> Dies ist eine Pro-Funktion </span>."
+
+#: promo-widgets/checkbox-group/index.php:89
+#: promo-widgets/datepicker/index.php:89 promo-widgets/plugins/index.php:89
+#: promo-widgets/post-excerpt/index.php:89
+#: promo-widgets/settings-field/index.php:89
+#: promo-widgets/tag-list/index.php:89
+#: promo-widgets/taxonomy-list-2/index.php:111
+#: promo-widgets/taxonomy-list/index.php:89 promo-widgets/themes/index.php:89
+#: widgets/category-form-field/index.php:125
+#: widgets/category-form-field/index.php:128 widgets/category-list/index.php:90
+#: widgets/category-list/index.php:93 widgets/category-selector/index.php:102
+#: widgets/category-selector/index.php:105 widgets/checkbox/index.php:119
+#: widgets/checkbox/index.php:122 widgets/email/index.php:119
+#: widgets/email/index.php:122 widgets/media-uploader/index.php:118
+#: widgets/menu/index.php:93 widgets/menu/index.php:96
+#: widgets/number/index.php:139 widgets/number/index.php:142
+#: widgets/post-author/index.php:114 widgets/post-author/index.php:117
+#: widgets/post-content/index.php:101 widgets/post-content/index.php:104
+#: widgets/post-list/index.php:198 widgets/post-list/index.php:201
+#: widgets/post-status/index.php:111 widgets/post-status/index.php:114
+#: widgets/post-thumbnail/index.php:109 widgets/post-title/index.php:110
+#: widgets/post-title/index.php:113 widgets/radio-group/index.php:105
+#: widgets/radio-group/index.php:128 widgets/radio-group/index.php:131
+#: widgets/radio/index.php:119 widgets/radio/index.php:122
+#: widgets/recaptcha/index.php:102 widgets/recaptcha/index.php:105
+#: widgets/select/index.php:134 widgets/select/index.php:137
+#: widgets/submit/index.php:111 widgets/submit/index.php:114
+#: widgets/tag-selector/index.php:102 widgets/tag-selector/index.php:105
+#: widgets/text/index.php:120 widgets/text/index.php:123
+#: widgets/textarea/index.php:111 widgets/textarea/index.php:114
+#: widgets/user-field/index.php:130 widgets/user-field/index.php:133
+#: widgets/user-list/index.php:96 widgets/user-list/index.php:99
+msgid "Label"
+msgstr "Etikette"
+
+#: promo-widgets/checkbox-group/index.php:110
+#: promo-widgets/datepicker/index.php:110 promo-widgets/plugins/index.php:110
+#: promo-widgets/post-excerpt/index.php:110
+#: promo-widgets/settings-field/index.php:110
+#: promo-widgets/tag-list/index.php:110
+#: promo-widgets/taxonomy-list-2/index.php:132
+#: promo-widgets/taxonomy-list/index.php:110 promo-widgets/themes/index.php:110
+msgid "You need to purchase pro module to access this feature and many more."
+msgstr ""
+"Sie müssen ein Pro-Modul erwerben, um auf diese und viele weitere Funktionen "
+"zugreifen zu können."
+
+#: promo-widgets/datepicker/index.php:34
+msgid ""
+"UF Datepicker <span class=\"fael_promo_text\" style=\"color: red;\">(Pro)</"
+"span>"
+msgstr ""
+"UF Datepicker <span class=\"fael_promo_text\" style=\"color: red;\">(Profi)</"
+"span>"
+
+#: promo-widgets/plugins/index.php:34
+msgid ""
+"FA Plugin List <span class=\"fael_promo_text\" style=\"color: red;\">(Pro)</"
+"span>"
+msgstr ""
+"FA Plugin Liste <span class=\"fael_promo_text\" style=\"color: red;"
+"\">(Profi)</span>"
+
+#: promo-widgets/post-excerpt/index.php:34
+msgid ""
+"UF Post EXCERPT <span class=\"fael_promo_text\" style=\"color: red;\">(Pro)</"
+"span>"
+msgstr ""
+"UF Post AUSZUG <span class=\"fael_promo_text\" style=\"color: red;"
+"\">(Profi)</span>"
+
+#: promo-widgets/settings-field/index.php:34
+msgid ""
+"UF Admin Settings Field <span class=\"fael_promo_text\" style=\"color: red;"
+"\">(Pro)</span>"
+msgstr ""
+"Feld UF-Administratoreinstellungen <span class=\"fael_promo_text\" style="
+"\"color: red;\">(Profi)</span>"
+
+#: promo-widgets/tag-list/index.php:34
+msgid ""
+"UF Tags List <span class=\"fael_promo_text\" style=\"color: red;\">(Pro)</"
+"span>"
+msgstr ""
+"UF-Tags-Liste <span class=\"fael_promo_text\" style=\"color: red;\">(Profi)</"
+"span>"
+
+#: promo-widgets/taxonomy-list-2/index.php:52
+msgid "UF "
+msgstr "UF"
+
+#: promo-widgets/taxonomy-list/index.php:34
+msgid ""
+"UF Taxonomy List <span class=\"fael_promo_text\" style=\"color: red;"
+"\">(Pro)</span>"
+msgstr ""
+"UF-Taxonomieliste<span class=\"fael_promo_text\" style=\"color: red;"
+"\">(Profi)</span>"
+
+#: promo-widgets/themes/index.php:34
+msgid ""
+"FA Theme List <span class=\"fael_promo_text\" style=\"color: red;\">(Pro)</"
+"span>"
+msgstr ""
+"FA Themenliste <span class=\"fael_promo_text\" style=\"color: red;"
+"\">(Profi)</span>"
+
+#: promo.php:3
+msgid ""
+"Registration Form <span class=\"fael_promo\" style=\"color: red;\">(Pro)</"
+"span>"
+msgstr ""
+"Anmeldeformular <span class=\"fael_promo\" style=\"color: red;\">(Profi)</"
+"span>"
+
+#: promo.php:14
+msgid "Upgrade"
+msgstr "Aktualisierung"
+
+#: promo.php:23
+msgid "Pro Widgets - UFEL"
+msgstr "Pro Widgets - UFEL"
+
+#: promo.php:34
+msgid ""
+"Categories to exclude <span class=\"fael_promo\" style=\"color: red;"
+"\">(Pro)</span>"
+msgstr ""
+"Auszuschließende Kategorien <span class=\"fael_promo\" style=\"color: red;"
+"\">(Profi)</span>"
+
+#: promo.php:41
+msgid ""
+"Exclude Empty Categorty ? <span class=\"fael_promo\" style=\"color: red;"
+"\">(Pro)</span>"
+msgstr ""
+"Leere Kategorie ausschließen ? <span class=\"fael_promo\" style=\"color: red;"
+"\">(Profi)</span>"
+
+#: promo.php:56
+msgid "UF Accessibility"
+msgstr "UF Zugänglichkeit"
+
+#: promo.php:63
+msgid ""
+"Who Can Access This Element <span class=\"fael_promo\" style=\"color: red;"
+"\">(Pro)</span>"
+msgstr ""
+"Wer kann auf dieses Element zugreifen? <span class=\"fael_promo\" style="
+"\"color: red;\">(Profi)</span>"
+
+#: promo.php:70
+msgid ""
+"Access by Role <span class=\"fael_promo\" style=\"color: red;\">(Pro)</span>"
+msgstr ""
+"Zugriff nach Rolle <span class=\"fael_promo\" style=\"color: red;\">(Profi)</"
+"span>"
+
+#: promo.php:79
+msgid "Roles <span class=\"fael_promo\" style=\"color: red;\">(Pro)</span>"
+msgstr "Rollen <span class=\"fael_promo\" style=\"color: red;\">(Profi)</span>"
+
+#: promo.php:94
+msgid ""
+"Choose Authors <span class=\"fael_promo\" style=\"color: red;\">(Pro)</span>"
+msgstr ""
+"Wählen Sie Autoren <span class=\"fael_promo\" style=\"color: red;\">(Profi)</"
+"span>"
+
+#: promo.php:98
+msgid "Posts of the selected authors will be listed."
+msgstr "Beiträge der ausgewählten Autoren werden aufgelistet."
+
+#: promo.php:104
+msgid ""
+"Choose Action(s) ? <span class=\"fael_promo\" style=\"color: red;\">(Pro)</"
+"span>"
+msgstr ""
+"Aktion wählen ? <span class=\"fael_promo\" style=\"color: red;\">(Profi)</"
+"span>"
+
+#: promo.php:107
+msgid "Allowed actions to display in action column"
+msgstr "Zulässige Aktionen können in der Aktionsspalte angezeigt werden"
+
+#: promo.php:118
+msgid "Taxonomy <span class=\"fael_promo\" style=\"color: red;\">(Pro)</span>"
+msgstr ""
+"Taxonomie <span class=\"fael_promo\" style=\"color: red;\">(Profi)</span>"
+
+#: promo.php:122 widgets/category-selector/index.php:106
+msgid "Category"
+msgstr "Kategorie"
+
+#: promo.php:124
+msgid "Choose the taxonomy that will be created by this form"
+msgstr "Wählen Sie die Taxonomie aus, die mit diesem Formular erstellt wird"
+
+#: promo.php:142 promo.php:147
+msgid "All users <span class=\"fael_promo\" style=\"color: red;\">(Pro)</span>"
+msgstr ""
+"Alle Nutzer <span class=\"fael_promo\" style=\"color: red;\">(Profi)</span>"
+
+#: promo.php:146
+msgid ""
+"Logged in users <span class=\"fael_promo\" style=\"color: red;\">(Pro)</span>"
+msgstr ""
+"Angemeldete Benutzer <span class=\"fael_promo\" style=\"color: red;"
+"\">(Profi)</span>"
+
+#: promo.php:153
+msgid ""
+"Create Admin Settings <span class=\"fael_promo\" style=\"color: red;"
+"\">(Pro)</span>"
+msgstr ""
+"Erstellen Sie Admin-Einstellungen <span class=\"fael_promo\" style=\"color: "
+"red;\">(Profi)</span>"
+
+#: ufel.php:69
+msgid ""
+"Elementor is not activated. You need to activate Elementor to get the User "
+"Frontend for Elementor working."
+msgstr ""
+"Elementor ist nicht aktiviert. Sie müssen Elementor aktivieren, damit das "
+"Benutzer-Frontend für Elementor funktioniert."
+
+#: ufel.php:70
+msgid "Activate Elementor Now"
+msgstr "Aktivieren Sie Elementor Now"
+
+#: ufel.php:78
+msgid ""
+"Elementor is not activated. You need to install and activate Elementor to "
+"get the User Frontend for Elementor working."
+msgstr ""
+"Elementor ist nicht aktiviert. Sie müssen Elementor installieren und "
+"aktivieren, damit das Benutzer-Frontend für Elementor funktioniert."
+
+#: ufel.php:79
+msgid "Install Elementor Now"
+msgstr "Installieren Sie Elementor Now"
+
+#: views/admin/go-pro.php:51
+msgid "Widget and Fields Access Control"
+msgstr "Zugriffssteuerung für Widgets und Felder"
+
+#: views/admin/go-pro.php:52
+msgid ""
+"With Pro, Each and every widget of elementor will have accessibility option "
+"through which you can control the access permission for any widget"
+msgstr ""
+"Mit Pro verfügt jedes Widget von elementor über eine Eingabehilfenoption, "
+"über die Sie die Zugriffsberechtigung für jedes Widget steuern können"
+
+#: views/admin/go-pro.php:57
+msgid "Content creation by guest"
+msgstr "Erstellung von Inhalten durch den Gast"
+
+#: views/admin/go-pro.php:58
+msgid "Logged out/guest user can create post, page or any content"
+msgstr ""
+"Abgemeldeter / Gastbenutzer kann Beiträge, Seiten oder beliebige Inhalte "
+"erstellen"
+
+#: views/admin/go-pro.php:63
+msgid "Advanced Item Listing"
+msgstr "Erweiterte Artikelliste"
+
+#: views/admin/go-pro.php:64
+msgid "List posts/contents of any author(s)"
+msgstr "Liste der Beiträge / Inhalte aller Autoren"
+
+#: views/admin/go-pro.php:69
+msgid "Action Control"
+msgstr "Aktionssteuerung"
+
+#: views/admin/go-pro.php:70
+msgid ""
+"Control the actions as how you want (add , edit, delete) for the posts listed"
+msgstr ""
+"Steuern Sie die gewünschten Aktionen (Hinzufügen, Bearbeiten, Löschen) für "
+"die aufgelisteten Beiträge"
+
+#: views/admin/go-pro.php:75
+msgid "More advanced widgets"
+msgstr "Erweiterte Widgets"
+
+#: views/admin/go-pro.php:76
+msgid ""
+"Our pro version will give the access to more advanced and stunning field and "
+"display widgets."
+msgstr ""
+"Unsere Pro-Version bietet Zugriff auf erweiterte und beeindruckende Feld- "
+"und Anzeige-Widgets."
+
+#: views/admin/go-pro.php:81
+msgid "More Form Types"
+msgstr "Weitere Formulartypen"
+
+#: views/admin/go-pro.php:82
+msgid ""
+"Along with other form types, custom taxonomy form and settings are there in "
+"pro version"
+msgstr ""
+"Zusammen mit anderen Formulartypen gibt es in der Pro-Version "
+"benutzerdefinierte Taxonomieformulare und -einstellungen"
+
+#: views/admin/go-pro.php:87
+msgid "Premium Support"
+msgstr "Premium Support"
+
+#: views/admin/go-pro.php:88
+msgid ""
+"Premium support will be unlocked for you using pro version to get the "
+"solution of any query effectively."
+msgstr ""
+"Der Premium-Support wird für Sie mithilfe der Pro-Version freigeschaltet, um "
+"die Lösung für alle Abfragen effektiv zu erhalten."
+
+#: views/admin/go-pro.php:93
+msgid "Pro Update"
+msgstr "Pro Update"
+
+#: views/admin/go-pro.php:94
+msgid "Instant and regular pro update will be available to you."
+msgstr "Sofortiges und regelmäßiges Pro-Update steht Ihnen zur Verfügung."
+
+#: views/admin/go-pro.php:98
+msgid "Buy Now / Learn More"
+msgstr "Jetzt kaufen / Erfahren Sie mehr"
+
+#: views/admin/help.php:60
+msgid "Documentation"
+msgstr "Dokumentation"
+
+#: views/admin/help.php:61
+msgid ""
+"Stuck with something at any point using it. You can get help from our "
+"complete documentation here"
+msgstr ""
+"Ich habe es zu jedem Zeitpunkt mit etwas zu tun. Hilfe finden Sie in unserer "
+"vollständigen Dokumentation hier"
+
+#: views/admin/help.php:62
+msgid "Read Doc"
+msgstr "Lesen Sie Doc"
+
+#: views/admin/help.php:68
+msgid "Report Issue"
+msgstr "Melde Probleme"
+
+#: views/admin/help.php:69
+msgid ""
+"Help us improving the plugin to make awesome for all like you by reporting "
+"any issue if found."
+msgstr ""
+"Helfen Sie uns, das Plugin zu verbessern, damit es für alle wie Sie "
+"großartig wird, indem Sie Probleme melden, wenn sie gefunden werden."
+
+#: views/admin/help.php:70
+msgid "Report issue"
+msgstr "Melde Probleme"
+
+#: views/admin/help.php:76
+msgid "Rate Us"
+msgstr "Bewerten Sie uns"
+
+#: views/admin/help.php:77
+msgid ""
+"If you find this plugin useful, let it be reliable to others as well by "
+"rating us."
+msgstr ""
+"Wenn Sie dieses Plugin nützlich finden, lassen Sie es auch für andere "
+"zuverlässig sein, indem Sie uns bewerten."
+
+#: views/admin/help.php:78
+msgid "Rate"
+msgstr "Bewertung"
+
+#: views/admin/help.php:84
+msgid "Feature Request"
+msgstr "Featureanfrage"
+
+#: views/admin/help.php:85
+msgid ""
+"Got something great to suggest about this plugin ? Please, feel free to let "
+"us know."
+msgstr ""
+"Haben Sie etwas Tolles zu diesem Plugin vorzuschlagen? Bitte zögern Sie "
+"nicht, uns zu informieren."
+
+#: views/admin/help.php:86
+msgid "Contact us"
+msgstr "Kontaktiere uns"
+
+#: views/admin/help.php:92
+msgid "Let People Know"
+msgstr "Lass es die Leute wissen"
+
+#: views/admin/help.php:93
+msgid "Got this plugin great ? We highly  appriciate sharing it with others."
+msgstr ""
+"Hast du dieses Plugin großartig? Wir freuen uns sehr, es mit anderen zu "
+"teilen."
+
+#: views/admin/help.php:94
+msgid "Facebook"
+msgstr "Facebook"
+
+#: views/admin/help.php:95
+msgid "Twitter"
+msgstr "Twitter"
+
+#: vote.php:53
+msgid "Rate us"
+msgstr "Bewerten Sie uns"
+
+#: vote.php:56
+msgid "Tweet"
+msgstr ""
+
+#: vote.php:59
+msgid "Share on facebook"
+msgstr "Auf Facebook teilen"
+
+#: vote.php:62
+msgid "No, thanks"
+msgstr "Nein Danke"
+
+#: vote.php:65
+msgid "Suggest us"
+msgstr "Schlagen Sie uns vor"
+
+#: vote.php:68
+msgid "Remind me later"
+msgstr "Erinnere mich später"
+
+#: vote.php:82
+msgid "<h3>Thanks for using <strong>"
+msgstr "<h3>Danke für die Verwendung <strong>"
+
+#. translators: 1: Plugin name 2: Elementor
+#: widgets-loader.php:158
+#, php-format
+msgid "\"%1$s\" requires \"%2$s\" to be installed and activated."
+msgstr "\"%1$s\" erfordert \"%2$s\" installiert und aktiviert werden."
+
+#: widgets-loader.php:159 widgets-loader.php:183 widgets-loader.php:208
+msgid "Frontend Admin for Elementor"
+msgstr "Frontend Admin für Elementor"
+
+#: widgets-loader.php:160 widgets-loader.php:184
+msgid "Elementor"
+msgstr ""
+
+#. translators: 1: Plugin name 2: Elementor 3: Required Elementor version
+#. translators: 1: Plugin name 2: PHP 3: Required PHP version
+#: widgets-loader.php:182 widgets-loader.php:207
+#, php-format
+msgid "\"%1$s\" requires \"%2$s\" version %3$s or greater."
+msgstr "\"%1$s\" erfordert \"%2$s\" Ausführung %3$s oder größer."
+
+#: widgets-loader.php:209
+msgid "PHP"
+msgstr ""
+
+#: widgets-loader.php:285
+msgid "Form Fields - UFEL"
+msgstr "Formularfelder - UFEL"
+
+#: widgets-loader.php:292
+msgid "Display Fields - UFEL"
+msgstr "Anzeigefelder - UFEL"
+
+#: widgets-loader.php:299
+msgid "Admin Menu Item - UFEL"
+msgstr "Menüpunkt Admin - UFEL"
+
+#: widgets/category-form-field/index.php:34
+msgid "UF Category Form Field"
+msgstr "UF Kategorie Formularfeld"
+
+#: widgets/category-form-field/index.php:90
+#: widgets/category-form-field/index.php:93
+#: widgets/category-selector/index.php:90
+#: widgets/category-selector/index.php:93 widgets/checkbox/index.php:90
+#: widgets/checkbox/index.php:93 widgets/email/index.php:90
+#: widgets/email/index.php:93 widgets/media-uploader/index.php:90
+#: widgets/media-uploader/index.php:93 widgets/number/index.php:90
+#: widgets/number/index.php:93 widgets/post-author/index.php:92
+#: widgets/post-author/index.php:95 widgets/post-content/index.php:90
+#: widgets/post-content/index.php:93 widgets/post-status/index.php:90
+#: widgets/post-status/index.php:93 widgets/post-thumbnail/index.php:90
+#: widgets/post-thumbnail/index.php:93 widgets/post-title/index.php:90
+#: widgets/post-title/index.php:93 widgets/radio-group/index.php:85
+#: widgets/radio-group/index.php:88 widgets/radio/index.php:90
+#: widgets/radio/index.php:93 widgets/recaptcha/index.php:91
+#: widgets/recaptcha/index.php:94 widgets/select/index.php:90
+#: widgets/select/index.php:93 widgets/submit/index.php:90
+#: widgets/submit/index.php:93 widgets/tag-selector/index.php:90
+#: widgets/tag-selector/index.php:93 widgets/text/index.php:91
+#: widgets/text/index.php:94 widgets/textarea/index.php:90
+#: widgets/textarea/index.php:93 widgets/user-field/index.php:90
+#: widgets/user-field/index.php:93
+msgid "Form Handle"
+msgstr "Formulargriff"
+
+#: widgets/category-form-field/index.php:94
+#: widgets/category-selector/index.php:94 widgets/checkbox/index.php:94
+#: widgets/email/index.php:94 widgets/media-uploader/index.php:94
+#: widgets/number/index.php:94 widgets/post-author/index.php:96
+#: widgets/post-content/index.php:94 widgets/post-status/index.php:94
+#: widgets/post-thumbnail/index.php:94 widgets/post-title/index.php:94
+#: widgets/radio-group/index.php:89 widgets/radio/index.php:94
+#: widgets/recaptcha/index.php:95 widgets/select/index.php:94
+#: widgets/submit/index.php:94 widgets/tag-selector/index.php:94
+#: widgets/text/index.php:95 widgets/textarea/index.php:94
+#: widgets/user-field/index.php:94
+msgid ""
+"Name of form handle, all fields of same form should have the same form handle"
+msgstr ""
+"Name des Formularhandles, alle Felder desselben Formulars sollten dasselbe "
+"Formularhandle haben"
+
+#: widgets/category-form-field/index.php:101 widgets/user-field/index.php:101
+msgid "Choose Field"
+msgstr "Wählen Sie Feld"
+
+#: widgets/category-form-field/index.php:105
+#: widgets/category-list/index.php:185
+msgid "Name"
+msgstr "Name"
+
+#: widgets/category-form-field/index.php:106
+msgid "Slug"
+msgstr "Schnecke"
+
+#: widgets/category-form-field/index.php:107
+msgid "Parent Category"
+msgstr "Elternteil Kategorie"
+
+#: widgets/category-form-field/index.php:108
+#: widgets/category-form-field/index.php:143
+#: widgets/category-form-field/index.php:146 widgets/category-list/index.php:99
+#: widgets/category-list/index.php:102 widgets/category-list/index.php:186
+#: widgets/category-selector/index.php:113
+#: widgets/category-selector/index.php:116 widgets/checkbox/index.php:129
+#: widgets/checkbox/index.php:132 widgets/email/index.php:138
+#: widgets/email/index.php:141 widgets/media-uploader/index.php:128
+#: widgets/media-uploader/index.php:131 widgets/menu/index.php:200
+#: widgets/menu/index.php:203 widgets/number/index.php:158
+#: widgets/number/index.php:161 widgets/post-author/index.php:124
+#: widgets/post-author/index.php:127 widgets/post-content/index.php:129
+#: widgets/post-content/index.php:132 widgets/post-list/index.php:207
+#: widgets/post-list/index.php:210 widgets/post-status/index.php:130
+#: widgets/post-status/index.php:133 widgets/post-thumbnail/index.php:119
+#: widgets/post-thumbnail/index.php:122 widgets/post-title/index.php:129
+#: widgets/post-title/index.php:132 widgets/radio-group/index.php:168
+#: widgets/radio-group/index.php:171 widgets/radio/index.php:129
+#: widgets/radio/index.php:132 widgets/recaptcha/index.php:112
+#: widgets/recaptcha/index.php:115 widgets/select/index.php:174
+#: widgets/select/index.php:177 widgets/submit/index.php:120
+#: widgets/submit/index.php:123 widgets/tag-selector/index.php:113
+#: widgets/tag-selector/index.php:116 widgets/text/index.php:139
+#: widgets/text/index.php:142 widgets/textarea/index.php:139
+#: widgets/textarea/index.php:142 widgets/user-field/index.php:149
+#: widgets/user-field/index.php:152 widgets/user-list/index.php:105
+#: widgets/user-list/index.php:108
+msgid "Description"
+msgstr "Beschreibung"
+
+#: widgets/category-form-field/index.php:116
+#: widgets/category-form-field/index.php:119 widgets/checkbox/index.php:110
+#: widgets/checkbox/index.php:113 widgets/email/index.php:110
+#: widgets/email/index.php:113 widgets/media-uploader/index.php:110
+#: widgets/number/index.php:110 widgets/number/index.php:113
+#: widgets/post-author/index.php:104 widgets/post-author/index.php:108
+#: widgets/post-content/index.php:111 widgets/post-content/index.php:114
+#: widgets/post-status/index.php:103 widgets/post-thumbnail/index.php:101
+#: widgets/post-title/index.php:101 widgets/post-title/index.php:104
+#: widgets/radio-group/index.php:118 widgets/radio-group/index.php:121
+#: widgets/radio/index.php:110 widgets/radio/index.php:113
+#: widgets/select/index.php:124 widgets/select/index.php:127
+#: widgets/submit/index.php:101 widgets/submit/index.php:104
+#: widgets/text/index.php:111 widgets/text/index.php:114
+#: widgets/textarea/index.php:121 widgets/textarea/index.php:124
+#: widgets/user-field/index.php:121 widgets/user-field/index.php:124
+msgid "Value"
+msgstr "Wert"
+
+#: widgets/category-form-field/index.php:134
+#: widgets/category-form-field/index.php:137 widgets/email/index.php:129
+#: widgets/email/index.php:132 widgets/number/index.php:149
+#: widgets/number/index.php:152 widgets/post-content/index.php:120
+#: widgets/post-content/index.php:123 widgets/post-status/index.php:121
+#: widgets/post-status/index.php:124 widgets/post-title/index.php:120
+#: widgets/post-title/index.php:123 widgets/text/index.php:130
+#: widgets/text/index.php:133 widgets/textarea/index.php:130
+#: widgets/textarea/index.php:133 widgets/user-field/index.php:140
+#: widgets/user-field/index.php:143
+msgid "Placeholder"
+msgstr "Platzhalter"
+
+#: widgets/category-form-field/index.php:152
+#: widgets/category-selector/index.php:122 widgets/checkbox/index.php:149
+#: widgets/email/index.php:147 widgets/media-uploader/index.php:137
+#: widgets/number/index.php:167 widgets/post-author/index.php:133
+#: widgets/post-content/index.php:138 widgets/post-status/index.php:139
+#: widgets/post-thumbnail/index.php:128 widgets/post-title/index.php:138
+#: widgets/radio-group/index.php:177 widgets/radio/index.php:149
+#: widgets/select/index.php:194 widgets/tag-selector/index.php:122
+#: widgets/text/index.php:148 widgets/textarea/index.php:181
+#: widgets/user-field/index.php:158
+msgid "Required"
+msgstr "Erforderlich"
+
+#: widgets/category-form-field/index.php:163
+#: widgets/category-list/index.php:117 widgets/category-selector/index.php:133
+#: widgets/checkbox/index.php:160 widgets/email/index.php:158
+#: widgets/media-uploader/index.php:148 widgets/menu/index.php:209
+#: widgets/number/index.php:178 widgets/post-author/index.php:144
+#: widgets/post-content/index.php:149 widgets/post-list/index.php:216
+#: widgets/post-status/index.php:150 widgets/post-thumbnail/index.php:139
+#: widgets/post-title/index.php:149 widgets/radio-group/index.php:188
+#: widgets/radio/index.php:160 widgets/recaptcha/index.php:121
+#: widgets/select/index.php:205 widgets/submit/index.php:130
+#: widgets/tag-selector/index.php:133 widgets/text/index.php:159
+#: widgets/textarea/index.php:192 widgets/user-field/index.php:169
+#: widgets/user-list/index.php:114
+msgid "ID"
+msgstr ""
+
+#: widgets/category-form-field/index.php:165
+#: widgets/category-list/index.php:119 widgets/category-selector/index.php:135
+#: widgets/checkbox/index.php:162 widgets/email/index.php:160
+#: widgets/media-uploader/index.php:150 widgets/menu/index.php:211
+#: widgets/number/index.php:180 widgets/post-author/index.php:146
+#: widgets/post-content/index.php:151 widgets/post-list/index.php:218
+#: widgets/post-status/index.php:152 widgets/post-thumbnail/index.php:141
+#: widgets/post-title/index.php:151 widgets/radio-group/index.php:190
+#: widgets/radio/index.php:162 widgets/recaptcha/index.php:123
+#: widgets/select/index.php:207 widgets/submit/index.php:132
+#: widgets/tag-selector/index.php:135 widgets/text/index.php:161
+#: widgets/textarea/index.php:194 widgets/user-field/index.php:171
+#: widgets/user-list/index.php:116
+msgid "ID for your element, this should be unique"
+msgstr "ID für Ihr Element, dies sollte eindeutig sein"
+
+#: widgets/category-form-field/index.php:171
+#: widgets/category-list/index.php:125 widgets/category-selector/index.php:141
+#: widgets/checkbox/index.php:168 widgets/email/index.php:166
+#: widgets/media-uploader/index.php:156 widgets/menu/index.php:217
+#: widgets/number/index.php:186 widgets/post-author/index.php:152
+#: widgets/post-content/index.php:157 widgets/post-list/index.php:224
+#: widgets/post-status/index.php:158 widgets/post-thumbnail/index.php:147
+#: widgets/post-title/index.php:157 widgets/radio-group/index.php:196
+#: widgets/radio/index.php:168 widgets/recaptcha/index.php:129
+#: widgets/select/index.php:213 widgets/submit/index.php:138
+#: widgets/tag-selector/index.php:141 widgets/text/index.php:167
+#: widgets/textarea/index.php:200 widgets/user-field/index.php:177
+#: widgets/user-list/index.php:122
+msgid "Class"
+msgstr "Klasse"
+
+#: widgets/category-form-field/index.php:173
+#: widgets/category-list/index.php:127 widgets/category-selector/index.php:143
+#: widgets/checkbox/index.php:170 widgets/email/index.php:168
+#: widgets/media-uploader/index.php:158 widgets/menu/index.php:219
+#: widgets/number/index.php:188 widgets/post-author/index.php:154
+#: widgets/post-content/index.php:159 widgets/post-list/index.php:226
+#: widgets/post-status/index.php:160 widgets/post-thumbnail/index.php:149
+#: widgets/post-title/index.php:159 widgets/radio-group/index.php:198
+#: widgets/radio/index.php:170 widgets/recaptcha/index.php:131
+#: widgets/select/index.php:215 widgets/submit/index.php:140
+#: widgets/tag-selector/index.php:143 widgets/text/index.php:169
+#: widgets/textarea/index.php:202 widgets/user-field/index.php:179
+#: widgets/user-list/index.php:124
+msgid "CSS Class for your element"
+msgstr "CSS-Klasse für Ihr Element"
+
+#: widgets/category-list/index.php:34
+msgid "UF Category List"
+msgstr "UF Kategorieliste"
+
+#: widgets/category-list/index.php:108
+msgid "Category per Page"
+msgstr "Kategorie pro Seite"
+
+#: widgets/category-list/index.php:110 widgets/post-list/index.php:123
+msgid "Number of posts per page"
+msgstr "Anzahl der Beiträge pro Seite"
+
+#: widgets/category-selector/index.php:34
+msgid "UF Category Selector"
+msgstr "UF Kategorieauswahl"
+
+#: widgets/checkbox/index.php:34
+msgid "UF Checkbox"
+msgstr "UF Kontrollkästchen"
+
+#: widgets/checkbox/index.php:101 widgets/checkbox/index.php:104
+#: widgets/email/index.php:101 widgets/email/index.php:104
+#: widgets/media-uploader/index.php:101 widgets/media-uploader/index.php:104
+#: widgets/number/index.php:101 widgets/number/index.php:104
+#: widgets/radio-group/index.php:96 widgets/radio-group/index.php:99
+#: widgets/radio/index.php:101 widgets/radio/index.php:104
+#: widgets/select/index.php:111 widgets/select/index.php:115
+#: widgets/text/index.php:102 widgets/text/index.php:105
+#: widgets/textarea/index.php:101 widgets/textarea/index.php:104
+msgid "Field Name"
+msgstr "Feldname"
+
+#: widgets/checkbox/index.php:123
+msgid "Checkbox"
+msgstr "Kontrollkästchen"
+
+#: widgets/checkbox/index.php:138 widgets/radio-group/index.php:138
+#: widgets/radio/index.php:138 widgets/select/index.php:144
+msgid "Checked"
+msgstr "Überprüft"
+
+#: widgets/checkbox/index.php:140 widgets/radio-group/index.php:140
+#: widgets/radio/index.php:140 widgets/select/index.php:146
+msgid "Check"
+msgstr "Prüfen"
+
+#: widgets/checkbox/index.php:141 widgets/radio-group/index.php:141
+#: widgets/radio/index.php:141 widgets/select/index.php:147
+msgid "Uncheck"
+msgstr "Deaktivieren"
+
+#: widgets/email/index.php:34
+msgid "UF Email"
+msgstr "UF Email"
+
+#: widgets/email/index.php:123
+msgid "Email"
+msgstr "Email"
+
+#: widgets/fa-form/index.php:34
+msgid "UF Form"
+msgstr "UF Bilden"
+
+#: widgets/fa-form/index.php:103
+msgid "Select form"
+msgstr "Formular auswählen"
+
+#: widgets/fa-form/index.php:107
+msgid "Select the form to display"
+msgstr "Wählen Sie das anzuzeigende Formular aus"
+
+#: widgets/media-uploader/index.php:34
+msgid "UF Media Uploader"
+msgstr "UF Medien-Uploader"
+
+#: widgets/media-uploader/index.php:121 widgets/post-thumbnail/index.php:112
+msgid "label for media uploader"
+msgstr "Etikett für Medien-Uploade"
+
+#: widgets/media-uploader/index.php:122
+msgid "Media Uploader"
+msgstr "Medien-Uploader"
+
+#: widgets/media-uploader/index.php:204 widgets/post-thumbnail/index.php:196
+msgid "Upload"
+msgstr "Hochladen"
+
+#: widgets/media-uploader/index.php:210 widgets/post-thumbnail/index.php:202
+msgid "Remove"
+msgstr "Entfernen"
+
+#: widgets/menu/index.php:34
+msgid "UF Menu"
+msgstr "UF Speisekarte"
+
+#: widgets/menu/index.php:97
+msgid "Menu Item"
+msgstr "Menüpunkt"
+
+#: widgets/menu/index.php:98
+msgid "Label for menu item"
+msgstr "Beschriftung für Menüpunkt"
+
+#: widgets/menu/index.php:104
+msgid "URL Type"
+msgstr "URL-Typ"
+
+#: widgets/menu/index.php:108
+msgid "URL"
+msgstr "URL"
+
+#: widgets/menu/index.php:111
+msgid "url"
+msgstr "url"
+
+#: widgets/menu/index.php:133
+msgid "Open Link in New Tab ?"
+msgstr "Link in neuem Tab öffnen ?"
+
+#: widgets/menu/index.php:139
+msgid "Checking this will menu item to open link in new tab"
+msgstr ""
+"Wenn Sie diesen Menüpunkt aktivieren, wird der Link in der neuen "
+"Registerkarte geöffnet"
+
+#: widgets/menu/index.php:160
+msgid "Select the page that will be linked with this menu item"
+msgstr ""
+"Wählen Sie die Seite aus, die mit diesem Menüpunkt verknüpft werden soll"
+
+#: widgets/menu/index.php:176
+msgid "Add Sub Menu Item"
+msgstr "Untermenüelement hinzufügen"
+
+#: widgets/menu/index.php:188
+msgid "Add Menu Item"
+msgstr "Menüelement hinzufügen"
+
+#: widgets/number/index.php:34
+msgid "UF Number"
+msgstr "UF Nummer"
+
+#: widgets/number/index.php:119 widgets/number/index.php:122
+msgid "Min Value"
+msgstr "Mindestwert"
+
+#: widgets/number/index.php:123 widgets/number/index.php:133
+msgid "Minimum value that an user can input"
+msgstr "Mindestwert, den ein Benutzer eingeben kann"
+
+#: widgets/number/index.php:129 widgets/number/index.php:132
+msgid "Max Value"
+msgstr "Maximalwert"
+
+#: widgets/number/index.php:143
+msgid "Number"
+msgstr "Nummer"
+
+#: widgets/post-author/index.php:36
+msgid "UF Post Author"
+msgstr "UF Post Autor"
+
+#: widgets/post-author/index.php:118
+msgid "Author"
+msgstr "Autor"
+
+#: widgets/post-author/index.php:201 widgets/post-status/index.php:207
+#: widgets/select/index.php:138
+msgid "Select"
+msgstr "Wählen"
+
+#: widgets/post-content/index.php:34
+msgid "UF Post Content"
+msgstr "UF Inhalt posten"
+
+#: widgets/post-content/index.php:105
+msgid "Post Content"
+msgstr "Inhalt posten"
+
+#: widgets/post-list/index.php:34
+msgid "UF Post List"
+msgstr "UF Post List"
+
+#: widgets/post-list/index.php:89
+msgid "Display"
+msgstr "Anzeige"
+
+#: widgets/post-list/index.php:93
+msgid "Owner's posts only"
+msgstr "Nur Beitrag des Eigentümers"
+
+#: widgets/post-list/index.php:94
+msgid "All posts"
+msgstr "Alle Beiträge"
+
+#: widgets/post-list/index.php:95
+msgid "Posts of specific author(s)"
+msgstr "Beiträge bestimmter Autoren"
+
+#: widgets/post-list/index.php:99
+msgid "Checking this will list only the owner's posts"
+msgstr ""
+"Wenn Sie dies aktivieren, werden nur die Beiträge des Eigentümers aufgelistet"
+
+#: widgets/post-list/index.php:114
+msgid "Choose posts of which post type will be listed"
+msgstr "Wählen Sie Beiträge aus, deren Beitragstyp aufgelistet werden soll"
+
+#: widgets/post-list/index.php:121
+msgid "Post per Page"
+msgstr "Beitrag pro Seite"
+
+#: widgets/post-list/index.php:135
+msgid "Posts with the post statuses selected will be listed"
+msgstr "Beiträge mit dem ausgewählten Beitragsstatus werden aufgelistet"
+
+#: widgets/post-list/index.php:160
+msgid "Taxonomy"
+msgstr "Taxonomie"
+
+#: widgets/post-list/index.php:164
+msgid ""
+"Posts with the selected taxonomy will be listed, keep blank to list post of "
+"all taxonomies"
+msgstr ""
+"Beiträge mit der ausgewählten Taxonomie werden aufgelistet. Lassen Sie das "
+"Feld leer, um die Beiträge aller Taxonomien aufzulisten"
+
+#: widgets/post-list/index.php:172
+msgid "Select "
+msgstr "auswählen"
+
+#: widgets/post-list/index.php:176
+msgid "Posts with the selected terms will be listed"
+msgstr "Beiträge mit den ausgewählten Begriffen werden aufgelistet"
+
+#: widgets/post-list/index.php:335 widgets/user-list/index.php:191
+msgid "View"
+msgstr "Aussicht"
+
+#: widgets/post-list/index.php:337 widgets/user-list/index.php:192
+msgid "Edit"
+msgstr "Bearbeiten"
+
+#: widgets/post-list/index.php:340 widgets/user-list/index.php:193
+msgid "Delete"
+msgstr "Entfernen"
+
+#: widgets/post-status/index.php:34
+msgid "UF Post Status"
+msgstr "UF Poststatus"
+
+#: widgets/post-thumbnail/index.php:34
+msgid "UF Featured Image"
+msgstr "UF Ausgewähltes Bild"
+
+#: widgets/post-title/index.php:34
+msgid "UF Post Title"
+msgstr "UF Post-Titel"
+
+#: widgets/post-title/index.php:114
+msgid "Post Title"
+msgstr "Post-Titel"
+
+#: widgets/radio-group/index.php:34
+msgid "UF Radio Group"
+msgstr "UF Radiogruppe"
+
+#: widgets/radio-group/index.php:108 widgets/select/index.php:101
+#: widgets/select/index.php:105
+msgid "Field Label"
+msgstr "Feldbezeichnung"
+
+#: widgets/radio-group/index.php:109
+msgid "Radio Group"
+msgstr "Radiogruppe"
+
+#: widgets/radio-group/index.php:122 widgets/radio-group/index.php:156
+#: widgets/select/index.php:128 widgets/select/index.php:162
+msgid "Default Value"
+msgstr "Standardwert"
+
+#: widgets/radio-group/index.php:132 widgets/radio-group/index.php:157
+#: widgets/select/index.php:163
+msgid "Default Label"
+msgstr "Standardbezeichnung"
+
+#: widgets/radio-group/index.php:151 widgets/select/index.php:157
+msgid "Add Options"
+msgstr "Optionen hinzufügen"
+
+#: widgets/radio/index.php:34
+msgid "UF Radio"
+msgstr "UF Radio"
+
+#: widgets/radio/index.php:123
+msgid "Radio Field"
+msgstr "Funkfeld"
+
+#: widgets/recaptcha/index.php:34
+msgid "UF Recaptcha Field"
+msgstr "UF Recaptcha Field"
+
+#: widgets/recaptcha/index.php:106
+msgid "Prove us if you are human"
+msgstr "Beweisen Sie uns, wenn Sie ein Mensch sind"
+
+#: widgets/select/index.php:34
+msgid "UF Dropdown / Select"
+msgstr "UF Dropdown / Auswahl"
+
+#: widgets/select/index.php:183
+msgid "Can Choose Multiple Options ?"
+msgstr "Können Sie mehrere Optionen auswählen?"
+
+#: widgets/submit/index.php:34
+msgid "UF Submit"
+msgstr "UF Einreichen"
+
+#: widgets/submit/index.php:105
+msgid "Submit"
+msgstr "Einreichen"
+
+#: widgets/submit/index.php:234
+msgid "Redirect to post edit page"
+msgstr "Weiterleiten, um die Bearbeitungsseite zu veröffentlichen"
+
+#: widgets/submit/index.php:235
+msgid "View created post"
+msgstr "Erstellten Beitrag anzeigen"
+
+#: widgets/tag-selector/index.php:34
+msgid "UF Tags Selector"
+msgstr "UF Auswahl der Tags"
+
+#: widgets/tag-selector/index.php:106
+msgid "Tag Selector"
+msgstr "Tag-Auswahl"
+
+#: widgets/text/index.php:34
+msgid "UF Text Field"
+msgstr "UF Textfeld"
+
+#: widgets/text/index.php:124
+msgid "Text Field"
+msgstr "Textfeld"
+
+#: widgets/textarea/index.php:34
+msgid "UF Textarea"
+msgstr "Textbereich"
+
+#: widgets/textarea/index.php:115
+msgid "Textarea"
+msgstr "Textbereich"
+
+#: widgets/textarea/index.php:148
+msgid "Enable Rich Editor"
+msgstr "Aktivieren Sie den Rich Editor"
+
+#: widgets/textarea/index.php:154
+msgid "Checking this will enable rich text editor"
+msgstr "Wenn Sie dies aktivieren, wird der Rich-Text-Editor aktiviert"
+
+#: widgets/textarea/index.php:160
+msgid "Enable Media Uploader"
+msgstr "Aktivieren Sie den Medien-Uploader"
+
+#: widgets/textarea/index.php:166
+msgid "Checking this will enable media uploader"
+msgstr "Wenn Sie dies aktivieren, wird der Medien-Uploader aktiviert"
+
+#: widgets/user-field/index.php:34
+msgid "UF User Field"
+msgstr "UF Benutzerfeld"
+
+#: widgets/user-field/index.php:105
+msgid "Username"
+msgstr "Nutzername"
+
+#: widgets/user-field/index.php:106
+msgid "First Name"
+msgstr "Vorname"
+
+#: widgets/user-field/index.php:107
+msgid "Last Name"
+msgstr "Nachname"
+
+#: widgets/user-field/index.php:108
+msgid "User Email"
+msgstr "Benutzer Email"
+
+#: widgets/user-field/index.php:109
+msgid "User Nickname"
+msgstr "Benutzername"
+
+#: widgets/user-field/index.php:110
+msgid "Display Name"
+msgstr "Anzeigename"
+
+#: widgets/user-field/index.php:111
+msgid "Website URL"
+msgstr "Webadresse"
+
+#: widgets/user-field/index.php:112
+msgid "Biographical Info"
+msgstr "Lebenslauf"
+
+#: widgets/user-field/index.php:113
+msgid "Password"
+msgstr "Passwort"
+
+#: widgets/user-field/index.php:134
+msgid "User Field"
+msgstr "Benutzerfeld"
+
+#: widgets/user-list/index.php:34
+msgid "UF User List"
+msgstr "UF Benutzerliste"
+
+#: widgets/user-list/index.php:86
+msgid "Users per Page"
+msgstr "Benutzer pro Seite"
+
+#: widgets/user-list/index.php:88
+msgid "Number of users per page"
+msgstr "Anzahl der Nutzer pro Seite"
+
+#. Description of the plugin/theme
+msgid "Create full featured admin panel/dashboard for the frontend."
+msgstr ""
+"Erstellen Sie ein voll ausgestattetes Admin-Panel / Dashboard für das "
+"Frontend."
+
+#. Author of the plugin/theme
+msgid "CyberCraft"
+msgstr "CyberCraft"
