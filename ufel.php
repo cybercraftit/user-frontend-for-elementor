@@ -204,6 +204,9 @@ final class FAEL_Init {
     }
 
     public function includes() {
+        //news
+        include_once 'news.php';
+
         //include moduldes
         include_once 'includes/modules/class-login.php';
 
