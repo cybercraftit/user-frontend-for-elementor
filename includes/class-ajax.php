@@ -326,7 +326,6 @@ class FAEL_Ajax {
             'msg' => __( 'Whoops ! Something went wrong.' ),
             'errors' => $response['errors']
         ]);
-        exit;
     }
 
     /**
