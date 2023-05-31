@@ -102,6 +102,7 @@ class FAEL_Media_Uploader extends FAEL_Widget_Base {
                 'type' => \Elementor\Controls_Manager::TEXT,
                 'input_type' => 'text',
                 'placeholder' => __( 'Field Name', 'fael' ),
+                'default' => __( 'media_uploader', 'fael' ),
             ]
         );
         $this->add_control(

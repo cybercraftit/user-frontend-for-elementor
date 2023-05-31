@@ -97,6 +97,7 @@ class FAEL_Radio_Group extends FAEL_Widget_Base {
                 'type' => \Elementor\Controls_Manager::TEXT,
                 'input_type' => 'text',
                 'placeholder' => __( 'Field Name', 'fael' ),
+                'default' => __( 'radiogroup', 'fael' ),
             ]
         );
         $this->add_control(
