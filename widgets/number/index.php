@@ -102,6 +102,7 @@ class FAEL_Number extends FAEL_Widget_Base {
                 'type' => \Elementor\Controls_Manager::TEXT,
                 'input_type' => 'text',
                 'placeholder' => __( 'Field Name', 'fael' ),
+                'default' => __( 'number', 'fael' ),
             ]
         );
         $this->add_control(

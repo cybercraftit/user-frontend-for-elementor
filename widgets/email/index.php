@@ -102,6 +102,7 @@ class FAEL_Email extends FAEL_Widget_Base {
                 'type' => \Elementor\Controls_Manager::TEXT,
                 'input_type' => 'text',
                 'placeholder' => __( 'Field Name', 'fael' ),
+	            'default' => __( 'email', 'fael' ),
             ]
         );
         $this->add_control(

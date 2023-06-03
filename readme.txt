@@ -4,8 +4,8 @@ Contributors: cybercraftit
 Tags: frontend admin for elementor, elementor, frontend admin, pagebuilder, user frontend, profile builder, frontend pagebuilder, Forms, widget-restriction, registration, login, membership, dashboard, dashboard-builder, frontend-posting,
 admin, frontend-admin, admin-panel, form-builer, post-form, user-form, display-widget, widget
 Requires at least: 3.0.1
-Tested up to: 5.8.1
-Stable tag: 2.0.0.4
+Tested up to: 6.2.2
+Stable tag: 2.0.0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -162,6 +162,10 @@ And for that reason we have included the following features to extend the awesom
 2. Activate the plugin through the 'Plugins' menu in WordPress
 
 == Changelog ==
+
+== 2.0.0.5 ==
+
+1. [patch] Default value and field names for widgets added
 
 == 2.0.0.1 ==
 

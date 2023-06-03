@@ -3,7 +3,7 @@
  * Plugin Name: User Frontend for Elementor
  * Description: Create full featured admin panel/dashboard for the frontend.
  * Plugin URI:
- * Version:     2.0.0.4
+ * Version:     2.0.0.5
  * Author:      CyberCraft
  * Author URI:
  * Text Domain: fael
