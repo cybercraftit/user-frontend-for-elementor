@@ -1,13 +1,14 @@
 === User Frontend for Elementor - Frontend Admin Panel, Profile, Login, Registration & Content Submission for Elementor ===
 Plugin Name: User Frontend for Elementor
 Version: 2.0.0.5
-Contributors: CyberCraft
+Author: CyberCraft
 Author URI: http://cybercraftit.com/
-Tags: frontend admin for elementor, elementor, frontend admin, pagebuilder, user frontend, profile builder, frontend pagebuilder, Forms, widget-restriction, registration, login, membership, dashboard, dashboard-builder, frontend-posting,
-admin, frontend-admin, admin-panel, form-builer, post-form, user-form, display-widget, widget,
+Contributors: cybercraftit
+Tags: frontend admin for elementor, elementor, frontend admin, pagebuilder, user frontend, profile builder, frontend pagebuilder, Forms, widget-restriction, registration, login, membership, dashboard, dashboard-builder, frontend-posting, admin, frontend-admin, admin-panel, form-builer, post-form, user-form, display-widget, widget,
 Requires at least: 4.7
 Tested up to: 6.2.2
 Stable tag: trunk
+Requires PHP: 5.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
