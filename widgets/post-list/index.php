@@ -110,7 +110,7 @@ class FAEL_Post_List extends FAEL_Widget_Base {
                 'label' => __( 'Post Type', 'fael' ),
                 'type' => \Elementor\Controls_Manager::SELECT2,
                 'multiple' => true,
-                'options' => [],
+                'options' => get_post_types(),
                 'description' => __( 'Choose posts of which post type will be listed', 'fael' ),
                 'default' => 'post'
             ]
@@ -131,7 +131,7 @@ class FAEL_Post_List extends FAEL_Widget_Base {
                 'label' => __( 'Post Status', 'fael' ),
                 'type' => \Elementor\Controls_Manager::SELECT2,
                 'multiple' => true,
-                'options' => [],
+                'options' => get_post_statuses(),
                 'description' => __( 'Posts with the post statuses selected will be listed', 'fael' ),
                 'default' => array( 'publish' )
             ]
